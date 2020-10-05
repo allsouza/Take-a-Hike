@@ -30,10 +30,10 @@ const UserSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'trails'
     },
-    lists: {
-        type: Schema,
-        ref: 'lists'
-    },
+    // lists: {
+    //     type: Schema,
+    //     ref: 'lists'
+    // },
     followers: {
         type: Schema.Types.ObjectId,
         ref: 'users'
