@@ -102,6 +102,12 @@ class SignupForm extends React.Component {
                             placeholder="Enter ZipCode"
                         />
                         <br />
+                        <input type="text"
+                            value={this.state.birthdate}
+                            onChange={this.update('birthdate')}
+                            placeholder="Enter Birthdate"
+                        />
+                        <br />
                         <input type="submit" value="Submit" />
                         {this.renderErrors()}
                     </div>
