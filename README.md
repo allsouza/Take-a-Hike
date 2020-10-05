@@ -1,230 +1,84 @@
-# Take-a-Hike
+# Take a Hike
 
-## Back-end Routes
+## Take a Hike
 
-### `users`
-* `GET /api/users/:id` - Finds the user, and returns their routes, their preferred trails, their comments, and their lists. 
-* `POST /api/users/register` - Lets a new user sign up
-* `POST /api/users/login` - Signs in the user
-* `GET /api/users/:user_id/trails` - returns all trails that a user has saved.  ?wouldn't these two gets be associations? so not necessary as a route?
-* `GET /api/users/:user_id/trails/:id` - finds and returns a specific trail for a user. 
-* `POST /api/users/:user_id/trails` - saves a trail in the user's directory (favorites a trail)
-* `DELETE /api/users/:user_id/trails/:id` - deletes a trail from a user's list. 
+Take a Hike is hiking assitant app where you can find/share/rate trails around you, save favorites to your profile, create lists and follow like minded hikers.
 
-### `lists`
-* `GET /api/lists` - returns lists that a user has created
-* `GET /api/list/:id` - returns a specific list. 
-* `POST /api/lists` - creates a list
-* `PATCH /api/lists/:id` - edit a list
-* `DELETE /api/lists/:id` - delete a list
+## Background and Overview
 
-### `trails`
-* `GET /api/trails` - finds and returns trails with data from Hiking Project API and other local data
-* `GET /api/trails/:id` - fetches a specific trail with data from Hiking Project API and other local data
-* `GET /api/trails/:id/reviews` - finds the reviews that a trail has. 
-* `GET /api/trails/:trail_id/reviews/:id` - finds a specific review that a trail has. 
+Due to the quarantine demand for access to nature and outdoor excursions has greatly risen.  While there are websites that allow you to find hikes in your area, there remains a dearth of resources connecting individual hikers with like minded individuals.  Often times, hikers will arrive at a hike ill prepared and won't enjoy their experience to the fullest.  
 
-### `Reviews`
-* `POST /api/reviews ` - creates a review for a trail. 
-* `PATCH /api/reviews/:id` - lets user edit a review that they left on a trail. 
-* `DELETE /api/reviews/:id` - delete a review that has been left on a trail. 
+Take a Hike aims to alleviate this by creating a platform that connects hikers to each other.  Users will be able to share equipment lists with each other and to review and rate hikes in the area allowing their followers to have a better insight on what to expect. 
+
+## Functionality and MVP
  
-### `Followers`
-* `GET /api/users/:user_id/followers` - gets all the followers associated with a user.
-* `GET /api/followers/:id` - returns user/follower information (Name, email, saved trails, reviews)
-* `GET /api/users/:user_id/following` - returns users followed by this user.
-* `POST /api/users/:user_id/follow` - follow another user. 
-* `DELETE /api/users/:user_id/unfollow` - stop following a user.
-
-
-## Schema
-
-### User
-
-| Column       | Data Type | Required |
-|--------------|-----------|----------|
-| username     | String    | Yes      |
-| firstName    | String    | Yes      |
-| lastName     | String    | Yes      |
-| zipcode      | integer   | Yes      |
-| email        | String    | Yes      |
-| birthdate    | date      | No       |
-| password     | String    | Yes      |
-| savedTrails  | Object    | No       |
-| lists        | Object    | No       |
-| followers    | Object    | No       |
-| following    | Object    | No       |
-| timestamps   |           | true     |
-
-### Trail
-
-| Column      | Data Type | Required |
-|-------------|-----------|----------|
-| API id      | integer   | Yes      |
-| avg_rating  | integer   | No       |
-| review_ids  | Object    | No       |
-| hikerCount  | integer   | No       |
-| timestamps  |           | true     |
-
-### List
-
-| Column     | Data Type | Required |
-|------------|-----------|----------|
-| authorId   | integer   | Yes      |
-| title      | String    | Yes      |
-| body       | String    | No       |
-| timestamps |           | true     |
-
-### Review
-
-| Column     | Data Type | Required |
-|------------|-----------|----------|
-| authorId   | integer   | Yes      |
-| title      | String    | Yes      |
-| body       | String    | No       |
-| rating     | integer   | Yes      |
-| pictures   | ? array?  | No       |
-| timestamps |           | true     |
-
-## Frontend Routes and Components
-
-### Components
-* `Root`
-    * `App`
-      * `Navbar`
-      * `Splash`
-      * `Footer`
-    * `Auth`
-      * `Navbar`
-      * `routed components`
-      * `footer`
-### Routes
-The following routes, defined in `App`, will render components between `NavBar` and `Footer`.
-
-* /
-  * `Splash`
-* `/login`
-  * `SessionForm`
-* `/signup`
-  * `SessionForm`
-* `/users/:user_id`
-  * `ProfileComponent`
-    * `TrailIndex`
-       * `TrailItem`
-       * `ReviewsIndex`
-       * `FollowersIndex`
-* `/users/:user_id/lists`
-  * `ListsComponent`
-* `/users`
-  * `UsersIndex`
-* `/trails`
-  * `TrailsIndex`
-* `/trails/:trail_id`
-     * `TrailShow`
-* `/trails/:trail_id/review/new`
-     * `ReviewForm`
-* `/trails/:trail_id/review/:review_id`
-     * `EditReview`
-     * `DeleteReview`
-     
-## Sample State
-
-``` 
-{
-  entities: {
-    trails: {
-      1: {
-        id: 1,
-        name: "Boulder Skyline Traverse",
-        summary: "The classic long mountain route in Boulder.",
-        state: "California",
-        difficulty: "hard",
-        ascent: 5480,
-        high: 8454,
-        low: 5423,
-        latitude: 39.9388,
-        longitude: -105.2582,
-        location: "Boulder, Colorado",
-        reviewIds: [6, 7, 12],
-        conditionSatus: "All Clear",
-        conditionDetails: "Dry",
-        averageRating: 4.3,
-        hikerCount: 10
-      },
-      2: {
-        id: 2,
-        name: "Walker Ranch",
-        summary: "An awesome and challenging hike near Boulder with great scenery.",
-        state: "California",
-        difficulty: "medium",
-        ascent: 1594,
-        high: 7335,
-        low: 6439,
-        latitude: 39.9511,
-        longitude: -105.3378,
-        location: "Boulder, Colorado",
-        reviewIds: [6, 7, 12],
-        conditionSatus: "All Clear",
-        conditionDetails: "Dry",
-        averageRating: 4.3,
-        hikerCount: 0
-      },
-    users: {
-      1: {
-        id: 1,
-        userName: "bigtym3hik3r",
-        firstName: "Bill",
-        lastName: "Simmons",
-        email: "bsimmons@gmail.com",  
-        zipcode: 02347,
-        birthdate: 09/07/1984,
-        savedHikes: [1, 3],
-        reviewsIds: [1, 2, 5, 8]        
-      },
-      2: {
-        id: 2,
-        userName: "lostindawoodz",
-        firstName: "Roger",
-        lastName: "Jones",
-        email: "rog.jones@gmail.com",  
-        zipcode: 02561,
-        birthdate: 12/11/1992,
-        savedHikes: [1, 3],
-        reviewsIds: [1, 2, 5, 8]        
-      }
-    },
-    reviews: {
-      1: {
-        id: 1,
-        reviewerId: 3,
-        trailId: 4,
-        title: "I was hungry",
-        body: "The trail is really well maintained, not too challenging, but no where to buy food nearby",  
-        rating: 5,  
-        pictures ?
-      },
-      2: {
-        id: 2,
-        reviewerId: 4,
-        trailId: 12,
-        title: "Wow!"
-        body: "challenging, but the view is worth it!",  
-        rating: 5,    
-        pictures ?
-      },
-  },
-  ui: {
-    loading: true/false,
-    filters: ,
-    modal: null or string of active modal
-  },
-  errors: {
-    login: ["Incorrect username or password"],
-    signUp: ["Zipcode cannot be blank", "First Name Field cannot be blank", "Last Name cannot be blank", "Email cannot be blank"]
-    reviewForm: ["Review cannot be submitted if the body is blank"]
-  },
-  session: { currentUserId: 15 }
-}
-
-
-```
+  * Splash page and User Auth
+  * User lists
+  * Trail API integration
+  * Trail reviews
+  * Followers and Dashboard
+  * Production ReadMe
+  
+ ## Technologies and Challanges
+ 
+ Take a Hike will use the MERN stack(MongoDB, Express, React, Node.js).
+ 
+ We will use:
+   * Hiking Project API to fetch and display trail information to users.
+   * AWS for adding pictures to reviews
+   
+ ### Backend: MongoDB/Express
+ 
+ Users will be able to save lists and references to saved hikes and followers/followees in the database.
+ 
+ Trails will be saved to the database using information fetched from the API while adding more information gathered by the app.
+ 
+ Lists will be saved to the database allowing them to be shared amongst users.
+ 
+ Reviews will be refer to a specific trail being able to hold photos and a user rating and description of said trail.
+ 
+ ### Frontend: React/Redux/Node.js
+ 
+ Provide a nice interface for users to find/save trails, create/share lists and share reviews regarding trails they have done.
+ 
+ Technical challanges:
+   * Implementing the API and making sure we display the correct information.
+   * Seeding AWS library
+   * Making sure that lists can only be viewed by permitted users(owner and shared with)
+   
+ ## Group Members and Work breakdown
+ 
+ ### October 3-4
+ 
+  * Created documentation - Everyone
+  * Investigate API for integration - John, Andre
+  * Create website logo - Brendon
+  * Set up MongoDB - Arash, Andre
+  
+ ### October 5
+ 
+  * Back-end User Auth - Andre and Arash
+  * Splash - Brendon
+  * Front-end User Auth - John
+  
+ ### October 6
+  * Back-end List and start Trails backend - Arash
+  * List Rich Text editor component - Andre
+  * List form and container - John
+  * Finish styling components from day before and style Lists - Brendon
+  
+ ### October 7
+  * Trails and Reviews backend - Arash
+  * Trail API integration - John
+  * Trail Index Components - Andre
+  * Trail Show Component - Brendon
+  
+ ### October 8
+  * Followers backend - Arash
+  * Review Forms(Create/Edit) - Brendon
+  * Review AWS integration - John
+  * Review Index/Trail integration - Andre
+  
+ ### October 9
+  * Complete production ReadMe - Arash
+  * Final touches and debugging - Everyone
