@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import path from '../../images/path.jpg'
+import '../../stylesheets/navbar.css'
+
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -22,7 +25,7 @@ class NavBar extends React.Component {
             );
         } else {
             return (
-                <div>
+                <div className='nav-components'>
                     <Link to={'/signup'}>Signup</Link>
                     <Link to={'/login'}>Login</Link>
                 </div>
@@ -32,10 +35,10 @@ class NavBar extends React.Component {
 
     render() {
         return (
-            <div>
-                <h1>Take a Hike</h1>
-                <h1>Take A Hike</h1>
-                { this.getLinks()}
+            <div className='nav'>
+                <Link to='/'><img src={path} alt="logo" className='logo1'/></Link>
+                <p className='nav-components'>Take a Hike</p>
+                { this.getLinks()} 
             </div>
         );
     }
