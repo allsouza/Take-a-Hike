@@ -7,18 +7,18 @@ import SignupFormContainer from './session/signup_form_container';
 import Modal from './modals/modal';
 import MainPage from './main/main_page';
 import Footer from './footer/footer'
-import RichTextEditor from './rich-text-editor/editor_container';
+import ListIndexContainer from './lists/list_index_container';
 
 const App = () => (
     <div>
         <Modal />
         <NavBarContainer />
         <Switch>
+            <Route path='/lists' component={ListIndexContainer} /> {/* REMOVE AFTER TESTING */}
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
+            <Route path="/" component={MainPage} />  
         </Switch>
-        <Route path='/editor' component={RichTextEditor} /> {/* REMOVE AFTER TESTING */}
-        <Route path="/" component={MainPage} />  
         <Route path="/" component={Footer} />
     </div>
 );

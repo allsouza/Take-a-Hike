@@ -1,6 +1,7 @@
 import React from 'react';
+import ListIndexItem from './list_index_item';
 
-class ListIndex extends React.Component {
+export default class ListIndex extends React.Component {
     constructor(props) {
         super(props)
     }
@@ -18,9 +19,11 @@ class ListIndex extends React.Component {
             return (
                 <div className="list-index">
                     <h1>Lists</h1>
-                    {this.props.lists.map(list => {
-                        return <ListIndexItem list={list}/>  
-                    })}
+                    <ul>
+                        {this.props.lists.map(list => {
+                            return <ListIndexItem list={list} deleteList={this.props.deleteList} edit={this.props.editList}/>  
+                        })} 
+                    </ul>
                 </div>
             )
         }
