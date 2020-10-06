@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import '../../stylesheets/modal.css'
 
 class SignupForm extends React.Component {
     constructor(props) {
@@ -45,7 +46,7 @@ class SignupForm extends React.Component {
             birthdate: this.state.birthdate
         };
 
-        this.props.signup(user, this.props.history);
+        this.props.signup(user, this.props.history).then(this.props.closeModal);
     }
 
     renderErrors() {
@@ -65,7 +66,9 @@ class SignupForm extends React.Component {
             <div className="signup-form-container">
                 <form onSubmit={this.handleSubmit}>
                     <div className="signup-form">
-                        <br />
+                    <div className='form-name'>
+                        Sign Up
+                        </div>
                         <input type="text"
                             value={this.state.email}
                             onChange={this.update('email')}
@@ -108,7 +111,7 @@ class SignupForm extends React.Component {
                             placeholder="Birthdate (MM/DD/YYYY)"
                         />
                         <br />
-                        <input type="submit" value="Submit" />
+                        <input type="submit" value="Submit" className='button' />
                         {this.renderErrors()}
                     </div>
                 </form>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-// import '../../stylesheets/forms.css'
+import '../../stylesheets/modal.css'
 
 class LoginForm extends React.Component {
     constructor(props) {
@@ -18,7 +18,7 @@ class LoginForm extends React.Component {
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.currentUser === true) {
-            this.props.history.push('/trails');
+            this.props.history.push('/dashboard');
         }
 
         this.setState({ errors: nextProps.errors })
@@ -38,7 +38,7 @@ class LoginForm extends React.Component {
             password: this.state.password
         };
 
-        this.props.login(user);
+        this.props.login(user).then(this.props.closeModal);
     }
 
     // Render the session errors if there are any
@@ -59,6 +59,9 @@ class LoginForm extends React.Component {
             <div>
                 <form onSubmit={this.handleSubmit}>
                     <div>
+                        <div className='form-name'>
+                        Login
+                        </div>
                         <input type="text"
                             value={this.state.email}
                             onChange={this.update('email')}
@@ -71,7 +74,7 @@ class LoginForm extends React.Component {
                             placeholder="Password"
                         />
                         <br />
-                        <input type="submit" value="Submit" />
+                        <input type="submit" value="Submit" className='button' />
                         {this.renderErrors()}
                     </div>
                 </form>
