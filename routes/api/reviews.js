@@ -2,7 +2,9 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 const passport = require('passport');
+
 const Review = require('../../models/Reviews');
+validateReviewInput = require('../../validation/reviews');
 
 router.get('/trails/:trail_id', (req,res)=>{
     Review.find({trail: req.params.trail_id})
@@ -36,6 +38,12 @@ router.get('/:reviewId', (req,res)=>{
 router.post('/', 
     passport.authenticate('jwt', {session: false}),
     (req,res)=> {
+        const {errors, isValid} = validateReviewInput(req.body);
+
+        if (!isValid){
+            return res.status(400).json(errors);
+        }
+        
         const newReview = new Review({
             author: req.user.id,
             trail: req.trail.id,
