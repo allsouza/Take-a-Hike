@@ -9,20 +9,18 @@ class ListIndex extends React.Component {
         this.props.fetchLists()
     }
 
-    // mapp in props from List index to list index item
+    // map in props from List index to list index item
 
     render() {
         if (!this.props.lists) {
             return null
         } else {
             return (
-                <div>
-                    <h1>List Index</h1>
-                    {
-                        this.props.lists.map(list => {
-                            return <ListIndexItem />  
-                        })
-                    }
+                <div className="list-index">
+                    <h1>Lists</h1>
+                    {this.props.lists.map(list => {
+                        return <ListIndexItem list={list}/>  
+                    })}
                 </div>
             )
         }

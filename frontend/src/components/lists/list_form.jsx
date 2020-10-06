@@ -1,26 +1,12 @@
 import React from 'react';
+import EditorContainer from '../rich-text-editor/editor_container';
 
 class ListForm extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = this.props.list;
-
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
-
-    handleSubmit(e) {
-        e.preventDefault();
-        this.props.action(this.state);
-    }
-
-    update(field) {
-        return e => this.setState({ [field]: e.target.value });
-    }
-
     render() {
         return (
-            <div>
+            <div className="list-form">
                 <h1>{this.props.formType}</h1>
+                <EditorContainer list={this.state} save={this.props.action}/>
             </div>
         )
     }

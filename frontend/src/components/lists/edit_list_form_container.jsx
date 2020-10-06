@@ -5,7 +5,7 @@ import ListForm from './list_form';
 
 const mSTP = (state, ownProps) => {
     return {
-        list: state.lists[ownProps.match.params.listId],
+        list: ownProps.list,
         formType: 'Update List'
     }
 };
@@ -13,7 +13,7 @@ const mSTP = (state, ownProps) => {
 const mDTP = dispatch => {
     return {
         fetchList: (listId) => dispatch(fetchList(listId)),
-        updateList: (list) => dispatch(update(list)) 
+        action: (list) => dispatch(updateList(list)) 
     }
 }
 

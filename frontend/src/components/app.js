@@ -7,6 +7,7 @@ import SignupFormContainer from './session/signup_form_container';
 import Modal from './modals/modal';
 import MainPage from './main/main_page';
 import Footer from './footer/footer'
+import RichTextEditor from './rich-text-editor/editor_container';
 
 const App = () => (
     <div>
@@ -16,6 +17,7 @@ const App = () => (
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
         </Switch>
+        <Route path='/editor' component={RichTextEditor} /> {/* REMOVE AFTER TESTING */}
         <Route path="/" component={MainPage} />  
         <Route path="/" component={Footer} />
     </div>

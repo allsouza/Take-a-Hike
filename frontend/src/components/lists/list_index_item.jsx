@@ -1,11 +1,10 @@
 import React from 'react';
 
 
-const ListIndexItem = props => (
-    <div>
-
-    </div>
-)
-
-
-export default ListIndexItem;
+export default function ListIndexItem({list}){
+    return(
+        <li key={list.id}>
+            
+        </li>
+    )
+}
