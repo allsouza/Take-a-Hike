@@ -7,6 +7,8 @@ export const fetchReviews = (trail) => {
     return axios.get(`/api/trails/${trail.id}/reviews`)
 };
 
+// fetchReview may be problematic...is it possible to take in a review object or does it need to be a reviewID
+
 export const fetchReview = (review) => {
     return axios.get(`/api/trails/${review.trailId}/reviews/${review.id}`)
 };
