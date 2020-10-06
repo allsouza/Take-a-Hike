@@ -8,7 +8,7 @@ validateListInput = require('../../validation/lists');
 
 router.get('/', (req,res)=>{
     List.find()
-        .sort({timestamp:-1})
+        .sort({date:-1})
         .then(lists => res.json(lists))
         .catch(err => res.status(404).json({nolistsfound: 'No lists found, create some!'}));
 
@@ -16,7 +16,7 @@ router.get('/', (req,res)=>{
 
 router.get('/user/:user_id', (req,res)=>{
     List.find({user: req.params.user_id})
-        .sort({timestamps: -1})
+        .sort({date: -1})
         .then(lists => res.json(lists))
         .catch(err => 
             res.status(404).json({listnotfound: 'No lists from that user were found'}
@@ -43,13 +43,15 @@ router.post('/',
 
         const newList = new List({
             title: req.body.title,
-            author: req.user.id
+            body: req.body.body,
+            author: req.user.id,
+            source: 'user'
         });
 
-        newList.save().then(list => res.json(list));
+        newList.save().then(list => res.json(list), errors=>res.json(errors));
     });
 
-router.patch('/:listId', passport.authenticate('jwt', {session:false}), async (req,res)=>{
+router.patch('/:listId', passport.authenticate('jwt', {session:false}), (req,res)=>{
     List.findById(req.params.listId, function(err, list){
         if (!list){
             return res.status(400).json('We could not find that list');
@@ -60,7 +62,8 @@ router.patch('/:listId', passport.authenticate('jwt', {session:false}), async (r
                 if (err) {
                     return res.status(400).json(err);
                 }else {
-                    res.send(list);
+                    newList = req.body;
+                    res.send(newList);
                 }
             });
         }
@@ -78,7 +81,7 @@ router.delete('/:listId', passport.authenticate('jwt', {session:false}), (req,re
                if (err){
                    return res.status(400).json(err);
                }else{
-                   res.send('Deleted!');
+                   res.send(list.id);
                }
 
            });

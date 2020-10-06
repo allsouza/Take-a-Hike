@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const ListSchema = newSchema({
+const ListSchema = new Schema({
     author:{
         type: Schema.Types.ObjectId,
         ref: 'users'
@@ -13,9 +13,11 @@ const ListSchema = newSchema({
     body:{
         type:String, 
         text:true, 
+    },
+    date:{
+        type:Date, 
+        default: Date.now
     }
-    },{
-    timestamps:true
-});
+    });
 
 module.exports = List = mongoose.model('list', ListSchema);
