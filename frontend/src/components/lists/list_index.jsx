@@ -28,3 +28,5 @@ class ListIndex extends React.Component {
         }
     }
 }
+
+export default ListIndex;

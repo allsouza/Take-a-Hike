@@ -1,8 +1,6 @@
 import axios from 'axios';
 
 
-// we may want to keep the route as api/lists???
-
 export const fetchReviews = (trail) => {
     return axios.get(`/api/trails/${trail.id}/reviews`)
 };

@@ -5,7 +5,7 @@ import ReviewForm from './review_form';
 
 const mSTP = state => {
     return {
-        list: {
+        review: {
             body: '',
             title: ''
         },
@@ -15,7 +15,7 @@ const mSTP = state => {
 
 const mDTP = dispatch => {
     return {
-        action: review => dispatch(createReview(review))
+        action: (review) => dispatch(createReview(review))
     }
 };
 

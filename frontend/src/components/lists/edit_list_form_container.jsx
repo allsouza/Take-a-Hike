@@ -13,7 +13,7 @@ const mSTP = (state, ownProps) => {
 const mDTP = dispatch => {
     return {
         fetchList: (listId) => dispatch(fetchList(listId)),
-        updateList: (list) => dispatch(update(list)) 
+        updateList: (list) => dispatch(updateList(list)) 
     }
 }
 
