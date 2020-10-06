@@ -1,0 +1,33 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    background-color: rgb(192, 245, 192, 0.8);
+    font-family: bukhari;
+}
+
+.logo1 {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    z-index: 0.5;
+}
+
+.nav-components {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+a {
+    padding: 5px;
+    text-decoration: none;
+}
+a:hover {
+    color: purple;
+    text-decoration: underline;
+}
+
+p {
+    color: rgb(97, 68, 15);
+}
