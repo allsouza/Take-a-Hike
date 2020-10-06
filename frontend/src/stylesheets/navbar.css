@@ -19,11 +19,25 @@
     flex-direction: column;
     justify-content: space-between;
 }
+button {
+    padding: 5px;
+    background-color: none;
+    border: none;
+    font-family: bukhari;
+    background-color: rgb(192, 245, 192, 0.8);
+    color: rgb(34, 34, 170);
+}
+
+button:hover{
+    color: purple;
+    text-decoration: underline;
+}
 a {
     padding: 5px;
     text-decoration: none;
+    
 }
-a:hover {
+a:hover{
     color: purple;
     text-decoration: underline;
 }
