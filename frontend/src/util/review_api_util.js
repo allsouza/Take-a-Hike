@@ -1,13 +1,14 @@
 import axios from 'axios';
 
-export const fetchReviews = () => {
-    return axios.get('/api/lists')
-};
 
 // we may want to keep the route as api/lists???
 
-export const fetchReview = reviewId => {
-    return axios.get(`/api/reviews/${reviewId}`)
+export const fetchReviews = (trail) => {
+    return axios.get(`/api/trails/${trail.id}/reviews`)
+};
+
+export const fetchReview = (review) => {
+    return axios.get(`/api/trails/${review.trailId}/reviews/${review.id}`)
 };
 
 export const createReview = data => {
