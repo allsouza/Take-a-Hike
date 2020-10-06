@@ -105,7 +105,7 @@ class SignupForm extends React.Component {
                         <input type="text"
                             value={this.state.birthdate}
                             onChange={this.update('birthdate')}
-                            placeholder="Enter Birthdate"
+                            placeholder="Birthdate (MM/DD/YYYY)"
                         />
                         <br />
                         <input type="submit" value="Submit" />
