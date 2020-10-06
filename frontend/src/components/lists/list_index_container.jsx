@@ -4,7 +4,7 @@ import { fetchLists, deleteList } from '../../actions/list_actions';
 
 
 const mSTP = state => ({
-    posts: Object.values(state.posts)
+    lists: Object.values(state.lists)
 });
 
 const mDTP = dispatch => ({
