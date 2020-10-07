@@ -10,10 +10,7 @@ import '../../stylesheets/modal.css'
 
 
 function Modal({modal, closeModal, info}){
-<<<<<<< HEAD
-=======
 
->>>>>>> d42fe7c244a2de9c81238ba5a56e4ee2703f4c27
     if(!modal) return null;
 
     let component;
