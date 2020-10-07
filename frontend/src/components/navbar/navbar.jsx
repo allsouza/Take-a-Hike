@@ -24,20 +24,30 @@ class NavBar extends React.Component {
                 </div>
             );
         } else {
+            const {openModal} = this.props
             return (
                 <div className='nav-components'>
-                    <Link to={'/signup'}>Signup</Link>
-                    <Link to={'/login'}>Login</Link>
+                    <button onClick={() => openModal('login')}>Login</button>
+                    <button onClick={() => openModal('signup')}>Signup</button>
                 </div>
             );
         }
     }
 
     render() {
+        const ifCurrentUser = () => {
+           if(this.props.loggedIn){
+               return (
+                 <Link to='/dashboard'>Dashboard</Link>
+               )
+           } 
+        }
+
         return (
             <div className='nav'>
                 <Link to='/'><img src={path} alt="logo" className='logo1'/></Link>
                 <p className='nav-components'>Take a Hike</p>
+                {ifCurrentUser()}
                 { this.getLinks()} 
             </div>
         );
