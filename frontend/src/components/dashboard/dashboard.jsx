@@ -24,6 +24,7 @@ class DashBoard extends React.Component {
                     <div >    
                         My Favorite Trails
                         <div  className='index'>Favorite Trails Index</div>
+                        <br/>
                         <button>Find More Trails</button>
                     </div>
                     <div> Profile
