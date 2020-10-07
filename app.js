@@ -2,12 +2,19 @@ const express = require("express");
 const mongoose = require('mongoose');
 const users = require('./routes/api/users');
 const lists = require('./routes/api/lists');
-const trails = require('./routes/api/trails');
-const reviews = require('./routes/api/reviews');
 const bodyParser = require('body-parser');
 const passport = require('passport');
-const path = require('path')
+// const db = require('./config/my_keys').mongoURI;
+// const fileUpload = require('express-fileupload');
+// const upload = require('./routes/api/upload');
+const cors = require("cors");
+const fileUploadRoutes = require('./routes/api/fileUploadRoutes')
+
 const app = express();
+
+const trails = require('./routes/api/trails');
+const reviews = require('./routes/api/reviews');
+const path = require('path')
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('frontend/build'));
@@ -30,6 +37,14 @@ app.use(bodyParser.json());
 
 app.use('/api/users', users);
 app.use('/api/lists', lists);
+// app.use('/api/upload', upload);
+app.use('/api/photo', fileUploadRoutes);
+
+app.use(cors());
+
+// app.use(fileUpload({
+//   createParentPath: true
+// }));
 app.use('/api/reviews', reviews);
 app.use('/api/trails', trails);
 
