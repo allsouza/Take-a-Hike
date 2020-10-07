@@ -9,7 +9,7 @@ const Auth = ({ component: Component, path, loggedIn, exact }) => (
             <Component {...props} />
         ) : (
                 // Redirect to the trails page if the user is authenticated
-                <Redirect to="/trails" />
+                <Redirect to="/dashboard" />
             )
     )} />
 );

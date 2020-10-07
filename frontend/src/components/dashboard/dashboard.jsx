@@ -1,4 +1,7 @@
-import React from 'react'
+import React from 'react';
+// import { Link } from 'react-router-dom';
+import '../../stylesheets/dashboard.css';
+import ListIndex from '../lists/list_index_container';
 
 class DashBoard extends React.Component {
 
@@ -6,10 +9,37 @@ class DashBoard extends React.Component {
         super(props)
     }
 
+    componentDidMount(){
+        //need to grab user info, this.props.fetchUsers()
+    }
+
     render() {
+        // const { email, firstName, lastName, birthDate } = this.props
         return(
-            <div>
-                (all user components will go here)
+            <div className='dashboard-container'>
+                <div className='dashboard'>
+                   <div className='index' >
+                        <ListIndex />
+                   </div>
+                    <div >    
+                        My Favorite Trails
+                        <div  className='index'>Favorite Trails Index</div>
+                        <button>Find More Trails</button>
+                    </div>
+                    <div> Profile
+                        <div className='profile' >
+                            <img src="" alt="profile-pic" className='profile-pic'/>
+                            <p>firstName lastName</p>
+                            <p>zipcode</p>
+                            <p>Following</p>
+                            <p>Followers</p>
+                            <p>Favorite Trails</p>
+                            <p>Reviews</p>
+                        </div> 
+                        <div className='feed'>Following/Feed</div>
+                    </div>
+                </div>
+                
             </div>
         )
     }
