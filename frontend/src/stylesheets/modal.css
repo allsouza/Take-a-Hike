@@ -1,0 +1,43 @@
+.modal-background {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 10;
+  }
+ 
+  .modal-child {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+.button {
+    padding: 5px;
+    border: none;
+    font-family: bukhari;
+    background-color: rgb(192, 245, 192, 0.8);
+    color: rgb(34, 34, 170);
+    border-radius:  0 50% 50%;
+    margin: 5px;
+    /* border-radius: 5px 50%; */
+}
+
+.button:hover{
+    color: purple;
+    text-decoration: underline;
+}
+
+.form-name {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  font-family: bukhari;
+  color: rgb(192, 245, 192);
+  padding: 8px;
+}
+

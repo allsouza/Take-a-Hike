@@ -21,7 +21,7 @@ const removeList = listId => ({
 
 export const fetchLists = () => dispatch => (
     ListApiUtil.fetchLists()
-        .then(lists => dispatch(receiveAllLists(lists)))
+        .then(lists => dispatch(receiveAllLists(lists.data)))
 );  
 
 export const fetchList = listId => dispatch => (
