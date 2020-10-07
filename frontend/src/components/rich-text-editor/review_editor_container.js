@@ -4,9 +4,9 @@ import RichTextEditor from './editor';
 
 const mSTP = (state, ownProps) => {
     return({
-        data: ownProps.list,
+        data: ownProps.review,
         save: ownProps.save,
-        editor: 'list'
+        editor: 'review'
 })}
 
 const mDTP = dispatch => ({

@@ -7,15 +7,20 @@ const mSTP = state => {
     return {
         review: {
             body: '',
-            title: ''
+            title: '',
+            rating: 0,
+            user: state.session.user,
+            trail: "5f7e0e930cdb287979bc8eb4"
         },
-        formType: 'Create Review'
+        formType: 'Create Review',
+        editor: 'review'
     }
 };
 
 const mDTP = dispatch => {
+    debugger
     return {
-        action: (review) => dispatch(createReview(review))
+        action: review => dispatch(createReview(review))
     }
 };
 

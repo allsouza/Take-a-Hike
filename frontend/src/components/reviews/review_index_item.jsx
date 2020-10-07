@@ -1,11 +1,21 @@
 import React from 'react';
 
 
-const ReviewIndexItem = props => (
-    <div>
-
-    </div>
-)
-
-
-export default ReviewIndexItem;
+export default function ReviewIndexItem({ review, updateReview, deleteReview, edit }) {
+    return (
+        <>
+            <p>{review.title}</p>
+            <i className="fas fa-trash"
+                onClick={(e) => {
+                    e.stopPropagation();
+                    deleteReview(review._id)
+                }}></i>
+            <i class="fa fa-pencil" 
+                onClick={(e) => {
+                    e.stopPropagation();
+                    updateReview(review._id)
+                }}
+                ></i>
+        </>
+    )
+}

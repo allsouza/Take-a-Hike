@@ -31,6 +31,7 @@ function Modal({modal, closeModal, info}){
             break;
         case 'newReview':
             component = <NewReview />;
+            break
         case 'review':
             component = <Review info={info} />;
         default:

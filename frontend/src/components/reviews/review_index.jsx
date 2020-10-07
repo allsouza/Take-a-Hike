@@ -7,6 +7,7 @@ class ReviewIndex extends React.Component {
     constructor(props) {
         super(props)
         this.newReview = this.newReview.bind(this);
+        // this.openModal = this.openModal.bind(this);
     }
 
     componentDidMount() {
@@ -16,7 +17,7 @@ class ReviewIndex extends React.Component {
     // map in props from Review index to list index item
 
     newReview() {
-        this.props.openModal('newReivew');
+        this.props.openModal('newReview');
     }
 
     render() {
@@ -29,8 +30,11 @@ class ReviewIndex extends React.Component {
                         <ul>
                             {
                                 this.props.reviews.map(review => {
+                                    debugger
                                     return <li key={review.id} onClick={() => this.props.editReview(review)}>
-                                        <ReviewIndexItem review={review} deleteReview={this.props.deleteReview}/>
+                                        <ReviewIndexItem review={review} 
+                                        deleteReview={this.props.deleteReview} 
+                                        updateReview={this.props.updateReview}/>
                                     </li>
                                 })
                             }

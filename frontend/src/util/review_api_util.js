@@ -13,10 +13,12 @@ export const fetchReview = (review) => {
 };
 
 export const createReview = data => {
-    return axios.post('/api/reviews/', data)
+    debugger
+    return axios.post('/api/reviews', data)
 }
 
 export const updateReview = (data) => {
+    debugger
     return axios.patch(`/api/reviews/${data._id}`, data)
 }
 

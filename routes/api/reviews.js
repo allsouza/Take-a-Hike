@@ -48,8 +48,8 @@ router.post('/',
         }
 
         const newReview = new Review({
-            author: req.user.id,
-            trail: req.trail.id,
+            author: req.body.user.id,
+            trail: req.body.trail.id,
             title: req.body.title, 
             body: req.body.body,
             rating:req.body.rating,

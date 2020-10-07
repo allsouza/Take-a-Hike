@@ -1,16 +1,18 @@
 import React from 'react';
-import EditorContainer from '../rich-text-editor/editor_container';
+import EditorContainer from '../rich-text-editor/review_editor_container';
 
 class ReviewForm extends React.Component {
 
     render() {
+        debugger
         return (
             <div className="review-form">
                 <h1>{this.props.formType}</h1>
                 <EditorContainer 
-                review={this.props.list} 
+                review={this.props.review} 
                 save={this.props.action} 
-                fetchReview={this.props.fetchReview}/>
+                fetchReview={this.props.fetchReview}
+                editor={this.props.editor}/>
             </div>
         )
     }
