@@ -5,6 +5,7 @@ const lists = require('./routes/api/lists');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const path = require('path')
+const app = express();
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('frontend/build'));
@@ -13,7 +14,6 @@ if (process.env.NODE_ENV === 'production') {
   })
 }
 
-const app = express();
 const db = require('./config/my_keys').mongoURI;
 mongoose
   .connect(db, { useNewUrlParser: true })
