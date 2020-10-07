@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require('mongoose');
 const users = require('./routes/api/users');
 const lists = require('./routes/api/lists');
+const reviews = require('./routes/api/reviews');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 
@@ -20,6 +21,7 @@ app.use(bodyParser.json());
 
 app.use('/api/users', users);
 app.use('/api/lists', lists);
+app.use('/api/reviews', reviews);
 
 const port = process.env.PORT || 5000;
 

@@ -4,6 +4,9 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 
 const Review = require('../../models/Reviews');
+const User = require('../../models/User');
+const Trails = require('../../models/Trails');
+
 validateReviewInput = require('../../validation/reviews');
 
 router.get('/trails/:trail_id', (req,res)=>{
@@ -43,7 +46,7 @@ router.post('/',
         if (!isValid){
             return res.status(400).json(errors);
         }
-        
+
         const newReview = new Review({
             author: req.user.id,
             trail: req.trail.id,
