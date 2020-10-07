@@ -8,6 +8,7 @@ import Modal from './modals/modal';
 import MainPage from './main/main_page';
 import Footer from './footer/footer'
 import DashBoard from './dashboard/dashboard_container'
+import ImageUploadContainer from './image_upload/image_upload_container.jsx';
 
 const App = () => (
     <div>
@@ -17,6 +18,7 @@ const App = () => (
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
             {/* <AuthRoute path='/dashboard' component={DashBoard}/> */}
+            <Route exact path='/images' component={ImageUploadContainer} />
         </Switch>
         <Route  path='/dashboard' component={DashBoard}/>
         <Route path="/" component={MainPage} />  
