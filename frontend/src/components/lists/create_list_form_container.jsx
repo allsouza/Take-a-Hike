@@ -16,7 +16,7 @@ const mSTP = state => {
 
 const mDTP = dispatch => {
     return {
-        action: list => dispatch(createList())
+        action: list => dispatch(createList(list))
     }
 };
 

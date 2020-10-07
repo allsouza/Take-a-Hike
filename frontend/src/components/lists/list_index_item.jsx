@@ -1,11 +1,14 @@
 import React from 'react';
 
 
-const ListIndexItem = props => (
-    <div>
-
-    </div>
-)
-
-
-export default ListIndexItem;
+export default function ListIndexItem({list, deleteList, edit}){
+    return(
+        <>
+            <p>{list.title}</p> 
+            <i className="fas fa-trash" 
+                onClick={(e) => {
+                    e.stopPropagation();
+                    deleteList(list._id)}}></i>
+        </>
+    )
+}
