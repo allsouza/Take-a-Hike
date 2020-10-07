@@ -1,8 +1,9 @@
 import axios from 'axios';
 
+// will need to take in a trail object and interpolate trail._id
 
-export const fetchReviews = (trail) => {
-    return axios.get(`/api/trails/${trail._id}/reviews`)
+export const fetchReviews = () => {
+    return axios.get(`/api/trails/5f7e0e930cdb287979bc8eb4/reviews`)
 };
 
 // fetchReview may be problematic...is it possible to take in a review object or does it need to be a reviewID
