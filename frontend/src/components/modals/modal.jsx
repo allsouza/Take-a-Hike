@@ -17,19 +17,15 @@ function Modal({modal, closeModal, info}){
     switch (modal) {
         case 'newList':
             component=<NewList />
-            klass = 'modal-list';
             break;
         case 'list':
             component=<List info={info} />
-            klass = 'modal-list';
             break;
         case 'login':
             component = <LoginFormContainer />;
-           klass = 'modal-child';
       break;
     case 'signup':
             component = <SignupFormContainer />;
-             klass = 'modal-child';
       break;
         default:
             return null;
@@ -37,7 +33,7 @@ function Modal({modal, closeModal, info}){
 
     return(
         <div className="modal-background" onClick={closeModal}>
-            <div onClick={e=>e.stopPropagation()} className={klass}>{component}</div>
+            <div onClick={e=>e.stopPropagation()}>{component}</div>
         </div>
     )
 }
