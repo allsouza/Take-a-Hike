@@ -31,7 +31,7 @@ app.use(bodyParser.json());
 app.use('/api/users', users);
 app.use('/api/lists', lists);
 app.use('/api/reviews', reviews);
-app.use('/api/trails');
+app.use('/api/trails', trails);
 
 const port = process.env.PORT || 5000;
 
