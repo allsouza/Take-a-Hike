@@ -5,7 +5,7 @@ import ListForm from './list_form';
 
 const mSTP = (state, ownProps) => {
     return {
-        list: ownProps.list,
+        list: ownProps.info,
         formType: 'Update List'
     }
 };

@@ -12,8 +12,8 @@ export const createList = data => {
     return axios.post('/api/lists/', data)
 }
 
-export const updateList = (listId, data) => {
-    return axios.patch(`/api/lists/${listId}`, data)
+export const updateList = (data) => {
+    return axios.patch(`/api/lists/${data._id}`, data)
 }
 
 export const deleteList = (listId) => {

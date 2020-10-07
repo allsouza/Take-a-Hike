@@ -8,6 +8,7 @@ export default class RichTextEditor extends React.Component{
         this.state = Object.assign({}, props.list)
         this.handleBodyChange = this.handleBodyChange.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.save = this.save.bind(this);
     }
 
     handleBodyChange(value){
@@ -28,18 +29,18 @@ export default class RichTextEditor extends React.Component{
                 <Toolbar/>
                 <form>
                     <input  type="text" className="title" 
-                            value={this.state.title === "Untitled" ? "" : this.state.title} 
+                            value={this.state.title} 
                             placeholder="Title"
                             onChange={this.handleChange} 
                         />
-                    <ReactQuill value={this.state.body}
+                    {/* <ReactQuill value={this.state.body}
                                 onChange={this.handleBodyChange}
                                 theme="snow"
                                 modules={modules}
                                 formats={formats}
                                 bounds={'.rich-text-editor'}
                                 placeholder="Start writing your list"
-                        />
+                        /> */}
                 </form>
                 <div className= "buttons">
                     <button onClick={this.props.closeModal}>Cancel</button>
