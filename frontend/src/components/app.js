@@ -1,5 +1,5 @@
 import React from 'react';
-import { AuthRoute } from '../util/route_util';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { Switch, Route } from 'react-router-dom';
 import NavBarContainer from './navbar/navbar_container';
 import LoginFormContainer from './session/login_form_container';
@@ -18,10 +18,9 @@ const App = () => (
             <Route path='/lists' component={ListIndexContainer} /> {/* REMOVE AFTER TESTING */}
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
-            <Route path="/" component={MainPage} />  
-            {/* <AuthRoute path='/dashboard' component={DashBoard}/> */}
+            <Route exact path="/" component={MainPage} />  
         </Switch>
-        <Route path='/dashboard' component={DashBoard}/>
+        <ProtectedRoute path='/dashboard' component={DashBoard}/>
         <Route path="/" component={Footer} />
         
     </div>
