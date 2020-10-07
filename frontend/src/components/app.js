@@ -8,6 +8,7 @@ import Modal from './modals/modal';
 import MainPage from './main/main_page';
 import Footer from './footer/footer'
 import ListIndexContainer from './lists/list_index_container';
+import ReviewIndexContainer from './reviews/review_index_container';
 import DashBoard from './dashboard/dashboard_container'
 
 const App = () => (
@@ -16,6 +17,7 @@ const App = () => (
         <NavBarContainer />
         <Switch>
             <Route path='/lists' component={ListIndexContainer} /> {/* REMOVE AFTER TESTING */}
+            <Route path='/reviews' component={ReviewIndexContainer} /> {/* REMOVE AFTER TESTING */}
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
             <Route exact path="/" component={MainPage} />  

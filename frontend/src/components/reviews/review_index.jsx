@@ -1,15 +1,23 @@
 import React from 'react';
+import { openModal } from '../../actions/modal_actions';
+import ReviewIndexItem from './review_index_item';
+// NEED TO IMPORT IMG UPLOAD CONTAINER !!!  Thread that in to the reviews
 
 class ReviewIndex extends React.Component {
     constructor(props) {
         super(props)
+        this.newReview = this.newReview.bind(this);
     }
 
     componentDidMount() {
-        this.props.fetchReviewss()
+        this.props.fetchReviews()
     }
 
     // map in props from Review index to list index item
+
+    newReview() {
+        this.props.openModal('newReivew');
+    }
 
     render() {
         if (!this.props.reviews) {
@@ -18,11 +26,16 @@ class ReviewIndex extends React.Component {
             return (
                 <div>
                     <h1>Review Index</h1>
-                    {
-                        this.props.reviews.map(review => {
-                            return <ReviewIndexItem />
-                        })
-                    }
+                        <ul>
+                            {
+                                this.props.reviews.map(review => {
+                                    return <li key={review.id} onClick={() => this.props.editReview(review)}>
+                                        <ReviewIndexItem review={review} deleteReview={this.props.deleteReview}/>
+                                    </li>
+                                })
+                            }
+                        </ul>
+                        <button onClick={this.newReview}>Create Review</button>
                 </div>
             )
         }
