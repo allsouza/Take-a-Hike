@@ -38,3 +38,5 @@ router.post('/',
 
         newTrail.save().then(trail => res.json(trail));
     });
+
+    module.exports = router;

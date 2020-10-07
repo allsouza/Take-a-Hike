@@ -1,5 +1,5 @@
 import React from 'react';
-import { AuthRoute } from '../util/route_util';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { Switch, Route } from 'react-router-dom';
 import NavBarContainer from './navbar/navbar_container';
 import LoginFormContainer from './session/login_form_container';
@@ -16,14 +16,15 @@ const App = () => (
         <Modal />
         <NavBarContainer />
         <Switch>
-            <Route path='/lists' component={ListIndexContainer} /> {/* REMOVE AFTER TESTING */}
+            <Route path='/lists' component={ListIndexContainer} />
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
-            {/* <AuthRoute path='/dashboard' component={DashBoard}/> */}
             <Route exact path='/images' component={ImageUploadContainer} />
         </Switch>
         <Route  path='/dashboard' component={DashBoard}/>
         <Route path="/" component={MainPage} />  
+            <Route exact path="/" component={MainPage} />  
+        <ProtectedRoute path='/dashboard' component={DashBoard}/>
         <Route path="/" component={Footer} />
     </div>
 );
