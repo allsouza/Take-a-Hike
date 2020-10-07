@@ -13,7 +13,7 @@ export default function ReviewIndexItem({ review, updateReview, deleteReview, ed
             <i class="fa fa-pencil" 
                 onClick={(e) => {
                     e.stopPropagation();
-                    updateReview(review._id)
+                    updateReview(review)
                 }}
                 ></i>
         </>
