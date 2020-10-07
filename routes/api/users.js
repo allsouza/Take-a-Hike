@@ -12,7 +12,8 @@ const validateLoginInput = require('../../validation/login');
 router.get('/current', passport.authenticate('jwt', {session: false}), (req, res) => {
     res.json({
         id: req.user.id,
-        email: req.user.email
+        email: req.user.email,
+        name: req.user.firstName
     });
   })
 
@@ -73,7 +74,7 @@ router.post('/login', (req, res) => {
         bcrypt.compare(password, user.password)
             .then(isMatch => {
                 if (isMatch) {
-                const payload = {id: user.id, email: user.email};
+                const payload = {id: user.id, email: user.email, name: user.firstName};
 
                 jwt.sign(
                     payload,
