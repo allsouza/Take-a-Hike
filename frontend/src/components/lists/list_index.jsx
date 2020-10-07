@@ -22,13 +22,13 @@ export default class ListIndex extends React.Component {
         return (
             <div className="list-index">
                 <h1>Lists</h1>
-                <button onClick={this.newList}>Create List</button>
                 <ul>
                     {this.props.lists.map(list => {
                         return <li key={list._id} onClick={() => {this.props.editList(list)}}>
                             <ListIndexItem list={list} deleteList={this.props.deleteList}/>  </li>
                     })} 
                 </ul>
+                 <button onClick={this.newList}>Create List</button>
             </div>
         )
     }
