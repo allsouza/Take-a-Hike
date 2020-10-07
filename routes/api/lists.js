@@ -25,7 +25,7 @@ router.get('/user/:user_id', (req,res)=>{
 });
 
 router.get('/:listId', (req,res)=> {
-    List.findById(req.params.id)
+    List.findById(req.params.listId)
         .then(list => res.json(list))
         .catch(err => 
             res.status(404).json({nolistfound: 'No list found with that id'})
