@@ -3,10 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { closeModal } from '../../actions/modal_actions';
 import NewList from '../../components/lists/create_list_form_container';
-<<<<<<< HEAD
-=======
 import List from '../../components/lists/edit_list_form_container';
->>>>>>> master
 import LoginFormContainer from '../session/login_form_container';
 import SignupFormContainer from '../session/signup_form_container';
 import '../../stylesheets/modal.css'
@@ -21,12 +18,9 @@ function Modal({modal, closeModal, info}){
         case 'newList':
             component=<NewList/>
             break;
-<<<<<<< HEAD
-=======
         case 'list':
             component=<List info={info}/>
             break;
->>>>>>> master
         case 'login':
             component = <LoginFormContainer />;
       break;

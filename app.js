@@ -49,7 +49,7 @@ app.use(cors());
 //   createParentPath: true
 // }));
 app.use('/api/reviews', reviews);
-app.use('/api/trails');
+app.use('/api/trails', trails);
 
 const port = process.env.PORT || 5000;
 
