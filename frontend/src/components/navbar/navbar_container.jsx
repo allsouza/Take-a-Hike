@@ -5,7 +5,7 @@ import { openModal } from '../../actions/modal_actions';
 import NavBar from './navbar';
 
 const mSTP = state => ({
-    loggedIn: state.session.isAuthenticated
+    loggedIn: state.session.isAuthenticated,
 });
 
 
