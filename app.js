@@ -12,6 +12,21 @@ const fileUploadRoutes = require('./routes/api/fileUploadRoutes')
 
 const app = express();
 
+const trails = require('./routes/api/trails');
+const reviews = require('./routes/api/reviews');
+const bodyParser = require('body-parser');
+const passport = require('passport');
+const path = require('path')
+const app = express();
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('frontend/build'));
+  app.get('/', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+  })
+}
+
+const db = require('./config/my_keys').mongoURI;
 mongoose
   .connect(db, { useNewUrlParser: true })
   .then(() => console.log("Connected to MongoDB successfully"))
@@ -33,6 +48,8 @@ app.use(cors());
 // app.use(fileUpload({
 //   createParentPath: true
 // }));
+app.use('/api/reviews', reviews);
+app.use('/api/trails');
 
 const port = process.env.PORT || 5000;
 
