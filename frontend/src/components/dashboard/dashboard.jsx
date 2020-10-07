@@ -1,7 +1,9 @@
 import React from 'react';
 // import { Link } from 'react-router-dom';
+import '../../stylesheets/reset.css'
 import '../../stylesheets/dashboard.css';
 import ListIndex from '../lists/list_index_container';
+import path from '../../images/path.jpg'
 
 class DashBoard extends React.Component {
 
@@ -21,15 +23,18 @@ class DashBoard extends React.Component {
                    <div className='index' >
                         <ListIndex />
                    </div>
-                    <div >    
-                        My Favorite Trails
-                        <div  className='index'>Favorite Trails Index</div>
-                        <br/>
+                    <div className='index-2'>    
+                        <ul> 
+                            <header>My Favorite Trails:</header> 
+                            <li>1st trail</li>
+                            <li>2nd trail</li>
+                            <li>3rd trail</li>
+                        </ul>
                         <button>Find More Trails</button>
                     </div>
                     <div> Profile
                         <div className='profile' >
-                            <img src="" alt="profile-pic" className='profile-pic'/>
+                        <img src={path} alt="profile-pic" className='profile-pic'/>
                             <p>firstName lastName</p>
                             <p>zipcode</p>
                             <p>Following</p>
