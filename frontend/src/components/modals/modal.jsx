@@ -10,16 +10,16 @@ import '../../stylesheets/modal.css'
 
 
 function Modal({modal, closeModal, info}){
-  let klass
+
     if(!modal) return null;
 
     let component;
     switch (modal) {
         case 'newList':
-            component=<NewList />
+            component=<NewList/>
             break;
         case 'list':
-            component=<List info={info} />
+            component=<List info={info}/>
             break;
         case 'login':
             component = <LoginFormContainer />;
@@ -33,7 +33,7 @@ function Modal({modal, closeModal, info}){
 
     return(
         <div className="modal-background" onClick={closeModal}>
-            <div onClick={e=>e.stopPropagation()}>{component}</div>
+            <div className="modal-child" onClick={e=>e.stopPropagation()}>{component}</div>
         </div>
     )
 }
