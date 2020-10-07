@@ -10,7 +10,7 @@ const ImagesReducer = (state = {}, action) => {
     switch (action.type) {
         case UPLOAD_IMAGE:
             debugger
-            newState[action.listId] = action.list;
+            newState['id'] = action.file.data.data;
             return newState;
         default:
             return state;

@@ -18,7 +18,7 @@ class ImageUpload extends React.Component {
         const data = new FormData(e.target);
         debugger
         data.append("file", this.state.selectedFile, this.state.description );
-        this.props.uploadImage();
+        this.props.uploadImage(data);
     }
 
 
@@ -34,6 +34,8 @@ class ImageUpload extends React.Component {
     };
 
     render() {
+        debugger
+        if (!this.props.image) {
         return (
             <div>
                 <form onSubmit={this.handleUpload}>
@@ -42,7 +44,15 @@ class ImageUpload extends React.Component {
                  <button type="submit">Upload</button>
                 </form>
             </div>
-        )
+            )
+        } else {
+            return (
+                <div className="image-wrapper">
+                    <img src={this.props.image.Location} alt="" srcset=""/>
+                </div>
+            )
+        }
+        
     }
 
 

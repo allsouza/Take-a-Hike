@@ -3,13 +3,14 @@ import * as ImageApiUtil from '../util/image_api_util';
 export const UPLOAD_IMAGE = 'UPLOAD_IMAGE';
 
 
-const receiveImage = image => ({
+const receiveImage = file => ({
     type: UPLOAD_IMAGE,
-    image
+    file
 });
 
 
-export const uploadImage = image => dispatch => (
-    ImageApiUtil.uploadImage(image)
-        .then(image => dispatch(receiveImage(image)))
-);
+export const uploadImage = file => dispatch => {
+    debugger
+    return ImageApiUtil.uploadImage(file)
+        .then(file => dispatch(receiveImage(file)))
+};
