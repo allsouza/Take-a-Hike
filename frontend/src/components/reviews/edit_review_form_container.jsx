@@ -5,7 +5,7 @@ import ReviewForm from './review_form';
 
 const mSTP = (state, ownProps) => {
     return {
-        review: state.reviews[ownProps.match.params.reviewId],
+        review: ownProps.info,
         formType: 'Update Review'
     }
 };
