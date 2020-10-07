@@ -14,10 +14,7 @@ const app = express();
 
 const trails = require('./routes/api/trails');
 const reviews = require('./routes/api/reviews');
-const bodyParser = require('body-parser');
-const passport = require('passport');
 const path = require('path')
-const app = express();
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('frontend/build'));
