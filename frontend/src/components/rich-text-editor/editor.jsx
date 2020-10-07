@@ -20,7 +20,8 @@ export default class RichTextEditor extends React.Component{
     }
 
     save(){
-        this.props.save(this.state)
+        this.props.save(this.state);
+        this.props.closeModal();
     }
 
     render(){
@@ -33,14 +34,14 @@ export default class RichTextEditor extends React.Component{
                             placeholder="Title"
                             onChange={this.handleChange} 
                         />
-                    {/* <ReactQuill value={this.state.body}
+                    <ReactQuill value={this.state.body}
                                 onChange={this.handleBodyChange}
                                 theme="snow"
                                 modules={modules}
                                 formats={formats}
                                 bounds={'.rich-text-editor'}
                                 placeholder="Start writing your list"
-                        /> */}
+                        />
                 </form>
                 <div className= "buttons">
                     <button onClick={this.props.closeModal}>Cancel</button>
