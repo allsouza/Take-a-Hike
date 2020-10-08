@@ -36,7 +36,8 @@ router.route("/").get((req, res, next) => {
 
 
 router.get('/:review_id', (req, res) => {
-    Photo.find({ review: req.params.photo_id })
+    debugger
+    Photo.find({ review_id: req.params.review_id })
         .then(photos => res.json(photos))
         .catch(err =>
             res.status(404).json({ photonotfound: 'no photo found' }

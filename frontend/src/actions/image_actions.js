@@ -16,14 +16,15 @@ const retrieveImage = image => {
 }
 
 //this uploads image to the browser
-export const uploadImage = file => dispatch => {
+export const uploadImage = review => dispatch => {
     debugger
-    return ImageApiUtil.uploadImage(file)
+    return ImageApiUtil.uploadImage(review)
         .then(file => dispatch(receiveImage(file)))
 };
 
 //this fetches the image based on the reviewId
 export const fetchImage = reviewId => dispatch => {
+    debugger
     return ImageApiUtil.fetchImage(reviewId)
         .then(image => dispatch(retrieveImage(image)))
 }

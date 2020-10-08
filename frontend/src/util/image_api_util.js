@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-export const uploadImage = (data) => {
+export const uploadImage = (review) => {
     debugger
-    return axios.post(`/api/photo/upload`, data).catch(err => {
+    return axios.post(`/api/photo/upload/${review._id}`, review).catch(err => {
         console.log(err);
     })
 }
@@ -11,7 +11,7 @@ export const uploadImage = (data) => {
 
 export const fetchImage = (reviewId) => {
     debugger
-    return axios.get(`api/photo/${reviewId}`, reviewId).catch(err => {
+    return axios.get(`api/photo/${reviewId}`).catch(err => {
         console.log(err);
     })
 }

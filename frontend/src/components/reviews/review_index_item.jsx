@@ -10,7 +10,8 @@ class ReviewIndexItem extends React.Component {
 
 
     componentDidMount() {
-        //this.props.fetchImage(this.props.review._id)
+        debugger
+        this.props.fetchImage(this.props.review._id)
     }
 
     render() {
@@ -38,6 +39,7 @@ class ReviewIndexItem extends React.Component {
                         updateReview={() => this.props.updateReview}
                         reviewId={this.props.review._id}
                         imageUrl={this.props.imageUrl}
+                        review={this.props.review}
                     />
                 </div>
             )

@@ -2,6 +2,8 @@ import { connect } from 'react-redux';
 import ImageUpload from './image_upload';
 import { uploadImage } from '../../actions/image_actions';
 
+//can I pass in a review object here???
+
 const mSTP = state => {
     debugger
     return {
