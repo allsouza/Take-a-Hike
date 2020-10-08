@@ -46,7 +46,7 @@ router.post('/',
         if (!isValid){
             return res.status(400).json(errors);
         }
-        debugger
+        debugger 
         const newReview = new Review({
             author: req.body.user.id,
             trail: req.body.trail.id,
