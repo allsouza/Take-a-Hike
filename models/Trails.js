@@ -45,6 +45,13 @@ const TrailSchema = new Schema({
     latitude:{
         type:Number, 
         require:true
+    },
+    descent:{
+        type: Number
+    },
+    url:{
+        type: String,
+        require: true
     }
 
 });

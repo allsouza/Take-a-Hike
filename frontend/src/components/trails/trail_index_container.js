@@ -1,13 +1,19 @@
-import { connect } from 'mongoose';
+import { connect } from 'react-redux';
 import {fetchTrails} from '../../actions/trails_actions';
 import TrailIndex from './trail_index';
 
 const mSTP = state => {
-    trails: Object.values(state.entities.trails)
+    return({
+        trails: Object.values(state.entities.trails)
+    })
+    
 }
 
 const mDTP = dispatch => {
-    fetchTrails: () => dispatch(fetchTrails())
+    return({
+        fetchTrails: () => dispatch(fetchTrails())
+    })
+   
 }
 
 export default connect(mSTP, mDTP)(TrailIndex);

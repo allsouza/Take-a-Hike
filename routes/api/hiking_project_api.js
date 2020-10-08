@@ -25,7 +25,8 @@ router.get('/', (req, res) => {
                 descent: trail.descent,
                 high: trail.high,
                 longitude: trail.longitude,
-                latitude: trail.latitude
+                latitude: trail.latitude,
+                url: trail.url
             })
             await newTrail.save().then(trail => {
                 response[trail._id] = trail;
