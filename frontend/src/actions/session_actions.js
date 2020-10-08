@@ -12,8 +12,9 @@ export const receiveCurrentUser = currentUser => {
     currentUser
 })};
 
-export const receiveUserSignIn = () => ({
-    type: RECEIVE_USER_SIGN_IN
+export const receiveUserSignIn = currentUser => ({
+    type: RECEIVE_USER_SIGN_IN,
+    currentUser
 });
 
 export const receiveErrors = errors => ({
@@ -42,7 +43,7 @@ export const login = user => dispatch => (
         dispatch(receiveCurrentUser(decoded))
     })
         .catch(err => {
-            dispatch(receiveErrors(err.response.data));
+         return dispatch(receiveErrors(err.response.data));
         })
 )
 

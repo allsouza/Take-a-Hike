@@ -5,11 +5,12 @@ import { openModal } from '../../actions/modal_actions';
 import NavBar from './navbar';
 
 const mSTP = state => {
+    // debugger
     const name = state.session.isAuthenticated ? state.session.user.name : ""
-return ({
+return {
     loggedIn: state.session.isAuthenticated,
     name: name
-}) 
+} 
 };
 
 
