@@ -7,7 +7,8 @@ import { openModal } from '../../actions/modal_actions';
 const mSTP = state => {
     debugger 
     return {
-        reviews: Object.values(state.entities.reviews)
+        reviews: Object.values(state.entities.reviews),
+        imageUrl: ''
     }
 };
 

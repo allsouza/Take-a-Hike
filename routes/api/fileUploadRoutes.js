@@ -56,8 +56,11 @@ router.post("/upload", upload.single("file"), function (req, res) {
         Key: file.originalname,
         Body: file.buffer,
         ContentType: file.mimetype,
-        ACL: "public-read"
+        ACL: "public-read",
+        reviewId: req.body.reviewId
+
     };
+    debugger
     s3bucket.upload(params, function (err, data) {
         if (err) {
             res.status(500).json({ error: true, Message: err });
@@ -66,8 +69,10 @@ router.post("/upload", upload.single("file"), function (req, res) {
             var newFileUploaded = {
                 description: req.body.description,
                 fileLink: s3FileURL + file.originalname,
-                s3_key: params.Key
+                s3_key: params.Key,
+                reviewId: params.reviewId
             };
+            debugger
             var photo = new Photo(newFileUploaded);
             photo.save(function (error, newFile) {
                 if (error) {

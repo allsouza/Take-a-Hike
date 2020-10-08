@@ -10,7 +10,8 @@ let PhotoSchema = new Schema(
         photo_id: { type: Number, default: 0 },
         description: { type: String },
         fileLink: { type: String },
-        s3_key: { type: String }
+        s3_key: { type: String },
+        reviewId: { type: String }
     },
     {
         // createdAt,updatedAt fields are automatically added into records
@@ -24,3 +25,5 @@ So during development to reset the go_id back to 1, I just have to drop the coun
 
 //add another field to the model that is reviewId, when we dispatch the action to save to the db, we need to make sure to include the reference to the review we are at (pass in a reviewId)
 //first create the review as a blank object
+
+// commiting a 

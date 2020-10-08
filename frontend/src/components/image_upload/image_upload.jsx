@@ -7,7 +7,8 @@ class ImageUpload extends React.Component {
         super(props);
         this.state = {
             description: '',
-            selectedFile: null
+            selectedFile: null,
+            imageUrl: ''
         }
         this.handleUpload = this.handleUpload.bind(this);
     }
@@ -18,6 +19,12 @@ class ImageUpload extends React.Component {
         debugger
         data.append("file", this.state.selectedFile, this.state.description);
         this.props.uploadImage(data);
+        this.handleSubmit();
+    }
+
+    handleSubmit() {
+        this.props.updateReview(this.props.reviewId)
+        //fetch the reivew
     }
 
 

@@ -42,7 +42,9 @@ class ReviewIndex extends React.Component {
                                         return <li key={review.id} onClick={() => this.props.editReview(review)}>
                                             <ReviewIndexItem review={review} 
                                             deleteReview={this.props.deleteReview} 
-                                            updateReview={this.props.updateReview}/>
+                                            updateReview={this.props.updateReview}
+                                            //photo={this.props.photoId}
+                                            />
                                         </li>
                                         }
                                     })
