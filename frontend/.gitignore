@@ -23,3 +23,4 @@ yarn-debug.log*
 yarn-error.log*
 
 /config/keys_dev.js
+/frontend/src/config/keys_dev.js
