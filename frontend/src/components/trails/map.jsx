@@ -11,13 +11,20 @@ class Map extends React.Component{
 
   getTrails(centerCoords){
     this.props.fetchApiTrails(centerCoords);
+    clearTimeout();
+    setTimeout(() => {
+      // debugger
+      this.props.fetchTrails()}, 2000);
   }
 
   render(){
     return(
       <div>
         <MapComponent
-          getTrails= {this.getTrails}/>
+          getTrails= {this.getTrails}
+          updateBounds={this.props.updateFilter}
+          // get filter setter from props
+          />
      
       </div>
     )

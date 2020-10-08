@@ -22,7 +22,6 @@ const MapWithASearchBox = compose(
   lifecycle({
     componentDidMount() {
       const refs = {}
-        debugger
       this.setState({
         bounds: null,
         center: {
@@ -31,14 +30,7 @@ const MapWithASearchBox = compose(
         markers: [],
         onMapMounted: ref => {
           refs.map = ref;
-        },
-        onBoundsChanged: () => {
-          this.setState({
-            bounds: refs.map.getBounds(),
-            center: refs.map.getCenter(),
-          })
-          // debugger
-          // this.props.updateBounds(this.state.bounds)
+          this.setState({map: ref})
         },
         onSearchBoxMounted: ref => {
           refs.searchBox = ref;
@@ -65,15 +57,16 @@ const MapWithASearchBox = compose(
           });
           // refs.map.fitBounds(bounds);
         },
+        onIdle: () => {
+          const mapBounds = refs.map.getBounds();
+          const northEast= mapBounds.getNorthEast();
+          const southWest= mapBounds.getSouthWest();
+          const bounds = { northEast: {lat: northEast.lat(), lng: northEast.lng()}, southWest: {lat: southWest.lat(), lng: southWest.lng()}}
+          this.props.updateBounds(bounds);
+          this.props.getTrails({lat: refs.map.getCenter().lat(), lon: refs.map.getCenter().lng()})
+        },
       })
     },
-    componentDidUpdate(){
-      debugger
-      const coords = typeof this.state.center.lat === 'function' ? 
-          {lat: this.state.center.lat(), lon: this.state.center.lng()} : 
-          {lat: this.state.center.lat, lon: this.state.center.lng}
-      this.props.getTrails(coords);
-    }
   }),
   withScriptjs,
   withGoogleMap
@@ -82,7 +75,7 @@ const MapWithASearchBox = compose(
     ref={props.onMapMounted}
     defaultZoom={12}
     center={props.center}
-    onBoundsChanged={() => props.onBoundsChanged}
+    onIdle={props.onIdle}
   >
     <SearchBox
       ref={props.onSearchBoxMounted}
