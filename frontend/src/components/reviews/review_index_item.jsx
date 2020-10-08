@@ -1,5 +1,5 @@
 import React from 'react';
-import ImageUpload from '../image_upload/image_upload_container';
+//import ImageUpload from '../image_upload/image_upload_container';
 
 export default function ReviewIndexItem({ review, updateReview, deleteReview, edit }) {
     debugger
@@ -20,7 +20,7 @@ export default function ReviewIndexItem({ review, updateReview, deleteReview, ed
                     updateReview(review._id)
                 }}
                 ></i>
-            <ImageUpload />
+            
         </div>
     )
 }

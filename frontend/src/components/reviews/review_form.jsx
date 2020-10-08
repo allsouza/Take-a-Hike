@@ -1,5 +1,6 @@
 import React from 'react';
 import EditorContainer from '../rich-text-editor/review_editor_container';
+import ImageUpload from '../image_upload/image_upload_container';
 
 class ReviewForm extends React.Component {
 
@@ -12,6 +13,7 @@ class ReviewForm extends React.Component {
                 review={this.props.review} 
                 save={this.props.action} 
                 editor={this.props.editor}/>
+                <ImageUpload />
             </div>
         )
     }

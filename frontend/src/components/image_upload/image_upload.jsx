@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-//import ImageUploader from 'react-images-upload';
 
 
 class ImageUpload extends React.Component {
@@ -48,7 +47,7 @@ class ImageUpload extends React.Component {
         } else {
             return (
                 <div className="image-wrapper">
-                    <img src={this.props.image.Location} alt="" srcset="" />
+                    <img style={{ "height": "150px", "width": "150px" }} src={this.props.image.Location} alt="" srcset="" />
                 </div>
             )
         }
