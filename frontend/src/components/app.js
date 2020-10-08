@@ -20,11 +20,13 @@ const App = () => (
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
             <Route exact path="/" component={MainPage} />  
+<<<<<<< HEAD
             <ProtectedRoute exact path= '/maps' component={Map}/>
+=======
+            <ProtectedRoute path='/dashboard' component={DashBoard}/>
+>>>>>>> 739a0ad164cc46b329755d2af54a549da466dec4
         </Switch>
-        <ProtectedRoute path='/dashboard' component={DashBoard}/>
-        <Route path="/" component={Footer} />
-        
+        <Footer />
     </div>
 );
 
