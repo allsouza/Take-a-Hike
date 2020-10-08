@@ -64,53 +64,44 @@ class SignupForm extends React.Component {
     render() {
         return (
             <div className="signup-form-container">
-                <form onSubmit={this.handleSubmit}>
-                    <div className="signup-form">
+                <form onSubmit={this.handleSubmit} >
                     <div className='form-name'>
-                        Sign Up
-                        </div>
+                    <div className='title'>Sign Up</div>
                         <input type="text"
                             value={this.state.email}
                             onChange={this.update('email')}
                             placeholder="Email"
                         />
-                        <br />
                         <input type="password"
                             value={this.state.password}
                             onChange={this.update('password')}
                             placeholder="Password"
                         />
-                        <br />
                         <input type="password"
                             value={this.state.password2}
                             onChange={this.update('password2')}
                             placeholder="Confirm Password"
                         />
-                        <br />
                         <input type="text"
                             value={this.state.firstName}
                             onChange={this.update('firstName')}
                             placeholder="Enter First Name"
                         />
-                        <br />
                         <input type="text"
                             value={this.state.lastName}
                             onChange={this.update('lastName')}
                             placeholder="Enter Last Name"
                         />
-                        <br />
                         <input type="text"
                             value={this.state.zipcode}
                             onChange={this.update('zipcode')}
                             placeholder="Enter ZipCode"
                         />
-                        <br />
                         <input type="text"
                             value={this.state.birthdate}
                             onChange={this.update('birthdate')}
                             placeholder="Birthdate (MM/DD/YYYY)"
                         />
-                        <br />
                         <input type="submit" value="Submit" className='button' />
                         {this.renderErrors()}
                     </div>

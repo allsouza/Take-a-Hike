@@ -23,7 +23,7 @@ class ListIndex extends React.Component {
         debugger
         return (
             <div className="list-index">
-                <h1>Lists</h1>
+                <p>Lists:</p>
                 <ul>
                     {this.props.lists.map(list => {
                         return <li key={list._id} onClick={() => {this.props.editList(list)}}>

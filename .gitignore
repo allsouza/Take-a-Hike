@@ -1,5 +1,5 @@
 /node_modules
 /frontend/node_modules
-/config/keys_prod.js
-/config/keys_dev.js
-/config/keys.js
+/config/my_keys_dev.js
+/config/my_keys_prod.js
+/config/my_keys.js
