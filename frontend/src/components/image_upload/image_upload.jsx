@@ -20,7 +20,7 @@ class ImageUpload extends React.Component {
         debugger
         data.append("file", this.state.selectedFile, this.state.description);
         debugger
-        this.props.uploadImage(this.props.review);
+        this.props.uploadImage(this.props.review, data);
         //this.handleSubmit();
     }
 
