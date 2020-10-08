@@ -7,8 +7,8 @@ import SignupFormContainer from './session/signup_form_container';
 import Modal from './modals/modal';
 import MainPage from './main/main_page';
 import Footer from './footer/footer';
-import Map from './trails/map';
 import TrailsIndexContainer from './trails/trail_index_container';
+import Map from './trails/map_container';
 import DashBoard from './dashboard/dashboard_container'
 import TrailShowContainer from './trails/trail_show_container';
 
