@@ -23,7 +23,7 @@ class ReviewIndex extends React.Component {
 
     render() {
         debugger
-            if (this.props.reviews.length < 5) {
+            if (this.props.reviews.length === 0) {
                 return (
                     <div>
                         <h1>No Reviews Yet!</h1>
