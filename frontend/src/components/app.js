@@ -6,7 +6,8 @@ import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import Modal from './modals/modal';
 import MainPage from './main/main_page';
-import Footer from './footer/footer'
+import Footer from './footer/footer';
+import Map from './trails/map';
 import ListIndexContainer from './lists/list_index_container';
 import ReviewIndexContainer from './reviews/review_index_container';
 import DashBoard from './dashboard/dashboard_container'
@@ -22,6 +23,7 @@ const App = () => (
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
             <Route exact path="/" component={MainPage} />  
             <ProtectedRoute path='/dashboard' component={DashBoard}/>
+            <ProtectedRoute exact='/map' component={Map}/>
         </Switch>
         <Footer />
     </div>
