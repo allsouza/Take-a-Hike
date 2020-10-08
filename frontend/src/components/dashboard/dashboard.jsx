@@ -23,7 +23,7 @@ class DashBoard extends React.Component {
                    <div className='index' >
                         <ListIndex />
                    </div>
-                    <div className='index-2'>    
+                    <div className='index2'>    
                         <ul> 
                             <header>My Favorite Trails:</header> 
                             <li>1st trail</li>

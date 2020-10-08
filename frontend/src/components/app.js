@@ -19,20 +19,11 @@ const App = () => (
             <Route path='/lists' component={ListIndexContainer} />
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
-<<<<<<< HEAD
             <Route exact path='/images' component={ImageUploadContainer} />
-        </Switch>
-        <Route  path='/dashboard' component={DashBoard}/>
-        <Route path="/" component={MainPage} />  
-            <Route exact path="/" component={MainPage} />  
-        <ProtectedRoute path='/dashboard' component={DashBoard}/>
-        <Route path="/" component={Footer} />
-=======
             <Route exact path="/" component={MainPage} />  
             <ProtectedRoute path='/dashboard' component={DashBoard}/>
         </Switch>
-        <Footer />
->>>>>>> master
+          <Footer />
     </div>
 );
 
