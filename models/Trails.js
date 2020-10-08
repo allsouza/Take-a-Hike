@@ -6,6 +6,9 @@ const TrailSchema = new Schema({
         type: String, 
         require: true
     },
+    trail_id:{
+        type: Number
+    },
     summary:{
         type: String, 
         text:true, 
@@ -17,6 +20,10 @@ const TrailSchema = new Schema({
     },
     image:{
         type: String, 
+        require: true
+    },
+    location:{
+        type: String,
         require: true
     },
     length:{
