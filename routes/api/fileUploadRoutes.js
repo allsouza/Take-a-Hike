@@ -55,7 +55,11 @@ router.route("/:id").get((req, res, next) => {
 });
 // route to upload a pdf document file
 // In upload.single("file") - the name inside the single-quote is the name of the field that is going to be uploaded.
-router.post("/upload", upload.single("file"), function (req, res) {
+
+
+// will refactor!! old was router.post("/upload", upload.single("file"), function (req, res)
+
+router.post("/upload/:review_id", upload.single("file"), function (req, res) {
     debugger
     const file = req.file;
     const s3FileURL = aws.uploadedFileURL;
@@ -68,7 +72,7 @@ router.post("/upload", upload.single("file"), function (req, res) {
         Body: file.buffer,
         ContentType: file.mimetype,
         ACL: "public-read",
-        review_id: req.body.review_id
+        review_id: req.params.review_id
 
     };
     debugger
