@@ -4,9 +4,9 @@
     justify-content: space-between;
     align-items: center;
     position: relative; */
-    height: 600px;
+    height: 100%;
     width: 100%;
-    
+    margin: 8px;
 }
 
 .dashboard {
@@ -17,11 +17,33 @@
 }
 
 .index{
-height: 500px;
-width: 372px;
-border: 1px solid lightgreen;
+height: 100%;
+width: 33%;
+/* border: 1px solid lightgreen; */
 margin: 0;  
 }
+
+.index2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 33%;
+/* border: 1px solid lightgreen; */
+    margin: 0;  
+    color: rgb(97, 68, 15);
+}
+
+.index2>ul>li{
+    padding: 8px;
+}
+/* .index2>button{
+    width: 50%;
+} */
+
+/* .index2>header{
+    color: rgb(97, 68, 15);
+} */
 
 .profile {
     height: 275px;
@@ -38,16 +60,36 @@ margin: 0;
 }
 
 .profile-pic {
-    height: 10%;
-    width: 10%;
+    height: 15%;
+    width: 15%;
 }
-/* .dashboard-links {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-} */
-/* .user-details {
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-} */
+
+.lists {
+display: flex;
+justify-content: space-evenly;
+flex-direction: row;
+align-items: center;
+text-align: center;
+padding: 8px;
+color: rgb(97, 68, 15);
+}
+
+.list-index>p{
+    font-size: large;
+}
+
+
+.lists:hover {
+    cursor: pointer;
+}
+
+.list-title:hover {
+    color: green;
+}
+.list-index>ul{
+    text-align: -webkit-center;
+    margin: 8px;
+}
+.list-index>ul>p{
+    margin-bottom: 10px;
+}

@@ -19,11 +19,12 @@ const App = () => (
             <Route path='/lists' component={ListIndexContainer} /> {/* REMOVE AFTER TESTING */}
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
+            {/* <Route exact path='/images' component={ImageUploadContainer} /> */}
             <Route exact path="/" component={MainPage} />  
             <ProtectedRoute path='/dashboard' component={DashBoard}/>
             <ProtectedRoute exact='/map' component={Map}/>
         </Switch>
-        <Footer />
+          <Footer />
     </div>
 );
 
