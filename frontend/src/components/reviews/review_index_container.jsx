@@ -4,9 +4,12 @@ import { fetchReviews, deleteReview, updateReview } from '../../actions/review_a
 import { openModal } from '../../actions/modal_actions';
 
 
-const mSTP = state => ({
-    reviews: Object.values(state.entities.reviews)
-});
+const mSTP = state => {
+    debugger 
+    return {
+        reviews: Object.values(state.entities.reviews)
+    }
+};
 
 const mDTP = dispatch => {
     debugger

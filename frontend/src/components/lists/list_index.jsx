@@ -9,6 +9,7 @@ class ListIndex extends React.Component {
     }
 
     componentDidMount() {
+        debugger
         this.props.fetchLists()
     }
 
@@ -19,6 +20,7 @@ class ListIndex extends React.Component {
     // map in props from List index to list index item
 
     render() {
+        debugger
         return (
             <div className="list-index">
                 <h1>Lists</h1>

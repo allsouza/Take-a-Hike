@@ -46,7 +46,7 @@ router.post('/',
         if (!isValid){
             return res.status(400).json(errors);
         }
-
+        debugger
         const newReview = new Review({
             author: req.body.user.id,
             trail: req.body.trail.id,
@@ -55,7 +55,7 @@ router.post('/',
             rating:req.body.rating,
             images: req.body.images
         });
-
+        debugger
         newReview.save().then(review => res.json(review), errors => res.json('Could not create Review') 
         );
     });

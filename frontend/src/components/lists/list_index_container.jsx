@@ -3,9 +3,12 @@ import ListIndex from './list_index';
 import { fetchLists, deleteList, createList } from '../../actions/list_actions';
 import { openModal } from '../../actions/modal_actions';
 
-const mSTP = state => ({
-    lists: Object.values(state.entities.lists)
-});
+const mSTP = state => {
+    debugger
+    return {
+        lists: Object.values(state.entities.lists)
+    }
+};
 
 const mDTP = dispatch => ({
     fetchLists: () => dispatch(fetchLists()),

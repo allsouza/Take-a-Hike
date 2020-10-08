@@ -34,10 +34,11 @@ export const createList = list => dispatch => (
         .then(list => dispatch(receiveList(list)))
 );
 
-export const updateList = list => dispatch => (
-    ListApiUtil.updateList(list)
+export const updateList = list => dispatch => {
+    debugger
+    return ListApiUtil.updateList(list)
         .then(list => dispatch(receiveList(list)))
-);
+};
 
 export const deleteList = listId => dispatch => (
     ListApiUtil.deleteList(listId)
