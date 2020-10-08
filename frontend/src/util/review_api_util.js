@@ -28,6 +28,7 @@ export const updateReview = (data) => {
 }
 
 export const deleteReview = (reviewId) => {
+    debugger
     return axios.delete(`/api/reviews/${reviewId}`)
 }
 

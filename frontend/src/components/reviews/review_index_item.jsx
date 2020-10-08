@@ -2,6 +2,7 @@ import React from 'react';
 
 
 export default function ReviewIndexItem({ review, updateReview, deleteReview, edit }) {
+    debugger
     return (
         <div>
             <h1>{review.title}</h1>
