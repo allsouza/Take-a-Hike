@@ -22,3 +22,5 @@ module.exports = mongoose.model("Photo", PhotoSchema);
 /* The mongoose-sequence creates a commodity collection named 'counters' which keeps track of the auto-incremental number.
 So during development to reset the go_id back to 1, I just have to drop the counter collection by running db.counters.drop()  */
 
+//add another field to the model that is reviewId, when we dispatch the action to save to the db, we need to make sure to include the reference to the review we are at (pass in a reviewId)
+//first create the review as a blank object
