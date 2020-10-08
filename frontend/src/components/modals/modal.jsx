@@ -10,7 +10,6 @@ import '../../stylesheets/modal.css'
 
 
 function Modal({modal, closeModal, info}){
-
     if(!modal) return null;
 
     let component;
@@ -33,7 +32,7 @@ function Modal({modal, closeModal, info}){
 
     return(
         <div className="modal-background" onClick={closeModal}>
-            <div className="modal-child" onClick={e=>e.stopPropagation()}>{component}</div>
+            <div onClick={e=>e.stopPropagation()}>{component}</div>
         </div>
     )
 }
@@ -46,6 +45,7 @@ const mSTP = state => {
         })
     }
 }
+
 
 const mDTP = dispatch => ({
     closeModal: () => dispatch(closeModal())

@@ -7,14 +7,22 @@
     background: rgba(0, 0, 0, 0.7);
     z-index: 10;
   }
- 
-  .modal-child {
+
+
+  .modal-list {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    background-color: rgb(229, 250, 230);
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
   }
 
+  .modal-list>h1{
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(34, 34, 170);
+  }
 .button {
     padding: 5px;
     border: none;
@@ -36,8 +44,22 @@
   flex-direction: column;
   text-align: center;
   align-items: center;
+  position: absolute;
   font-family: bukhari;
   color: rgb(192, 245, 192);
-  padding: 8px;
+  /* padding: 8px; */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
+ 
+  .title {
+    margin-bottom: 8px;
+  }
 
+  .list-index>ul>li{
+    border: 1px solid lightgreen;
+    width: 75%;
+  }
+
+  
