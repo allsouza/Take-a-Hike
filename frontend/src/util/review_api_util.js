@@ -4,7 +4,7 @@ import axios from 'axios';
 
 export const fetchReviews = () => {
     debugger
-    return axios.get(`/api/reviews/trails/5f7e373eef475323aff356b1`)
+    return axios.get(`/api/reviews/trails/5f7e0e930cdb287979bc8eb4`)
 };
 
 //
@@ -17,7 +17,7 @@ export const fetchReview = (review) => {
 
 export const createReview = data => {
     debugger
-    return axios.post('/api/reviews', data)
+    return axios.post('/api/reviews/', data)
 }
 
 //creating a review is working now, but fetching a review is not.
