@@ -33,6 +33,17 @@ router.route("/").get((req, res, next) => {
         }
     );
 });
+
+
+router.get('/:review_id', (req, res) => {
+    Photo.find({ review: req.params.photo_id })
+        .then(photos => res.json(photos))
+        .catch(err =>
+            res.status(404).json({ photonotfound: 'no photo found' }
+            )
+        );
+});
+
 // Route to get a single existing GO data (needed for the Edit functionality)
 router.route("/:id").get((req, res, next) => {
     Photo.findById(req.params.id, (err, go) => {
@@ -57,7 +68,7 @@ router.post("/upload", upload.single("file"), function (req, res) {
         Body: file.buffer,
         ContentType: file.mimetype,
         ACL: "public-read",
-        reviewId: req.body.reviewId
+        review_id: req.body.review_id
 
     };
     debugger
@@ -70,7 +81,7 @@ router.post("/upload", upload.single("file"), function (req, res) {
                 description: req.body.description,
                 fileLink: s3FileURL + file.originalname,
                 s3_key: params.Key,
-                reviewId: params.reviewId
+                review_id: params.review_id
             };
             debugger
             var photo = new Photo(newFileUploaded);

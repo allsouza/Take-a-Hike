@@ -43,6 +43,7 @@ class ReviewIndex extends React.Component {
                                             <ReviewIndexItem review={review} 
                                             deleteReview={this.props.deleteReview} 
                                             updateReview={this.props.updateReview}
+                                            fetchImage={this.props.fetchImage}
                                             //photo={this.props.photoId}
                                             />
                                         </li>

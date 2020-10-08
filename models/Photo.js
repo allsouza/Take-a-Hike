@@ -11,7 +11,7 @@ let PhotoSchema = new Schema(
         description: { type: String },
         fileLink: { type: String },
         s3_key: { type: String },
-        reviewId: { type: String }
+        review_id: { type: String }
     },
     {
         // createdAt,updatedAt fields are automatically added into records

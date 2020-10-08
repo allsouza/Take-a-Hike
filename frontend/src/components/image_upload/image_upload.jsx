@@ -54,7 +54,7 @@ class ImageUpload extends React.Component {
         } else {
             return (
                 <div className="image-wrapper">
-                    <img style={{ "height": "150px", "width": "150px" }} src={this.props.image.Location} alt="" srcset="" />
+                    <img style={{ "height": "150px", "width": "150px" }} src={this.props.image.Location} alt="image-upload" />
                 </div>
             )
         }

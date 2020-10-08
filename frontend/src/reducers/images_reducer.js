@@ -1,4 +1,4 @@
-import { UPLOAD_IMAGE } from '../actions/image_actions';
+import { UPLOAD_IMAGE, RETRIEVE_IMAGE } from '../actions/image_actions';
 
 
 
@@ -12,6 +12,9 @@ const ImagesReducer = (state = {}, action) => {
             debugger
             newState['id'] = action.file.data.data;
             return newState;
+        case RETRIEVE_IMAGE:
+            debugger
+            newState[action.image.data._id] = action.image.data
         default:
             return state;
     }

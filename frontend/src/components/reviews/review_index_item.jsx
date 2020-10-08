@@ -8,32 +8,63 @@ class ReviewIndexItem extends React.Component {
 
     }
 
+
+    componentDidMount() {
+        //this.props.fetchImage(this.props.review._id)
+    }
+
     render() {
-        return (
-            <div>
-                <h1>{this.props.review.title}</h1>
-                {this.props.review.body}
-                
-                <br />
-                <i className="fas fa-trash"
-                    onClick={(e) => {
-                        e.stopPropagation();
-                        this.props.deleteReview(this.props.review._id)
-                    }}></i>
-                <br />
-                <i className="fa fa-pencil"
-                    onClick={(e) => {
-                        e.stopPropagation();
-                        this.props.updateReview(this.props.review._id)
-                    }}
-                ></i>
-                <ImageUpload
-                    updateReview={() => this.props.updateReview}
-                    reviewId={this.props.review._id}
-                    imageUrl={this.props.imageUrl}
-                />
-            </div>
-        )
+
+        if (!this.props.image) {
+            return (
+                <div>
+                    <h1>{this.props.review.title}</h1>
+                    {this.props.review.body}
+                    
+                    <br />
+                    <i className="fas fa-trash"
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            this.props.deleteReview(this.props.review._id)
+                        }}></i>
+                    <br />
+                    <i className="fa fa-pencil"
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            this.props.updateReview(this.props.review._id)
+                        }}
+                    ></i>
+                    <ImageUpload
+                        updateReview={() => this.props.updateReview}
+                        reviewId={this.props.review._id}
+                        imageUrl={this.props.imageUrl}
+                    />
+                </div>
+            )
+        } else {
+            return (
+                <div>
+                    <h1>{this.props.review.title}</h1>
+                    {this.props.review.body}
+
+                    <br />
+                    <i className="fas fa-trash"
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            this.props.deleteReview(this.props.review._id)
+                        }}></i>
+                    <br />
+                    <i className="fa fa-pencil"
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            this.props.updateReview(this.props.review._id)
+                        }}
+                    ></i>
+                    <img src={this.props.image.Location} alt=""/>
+                </div>
+            )
+        }
+
     }
 }
 
