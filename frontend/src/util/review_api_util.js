@@ -19,7 +19,7 @@ export const createReview = data => {
 
 export const updateReview = (data) => {
     debugger
-    return axios.patch(`/api/reviews/${data._id}`, data)
+    return axios.patch(`/api/reviews/${data}`, data)
 }
 
 export const deleteReview = (reviewId) => {

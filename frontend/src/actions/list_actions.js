@@ -29,10 +29,12 @@ export const fetchList = listId => dispatch => (
         .then(list => dispatch(receiveList(list)))
 );
 
-export const createList = list => dispatch => (
-    ListApiUtil.createList(list)
+export const createList = list => dispatch => {
+    debugger
+    return ListApiUtil.createList(list)
         .then(list => dispatch(receiveList(list)))
-);
+
+};
 
 export const updateList = list => dispatch => (
     ListApiUtil.updateList(list)

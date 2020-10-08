@@ -5,3 +5,4 @@
 /frontend/node_modules
 /config/keys_prod.js
 /config/my_keys.js
+/config/keys_dev.js

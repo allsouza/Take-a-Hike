@@ -11,7 +11,6 @@ class ReviewForm extends React.Component {
                 <EditorContainer 
                 review={this.props.review} 
                 save={this.props.action} 
-                fetchReview={this.props.fetchReview}
                 editor={this.props.editor}/>
             </div>
         )
