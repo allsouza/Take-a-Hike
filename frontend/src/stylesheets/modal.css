@@ -62,4 +62,7 @@
     width: 75%;
   }
 
-  
+  .errors{
+    color: red;
+    font-family: Arial, Helvetica, sans-serif;
+  }
