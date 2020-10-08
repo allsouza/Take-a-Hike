@@ -2,7 +2,7 @@
 
 // 'use strict'
 // require("dotenv").config({ path: '../../.env' });
-const { aws } = require("../../config/my_keys");
+const { aws } = require("../../config/keys");
 const express = require("express");
 const router = express.Router();
 const Photo = require("../../models/Photo");

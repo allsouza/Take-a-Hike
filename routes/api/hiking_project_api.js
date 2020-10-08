@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 const Trails = require('../../models/Trails');
-const keys = require('../../config/my_keys');
+const keys = require('../../config/keys');
 const axios = require('axios');
 
 router.get('/', (req, res) => {

@@ -13,7 +13,6 @@ class ReviewForm extends React.Component {
                 review={this.props.review} 
                 save={this.props.action} 
                 editor={this.props.editor}/>
-                <ImageUpload />
             </div>
         )
     }
