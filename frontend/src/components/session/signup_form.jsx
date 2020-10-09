@@ -21,9 +21,9 @@ class SignupForm extends React.Component {
     }
 
     // componentWillReceiveProps(nextProps) {
-    //     debugger
+    //     
     //     if (nextProps.signedIn === true) {
-    //         debugger
+    //         
     //         this.props.closeModal()
     //         // this.props.history.push('/login');
     //     }
@@ -37,7 +37,7 @@ class SignupForm extends React.Component {
                 }
     }
     // componentWillUnmount(){
-    //     debugger
+    //     
     //     //   this.props.clearErrors()
     //     //   this.forceUpdate()
     //       this.props.closeModal()

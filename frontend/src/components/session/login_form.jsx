@@ -27,9 +27,9 @@ class LoginForm extends React.Component {
     // }
 
     componentDidUpdate() {
-      // debugger
+      // 
       if (this.props.loggedIn === true) {
-        debugger
+        
         this.props.closeModal()
             // this.props.history.push('/dashboard');
             }
@@ -38,7 +38,7 @@ class LoginForm extends React.Component {
     }
 
     // componentWillUnmount(){
-    //   debugger
+    //   
     // //   this.props.clearErrors()
     //   this.forceUpdate()
     // }
@@ -65,7 +65,7 @@ class LoginForm extends React.Component {
         //   this.props.openModal('login')
         // this.props.login(user).then(this.props.closeModal());
         }else{
-          debugger
+          
           this.props.closeModal()
         }
         // this.props.login(user);

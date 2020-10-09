@@ -35,7 +35,6 @@ export const createList = list => dispatch => (
 );
 
 export const updateList = list => dispatch => {
-    debugger
     return ListApiUtil.updateList(list)
         .then(list => dispatch(receiveList(list)))
 };

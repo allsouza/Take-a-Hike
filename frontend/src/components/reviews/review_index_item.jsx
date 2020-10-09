@@ -12,7 +12,7 @@ class ReviewIndexItem extends React.Component {
 
 
     componentDidMount() {
-        //debugger
+        //
         //this.props.fetchImage(this.props.review._id)
         //this.props.fetchReviews(this.props.trail);
     }
@@ -77,7 +77,7 @@ class ReviewIndexItem extends React.Component {
 export default ReviewIndexItem;
 
 // export default function ReviewIndexItem({ review, updateReview, deleteReview, edit }) {
-//     debugger
+//     
 
 //     this.state= {
 

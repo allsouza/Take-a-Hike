@@ -2,6 +2,9 @@
     background-color: rgba(48, 112, 5, 0.8);
     font-family: Arial, Helvetica, sans-serif;
     width: 100%;
+    position: absolute;
+    bottom: 0;
+    max-height: 100px;
 }
 
 .footer-container {
@@ -9,7 +12,6 @@
     flex-direction:  row;
     justify-content: center;
     color: rgb(248, 246, 242);
-    margin-top: 60px;
 }
 
 .footer-container>ul {

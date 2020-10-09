@@ -1,12 +1,13 @@
 module.exports = {
-  mongoURI: "mongodb+srv://dev:FUwC874Uj3PmipMg@mycluster.3nof1.mongodb.net/TakeAHike?retryWrites=true&w=majority",
-  secretOrKey: "1MS6i|;Q}dH,o%",
-  googleMapsApi: 'AIzaSyD82UDrvQNsF2WNrTjXGc7-buTzyFFBrlY',
+  mongoURI: process.env.REACT_APP_MONGO_URI,
+  secretOrKey: process.env.REACT_APP_SECRET_OR_KEY,
+  googleMapsApi: process.env.REACT_APP_GOOGLE_MAPS_KEY,
+  hikingProjectKey: process.env.REACT_APP_HIKING_PROJECT_API,
   aws: {
-    bucketName: "take-a-hike-prod",
-    uploadedFileURL: "https://take-a-hike-orid.s3.amazonaws.com/",
-    accessKeyId: "AKIATXFIPXWON5SJ2MWY",
-    secretAccessKey: "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",
+    bucketName: process.env.REACT_APP_BUCKETNAME,
+    uploadedFileURL: process.env.REACT_APP_FILEURL,
+    accessKeyId: process.env.REACT_APP_ACCESS_KEY_ID,
+    secretAccessKey: process.env.REACT_APP_SECRET_ACCESS_KEY,
     region: "ap-northeast-2"
-  },
-};
+  }
+}

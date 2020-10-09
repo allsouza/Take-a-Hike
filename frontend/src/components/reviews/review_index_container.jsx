@@ -5,8 +5,7 @@ import { fetchImage } from '../../actions/image_actions';
 import { openModal } from '../../actions/modal_actions';
 
 
-const mSTP = state => {
-    debugger 
+const mSTP = state => { 
     return {
         reviews: Object.values(state.entities.reviews),
         image: state.entities.images
@@ -14,7 +13,6 @@ const mSTP = state => {
 };
 
 const mDTP = dispatch => {
-    debugger
     return {
         fetchReviews: (trail) => dispatch(fetchReviews(trail)),
         deleteReview: reviewId => dispatch(deleteReview(reviewId)),

@@ -5,8 +5,6 @@ import axios from 'axios';
 //test with reviews => 5f7e0e930cdb287979bc8eb4
 
 export const fetchReviews = (trail) => {
-    debugger
-    console.log(trail._id);
     return axios.get(`/api/reviews/trails/${trail._id}`)
 };
 
@@ -19,19 +17,19 @@ export const fetchReview = (review) => {
 };
 
 export const createReview = data => {
-    debugger
+    
     return axios.post('/api/reviews/', data)
 }
 
 //creating a review is working now, but fetching a review is not.
 
 export const updateReview = (data) => {
-    debugger
+    
     return axios.patch(`/api/reviews/${data._id}`, data)
 }
 
 export const deleteReview = (reviewId) => {
-    debugger
+    
     return axios.delete(`/api/reviews/${reviewId}`)
 }
 

@@ -10,7 +10,6 @@ const receiveAllReviews = reviews => ({
 });
 
 const receiveReview = review => {
-    debugger
     return {
         type: RECEIVE_REVIEW,
         review
@@ -24,8 +23,6 @@ const removeReview = reviewId => ({
 
 
 export const fetchReviews = (trail) => dispatch => {
-    debugger
-    console.log(trail._id);
     ReviewApiUtil.fetchReviews(trail)
         .then(reviews => dispatch(receiveAllReviews(reviews.data)))
 };
@@ -36,13 +33,11 @@ export const fetchReview = reviewId => dispatch => (
 );
 
 export const createReview = review => dispatch => {
-    debugger
     return ReviewApiUtil.createReview(review)
         .then(review => dispatch(receiveReview(review)))
 };
 
 export const updateReview = review => dispatch => {
-    debugger
     return ReviewApiUtil.updateReview(review)
         .then(review => dispatch(receiveReview(review)))
 };

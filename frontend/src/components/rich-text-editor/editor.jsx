@@ -26,7 +26,7 @@ export default class RichTextEditor extends React.Component{
     }
     
     save(){
-        debugger
+        
         this.props.save(this.state);
         this.props.closeModal();
     }
