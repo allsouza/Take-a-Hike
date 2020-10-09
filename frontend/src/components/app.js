@@ -10,7 +10,9 @@ import Footer from './footer/footer';
 import Map from './trails/map';
 import ListIndexContainer from './lists/list_index_container';
 import ReviewIndexContainer from './reviews/review_index_container';
+import TrailsIndexContainer from './trails/trail_index_container';
 import DashBoard from './dashboard/dashboard_container'
+import TrailShowContainer from './trails/trail_show_container';
 
 const App = () => (
     <div>
@@ -24,7 +26,9 @@ const App = () => (
             {/* <Route exact path='/images' component={ImageUploadContainer} /> */}
             <Route exact path="/" component={MainPage} />  
             <ProtectedRoute path='/dashboard' component={DashBoard}/>
-            <ProtectedRoute exact='/map' component={Map}/>
+            <Route exact path='/trails' component={TrailsIndexContainer} /> {/* REMOVE AFTER TESTING */}
+            <ProtectedRoute exact path="/trails/:id" component={TrailShowContainer} />
+            <ProtectedRoute exact path='/map' component={Map}/>
         </Switch>
           <Footer />
     </div>
