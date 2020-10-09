@@ -5,7 +5,7 @@ import '../../stylesheets/dashboard.css';
 import ListIndex from '../lists/list_index_container';
 import path from '../../images/path.jpg'
 import {formatDate} from '../../util/date_utils';
-
+import Footer from '../footer/footer';
 class DashBoard extends React.Component {
 
     constructor(props) {
@@ -22,7 +22,7 @@ class DashBoard extends React.Component {
             
            const { email, firstName, lastName, birthdate, zipcode } = this.props.user
            return (
-               <div> 
+               <div className="profile-wrapper"> 
                         <div className='profile' >
                         <img src={path} alt="profile-pic" className='profile-pic'/>
                             <p>{`${firstName} ${lastName}`}</p>
@@ -44,6 +44,7 @@ class DashBoard extends React.Component {
         
        
         return(
+            <>
             <div className='dashboard-container'>
                 <div className='dashboard'>
                    <div className='index' >
@@ -59,8 +60,9 @@ class DashBoard extends React.Component {
                     </div>
                     {this.profile()}
                 </div>
-                
             </div>
+                <Footer />
+                </>
         )
     }
 }

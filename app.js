@@ -8,6 +8,8 @@ const api = require('./routes/api/hiking_project_api');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const path = require('path')
+const fileUploadRoutes = require('./routes/api/fileUploadRoutes')
+
 const app = express();
 
 if (process.env.NODE_ENV === 'production') {
@@ -17,7 +19,7 @@ if (process.env.NODE_ENV === 'production') {
   })
 }
 
-const db = require('./config/my_keys').mongoURI;
+const db = require('./config/keys').mongoURI;
 mongoose
   .connect(db, { useNewUrlParser: true })
   .then(() => console.log("Connected to MongoDB successfully"))
@@ -34,6 +36,7 @@ app.use('/api/lists', lists);
 app.use('/api/reviews', reviews);
 app.use('/api/trails', trails);
 app.use('/api/hiking_project_api', api);
+app.use('/api/photo', fileUploadRoutes);
 
 const port = process.env.PORT || 5000;
 

@@ -3,11 +3,13 @@ import { closeModal } from '../../actions/modal_actions';
 import RichTextEditor from './editor';
 
 const mSTP = (state, ownProps) => {
-    return({
-        data: ownProps.list,
+    debugger
+    return{
+        data: ownProps.review,
         save: ownProps.save,
-        editor: 'list'
-})}
+        editor: 'review'
+    }
+}
 
 const mDTP = dispatch => ({
     closeModal: () => dispatch(closeModal())

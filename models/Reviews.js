@@ -22,7 +22,7 @@ const ReviewSchema = new Schema({
         required:true
     },
     images:{
-        type:Array
+        type:String
     },
     date:{
         type: Date, 

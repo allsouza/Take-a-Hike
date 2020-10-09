@@ -22,5 +22,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+src/config/keys_dev.js
+src/config/keys_prod.js
 /config/keys_dev.js
 /frontend/src/config/keys_dev.js

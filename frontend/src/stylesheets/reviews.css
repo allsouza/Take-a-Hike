@@ -1,0 +1,90 @@
+    
+.review-idx-item-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 400px;
+    padding-bottom: 20px;
+}    
+
+.review-idx-item-wrapper h1 {
+    font-size: 18px;
+    color: rgb(97, 68, 15);
+    font-family: bukhari;
+    padding: 5px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}    
+
+.review-idx-item-wrapper p {
+    font-size: 18px;
+    color: rgb(97, 68, 15);
+    font-family: bukhari;
+    padding: 5px;
+} 
+
+
+.review-icon-wrapper {
+    display: flex;
+    padding: 10px 0px 30px 3px;
+}
+.review-icon-wrapper i {
+    padding: 5px;
+}
+
+.img-uploader-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.img-uploader-wrapper input {
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    max-width: 150px;
+    margin-bottom: 10px;
+}
+
+.upload-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.choose-btn {
+    color: red;
+}
+
+input[type="file"] {
+    display: none;
+}
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+.custom-upload {
+    display: flex;
+}
+
+.custom-upload h2 {
+    font-size: 14px;
+    padding-left: 14px;
+    font-family: bukhari;
+}
+
+.btn-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.btn-wrapper i {
+    padding-right: 10px;
+}
+
+.btn-wrapper button {
+    padding-left: 10px;
+    outline: none;
+    border: none;
+}

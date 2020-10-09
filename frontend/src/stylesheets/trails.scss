@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Peddana&family=Sansita+Swashed:wght@500&display=swap');
+$brown: rgb(97, 68, 15);
+$darkgreen: rgb(41,71,1);
+
 .trail-index-item {
     img{
         height: 100px;
@@ -13,6 +16,7 @@
 .trail-show{
     width: 80%;
     margin: auto;
+    display: flex;
     p{
         color: black;
         padding: 0 5px;
@@ -24,6 +28,7 @@
         font-size: 32px;
         padding: 20px;
         font-family: 'Sansita Swashed', cursive;
+        color: $brown;
     }
     .trail-info{
         width: 50%;
@@ -42,26 +47,38 @@
             margin: auto;
             img{
                 max-height: 300px;
+                border-radius: 5px;
             }
         }
         .stats{
             margin: 20px auto;
             span{
-                display: flex;
-                justify-content: center;
+                justify-content: space-between;
                 align-items: baseline;
                 padding: 10px;
                 display: flex;
-                font-size: 18px;
+                font-size: 20px;
+                min-width: 300px;
+                font-family: arial;
+                h3 {
+                    font-size: 20px;
+                    font-family: arial;
+                }
                 p{
                     font-size: 20px;
+                    font-family: arial;
                 }
             }
         }
 
         .summary{
             font-size: 30px;
-            margin-bottom: 20px;
+            margin: 30px 0px 0px 0px;
+            font-family: 'Sansita Swashed', cursive;
+            color: $brown;
+            a {
+                color: red;
+            }
         }
 
         .buttons{
@@ -69,8 +86,15 @@
         }
     }
     .trail-reviews{
+        padding-top: 100px;
         width: 50%;
     }
+}
+
+.title-and-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .modal-background{
@@ -102,15 +126,20 @@
         .summary{
             color: white;
             padding: 5px;
+            font-family: arial;
         }
         .name{
             margin: 10px 0;
-            font-size: 18px;
-            font-weight: bold;
+            font-size: 22px;
+            font-weight: 500;
             color: white;
+            font-family: bukhari;
         }
         button{
             margin-top: 10px;
+            margin-right: 5px;
+            margin-left: 5px;
+            margin-bottom: 5px;
         }
     }
 }

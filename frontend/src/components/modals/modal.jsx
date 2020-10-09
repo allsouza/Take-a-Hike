@@ -6,6 +6,8 @@ import NewList from '../../components/lists/create_list_form_container';
 import List from '../../components/lists/edit_list_form_container';
 import LoginFormContainer from '../session/login_form_container';
 import SignupFormContainer from '../session/signup_form_container';
+import NewReview from '../reviews/create_review_form_container';
+import Review from '../reviews/edit_review_form_container';
 import TrailIndexItemContainer from '../../components/trails/trail_index_item_container';
 import '../../stylesheets/modal.css'
 
@@ -26,6 +28,12 @@ function Modal({modal, closeModal, info}){
             break;
         case 'signup':
             component = <SignupFormContainer />;
+            break;
+        case 'newReview':
+            component = <NewReview info={info}/>;
+            break;
+        case 'review':
+            component = <Review info={info} />;
             break;
         case 'trail-item':
             component = <TrailIndexItemContainer trail={info}/>;
