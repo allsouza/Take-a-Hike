@@ -35,25 +35,33 @@
 }
 
 .button {
-  padding: 5px;
+  padding: 11px;
+    border: none;
+    font-family: bukhari;
+    background-color: rgba(48, 112, 5, 0.8);
+    color: white;
+    border-radius: 0 50% 50%;
+    margin: 5px;
+    outline: none;
+  /* padding: 5px;
   border: none;
   font-family: bukhari;
   background-color: rgb(192, 245, 192, 0.8);
   color: rgb(178, 178, 236);
   border-radius:  0 50% 50%;
   margin: 5px;
-  outline: none;
-  /* margin-left: 10px;
-  margin-right: 10px; */
-  /* display: flex;
-  justify-content: space-evenly; */
-  /* border-radius: 5px 50%; */
+  outline: none; */
+
 }
 
 .button:hover{
-  color: purple;
+
   text-decoration: underline;
 }
+
+/* .button input[type=submit]:hover {
+  color: rgb(41,71,1);
+} */
 
 .form-name {
 display: flex;
@@ -67,6 +75,67 @@ color: rgba(48, 112, 5, 0.8);
 top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
+}
+
+.form-name input[type=text] {
+    border: none;
+    padding: 15px 0px 12px 17px;
+}
+.form-name input[type=text]:focus {
+  outline: none;
+}
+.form-name input[type=password] {
+    border: none;
+    padding: 4px 0px 12px 17px;
+}
+.form-name input[type=password]:focus {
+  outline: none;
+}
+
+.form-name input[type=submit]:hover {
+  background-color: rgb(41,71,1);
+}
+
+.form-name-signup {
+display: flex;
+flex-direction: column;
+text-align: center;
+align-items: center;
+position: absolute;
+font-family: bukhari;
+color: rgba(48, 112, 5, 0.8);
+/* padding: 8px; */
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+
+.form-name-signup input {
+    border: none;
+    padding: 3px 0px 3px 5px;
+    min-width: 200px
+}
+.form-name-signup input:focus {
+  outline: none;
+}
+/* .form-name-signup input[type=password] {
+    border: none;
+        padding: 0px 0px 4px 2px;
+}
+.form-name-signup input[type=password]:focus {
+  outline: none;
+} */
+
+.form-name-signup input[type=submit] {
+  width: auto;
+}
+
+.form-name-signup button {
+  width: 150px;
+}
+
+.form-name-signup input[type=submit]:hover {
+  background-color: rgb(41,71,1);
 }
 
 .title {

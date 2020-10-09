@@ -80,7 +80,7 @@ class SignupForm extends React.Component {
         return (
             <div className="signup-form-container">
                 <form onSubmit={this.handleSubmit} >
-                    <div className='form-name'>
+                    <div className='form-name-signup'>
                     <div className='title'>Sign Up</div>
                         <input type="text"
                             value={this.state.email}
