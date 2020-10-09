@@ -56,7 +56,7 @@ class NavBar extends React.Component {
                 <p className='nav-title'>Take a Hike</p>
                 {ifCurrentUser()}
                 <Link to='/lists'>Lists</Link>
-                <Link>Trails</Link>
+                <Link to='/trails'>Trails</Link>
                 { this.getLinks()}    
             </div>
         );
