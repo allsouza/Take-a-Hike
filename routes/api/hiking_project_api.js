@@ -5,8 +5,21 @@ const Trails = require('../../models/Trails');
 const keys = require('../../config/my_keys');
 const axios = require('axios');
 
+<<<<<<< HEAD
 router.post('/', (req, res) => {
     const {lat, lon, maxResult =10, maxLength} = req.body;
+=======
+<<<<<<< HEAD
+router.post('/', (req, res) => {
+    const {lat, lon, maxResult =10, maxLength} = req.body;
+    const path = `https://www.hikingproject.com/data/get-trails?key=${keys.hikingProjectKey}&lat=${lat}&lon=${lon}&maxResult=${maxResult}&maxLength=${maxLength}`;
+    const response = {};
+    console.log(path, req.body)
+    axios.get(path).then(result => {
+=======
+router.get('/', (req, res) => {
+    const {lat=45.415972, lon=-120.453624, maxResult =10, maxLength} = req.body;
+>>>>>>> master
     const path = `https://www.hikingproject.com/data/get-trails?key=${keys.hikingProjectKey}&lat=${lat}&lon=${lon}&maxResult=${maxResult}&maxLength=${maxLength}`;
     const response = {};
     const promises = [];
@@ -34,6 +47,10 @@ router.post('/', (req, res) => {
         }
     }
     axios.get(path).then(async function(result){
+<<<<<<< HEAD
+=======
+>>>>>>> a9fcc5274fc39cd7c40b69d61ddcaddb71a849ea
+>>>>>>> master
         if(result.data.success === 1){
             Array.from(result.data.trails).forEach(function(trail){
                 promises.push(saveNew(trail));
