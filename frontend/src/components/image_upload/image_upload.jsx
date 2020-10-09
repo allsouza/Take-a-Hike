@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-
+import '../../stylesheets/reset.css';
+import '../../stylesheets/reviews.css';
 
 class ImageUpload extends React.Component {
     constructor(props) {
@@ -45,10 +46,13 @@ class ImageUpload extends React.Component {
         debugger
         if (this.props.image.length === 0) {
             return (
-                <div>
-                    <form onSubmit={this.handleUpload}>
+                <div className="img-uploader-wrapper">
+                    <form className="upload-form" onSubmit={this.handleUpload}>
                         <input type="text" placeholder="Photo Title" name="discription" onChange={this.onChange} />
-                        <input type="file" name="" id="" onChange={this.handleSelectFile} />
+                        <label class="custom-file-upload">
+                            <input type="file" />
+                            <div className="custom-upload"><i class="fa fa-cloud-upload"></i><h2>Choose a File</h2></div> 
+                        </label>
                         <button type="submit">Upload</button>
                     </form>
                 </div>

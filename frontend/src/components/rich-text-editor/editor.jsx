@@ -1,6 +1,7 @@
 import React from "react";
 import ReactQuill from "react-quill";
 import {Toolbar, formats, modules} from './editor_toolbar';
+import Parser from 'html-react-parser';
 
 export default class RichTextEditor extends React.Component{
     constructor(props){
@@ -14,16 +15,27 @@ export default class RichTextEditor extends React.Component{
     handleBodyChange(value){
         this.setState({body: value})
     }
-
+    
     handleChange(field){
         return e => this.setState({[field]: e.target.value})
     }
-
+    
     save(){
         debugger
         this.props.save(this.state);
         this.props.closeModal();
     }
+    
+    // handleBodyChange(value, editor){
+    //     const text = editor.getText(value)
+    //     this.setState({body: text})
+    // }
+
+    // onChange(content, delta, source, editor) {
+    //     const text = editor.getText(content);
+    //     this.setState({ content: text });
+    //     console.log(text)
+    // }
 
     render(){
         return(

@@ -42,7 +42,6 @@ class ReviewIndex extends React.Component {
                                         return <li key={review.id} onClick={() => this.props.editReview(review)}>
                                             <ReviewIndexItem review={review} 
                                             deleteReview={this.props.deleteReview} 
-                                            updateReview={this.props.updateReview}
                                             fetchImage={this.props.fetchImage}
                                             //photo={this.props.photoId}
                                             />
@@ -55,8 +54,19 @@ class ReviewIndex extends React.Component {
                     </div>
                 )
             }
-
+            
+        }
     }
-}
+    
+{/* <ul>
+    {this.props.lists.map(list => {
+        return <li key={list._id} onClick={() => { this.props.editList(list) }}>
+        <ListIndexItem list={list} deleteList={this.props.deleteList} />  </li>
+    })}
+    updateReview={this.props.updateReview}
+</ul> */}
+
+
+
 
 export default ReviewIndex;

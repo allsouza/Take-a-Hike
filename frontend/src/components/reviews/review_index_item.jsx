@@ -1,6 +1,8 @@
 import React from 'react';
 //import ImageUpload from '../image_upload/image_upload_container';
 import ImageUpload from '../image_upload/image_upload_container';
+import '../../stylesheets/reset.css'
+import '../../stylesheets/reviews.css'
 
 class ReviewIndexItem extends React.Component {
     constructor(props) {
@@ -18,23 +20,24 @@ class ReviewIndexItem extends React.Component {
 
         if (!this.props.image) {
             return (
-                <div>
+                <div className="review-idx-item-wrapper">
                     <h1>{this.props.review.title}</h1>
                     {this.props.review.body}
-                    
-                    <br />
-                    <i className="fas fa-trash"
-                        onClick={(e) => {
-                            e.stopPropagation();
-                            this.props.deleteReview(this.props.review._id)
-                        }}></i>
-                    <br />
-                    <i className="fa fa-pencil"
-                        onClick={(e) => {
-                            e.stopPropagation();
-                            this.props.updateReview(this.props.review._id)
-                        }}
-                    ></i>
+                    <div className="review-icon-wrapper">
+                        <i className="fas fa-trash"
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                this.props.deleteReview(this.props.review._id)
+                            }}></i>
+
+                        <i className="fa fa-pencil"
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                this.props.updateReview(this.props.review._id)
+                            }}
+                        ></i>
+                    </div>
+
                     <ImageUpload
                         updateReview={() => this.props.updateReview}
                         reviewId={this.props.review._id}
@@ -56,12 +59,12 @@ class ReviewIndexItem extends React.Component {
                             this.props.deleteReview(this.props.review._id)
                         }}></i>
                     <br />
-                    <i className="fa fa-pencil"
+                    {/* <i className="fa fa-pencil"
                         onClick={(e) => {
                             e.stopPropagation();
                             this.props.updateReview(this.props.review._id)
                         }}
-                    ></i>
+                    ></i> */}
                     <img src={this.props.image.Location} alt=""/>
                 </div>
             )
