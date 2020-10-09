@@ -2,7 +2,6 @@
 .review-idx-item-wrapper {
     display: flex;
     flex-direction: column;
-    background-color: lightblue;
     align-items: flex-start;
     max-width: 400px;
     padding-bottom: 20px;
@@ -86,4 +85,6 @@ input[type="file"] {
 
 .btn-wrapper button {
     padding-left: 10px;
+    outline: none;
+    border: none;
 }
