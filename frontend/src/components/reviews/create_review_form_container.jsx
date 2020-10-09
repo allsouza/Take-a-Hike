@@ -10,7 +10,8 @@ const mSTP = (state, ownProps) => {
             title: '',
             rating: 0,
             user: state.session.user,
-            trail: ownProps.info
+            trail: ownProps.info,
+            author: state.session.user.id
         },
         formType: 'Create Review',
         editor: 'review'

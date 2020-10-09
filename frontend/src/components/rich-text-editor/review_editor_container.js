@@ -7,7 +7,8 @@ const mSTP = (state, ownProps) => {
     return{
         data: ownProps.review,
         save: ownProps.save,
-        editor: 'review'
+        editor: 'review',
+        currentUser: state.session.user
     }
 }
 

@@ -8,7 +8,8 @@ const mSTP = state => {
     return {
         list: {
             body: '',
-            title: ''
+            title: '',
+            author: state.session.user.id
         },
         formType: 'Create List'
     }

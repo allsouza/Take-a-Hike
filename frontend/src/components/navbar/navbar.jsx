@@ -57,7 +57,7 @@ class NavBar extends React.Component {
                 <Link to='/'><img src={path} alt="logo" className='logo1'/></Link>
                 <Link to='/'><p className='nav-title'>Take a Hike</p></Link>
                 {ifCurrentUser()}
-                <Link to='/map'>Map</Link>
+                {this.props.loggedIn ? <Link to='/map'>Map</Link> : null}
                 {/* <Link to='/trails'>Trails</Link> */}
                 { this.getLinks()}    
             </div>
