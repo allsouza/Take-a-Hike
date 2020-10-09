@@ -16,7 +16,7 @@ const MapWithASearchBox = compose(
   withProps({
     googleMapURL: `https://maps.googleapis.com/maps/api/js?key=${googleMapsApi}&v=3.exp&libraries=geometry,drawing,places`,
     loadingElement: <div style={{ height: `100%` }} />,
-    containerElement: <div style={{ height: `700px` }} />,
+    containerElement: <div style={{ height: `100vh` }} />,
     mapElement: <div style={{ height: `100%` }} />,
   }),
   lifecycle({
@@ -26,7 +26,7 @@ const MapWithASearchBox = compose(
       this.setState({
         bounds: null,
         center: {
-          lat: 41.9, lng: -87.624
+          lat: 40.6602, lng: -73.9690
         },
         markers: [],
         trails: Object.values(this.props.trails),
@@ -108,11 +108,6 @@ const MapWithASearchBox = compose(
         }}
       />
     </SearchBox>
-
-    {props.markers.map((marker, index) =>
-      <Marker key={index} position={marker.position}/>
-      
-    )}
 
       {props.trails.map((mark, index)=>
       <Marker

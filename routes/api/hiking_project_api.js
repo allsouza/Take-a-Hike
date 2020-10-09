@@ -5,7 +5,7 @@ const Trails = require('../../models/Trails');
 const keys = require('../../config/keys');
 const axios = require('axios');
 
-router.get('/', (req, res) => {
+router.post('/', (req, res) => {
     const {lat=45.415972, lon=-120.453624, maxResult =10, maxLength} = req.body;
     const path = `https://www.hikingproject.com/data/get-trails?key=${keys.hikingProjectKey}&lat=${lat}&lon=${lon}&maxResult=${maxResult}&maxLength=${maxLength}`;
     const response = {};

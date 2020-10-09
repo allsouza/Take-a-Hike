@@ -14,7 +14,6 @@ export default class RichTextEditor extends React.Component{
         this.handleBodyChange = this.handleBodyChange.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.save = this.save.bind(this);
-        debugger
     }
 
     handleBodyChange(value){
@@ -43,7 +42,6 @@ export default class RichTextEditor extends React.Component{
     // }
 
     render(){
-        debugger
         return(
             <div className="rich-text-editor" >
                 <Toolbar/>

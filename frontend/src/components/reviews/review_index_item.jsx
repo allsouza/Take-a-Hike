@@ -18,12 +18,14 @@ class ReviewIndexItem extends React.Component {
     }
 
     render() {
-
+        const Div = document.createElement('div');
+        Div.innerHTML = this.props.review.body;
         if (!this.props.image) {
             return (
                 <div className="review-idx-item-wrapper">
                     <h1>{this.props.review.title}</h1>
-                    {this.props.review.body}
+                    <p>Rating: {this.props.review.rating}</p>
+                    <p>{Div.innerText}</p>
                     <div className="review-icon-wrapper">
                         <i className="fas fa-trash"
                             onClick={(e) => {

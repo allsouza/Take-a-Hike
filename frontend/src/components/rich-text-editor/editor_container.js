@@ -3,7 +3,6 @@ import { closeModal } from '../../actions/modal_actions';
 import RichTextEditor from './editor';
 
 const mSTP = (state, ownProps) => {
-    debugger
     return({
         data: ownProps.list,
         save: ownProps.save,

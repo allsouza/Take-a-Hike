@@ -20,20 +20,12 @@ const App = () => (
         <Modal />
         <NavBarContainer />
         <Switch>
-            <Route path='/lists' component={ListIndexContainer} /> {/* REMOVE AFTER TESTING */}
-            <Route path='/reviews' component={ReviewIndexContainer} /> {/* REMOVE AFTER TESTING */}
-            <AuthRoute exact path="/login" component={LoginFormContainer} />
-            <AuthRoute exact path="/signup" component={SignupFormContainer} />
-            {/* <Route exact path='/images' component={ImageUploadContainer} /> */}
             <AuthRoute exact path="/" component={MainPage} />  
             <ProtectedRoute path='/dashboard' component={DashBoard}/>
-            <Route exact path='/trails' component={TrailsIndexContainer} /> {/* REMOVE AFTER TESTING */}
             <ProtectedRoute exact path="/trails/:id" component={TrailShowContainer} />
             <ProtectedRoute exact path='/map' component={Map}/>
         </Switch>
-          {/* <Footer /> */}
     </div>
 );
-
 
 export default App;
