@@ -13,7 +13,7 @@ export const createList = data => {
 }
 
 export const updateList = (data) => {
-    debugger
+    
     return axios.patch(`/api/lists/${data._id}`, data)
 }
 

@@ -11,6 +11,7 @@
     font-family: bukhari;
     text-decoration: none;
     margin: 0;
+    height: -webkit-fill-available;
 }
 
 .display {

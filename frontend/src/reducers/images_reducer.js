@@ -9,11 +9,11 @@ const ImagesReducer = (state = {}, action) => {
 
     switch (action.type) {
         case UPLOAD_IMAGE:
-            // debugger
+            // 
             newState['id'] = action.file.data.data;
             return newState;
         case RETRIEVE_IMAGE:
-            // debugger
+            // 
             newState[action.image.data._id] = action.image.data
         default:
             return state;

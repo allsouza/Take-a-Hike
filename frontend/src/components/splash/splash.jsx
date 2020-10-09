@@ -3,7 +3,7 @@ import path from '../../images/path.jpg'
 
 export default () => {
    return (
-       <div>
+       <div className="splash">
            <img src={path}/>
        </div>
    ) 

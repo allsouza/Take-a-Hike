@@ -36,7 +36,7 @@ router.route("/").get((req, res, next) => {
 
 
 router.get('/:review_id', (req, res) => {
-    debugger
+    
     Photo.find({ review_id: req.params.review_id })
         .then(photos => res.json(photos))
         .catch(err =>
@@ -61,11 +61,11 @@ router.route("/:id").get((req, res, next) => {
 // will refactor!! old was router.post("/upload", upload.single("file"), function (req, res)
 
 router.post("/upload/:review_id", upload.single("file"), function (req, res) {
-    debugger
+    
     const file = req.file;
     const s3FileURL = aws.uploadedFileURL;
     let s3bucket = new AWS.S3();
-    debugger
+    
     //Where you want to store your file
     var params = {
         Bucket: aws.bucketName,
@@ -76,7 +76,7 @@ router.post("/upload/:review_id", upload.single("file"), function (req, res) {
         review_id: req.params.review_id
 
     };
-    debugger
+    
     s3bucket.upload(params, function (err, data) {
         if (err) {
             res.status(500).json({ error: true, Message: err });
@@ -88,7 +88,7 @@ router.post("/upload/:review_id", upload.single("file"), function (req, res) {
                 s3_key: params.Key,
                 review_id: params.review_id
             };
-            debugger
+            
             var photo = new Photo(newFileUploaded);
             photo.save(function (error, newFile) {
                 if (error) {

@@ -2,7 +2,7 @@ import React from 'react';
 import Take_A_Hike from '../../images/Take_A_Hike.jpg';
 import hiking from '../../images/hiking.jpg';
 import '../../stylesheets/main.css';
-import DashBoard from '../dashboard/dashboard_container'
+import Footer from '../../components/footer/footer';
 
 class MainPage extends React.Component {
 
@@ -24,6 +24,7 @@ class MainPage extends React.Component {
                 </ul> 
                 </div>
                 
+            <Footer />
             </div>
         )
         

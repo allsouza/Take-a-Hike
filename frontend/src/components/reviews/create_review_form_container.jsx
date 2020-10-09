@@ -18,7 +18,6 @@ const mSTP = (state, ownProps) => {
 };
 
 const mDTP = dispatch => {
-    debugger
     return {
         action: review => dispatch(createReview(review))
     }
