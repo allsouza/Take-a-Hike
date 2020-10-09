@@ -8,10 +8,10 @@ const {
   withScriptjs,
   withGoogleMap,
   GoogleMap,
-  Marker,
+  Marker
 } = require("react-google-maps");
 const { SearchBox } = require("react-google-maps/lib/components/places/SearchBox");
-
+const { MarkerWithLabel} = require("react-google-maps/lib/components/addons/MarkerWithLabel");
 const MapWithASearchBox = compose(
   withProps({
     googleMapURL: `https://maps.googleapis.com/maps/api/js?key=${googleMapsApi}&v=3.exp&libraries=geometry,drawing,places`,
@@ -21,6 +21,7 @@ const MapWithASearchBox = compose(
   }),
   lifecycle({
     componentDidMount() {
+      const _self = this.props;
       const refs = {}
       this.setState({
         bounds: null,
@@ -28,6 +29,7 @@ const MapWithASearchBox = compose(
           lat: 41.9, lng: -87.624
         },
         markers: [],
+        trails: Object.values(this.props.trails),
         onMapMounted: ref => {
           refs.map = ref;
           this.setState({map: ref})
@@ -50,11 +52,13 @@ const MapWithASearchBox = compose(
             position: place.geometry.location,
           }));
           const nextCenter = _.get(nextMarkers, '0.position', this.state.center);
-
+          
           this.setState({
             center: nextCenter,
             markers: nextMarkers,
+            trails: Object.values(this.props.trails)
           });
+        
           // refs.map.fitBounds(bounds);
         },
         onIdle: () => {
@@ -64,6 +68,9 @@ const MapWithASearchBox = compose(
           const bounds = { northEast: {lat: northEast.lat(), lng: northEast.lng()}, southWest: {lat: southWest.lat(), lng: southWest.lng()}}
           this.props.updateBounds(bounds);
           this.props.getTrails({lat: refs.map.getCenter().lat(), lon: refs.map.getCenter().lng()})
+          this.setState({
+            trails: Object.values(this.props.trails)
+          })
         },
       })
     },
@@ -101,9 +108,23 @@ const MapWithASearchBox = compose(
         }}
       />
     </SearchBox>
+
     {props.markers.map((marker, index) =>
-      <Marker key={index} position={marker.position} />
+      <Marker key={index} position={marker.position}/>
+      
     )}
+
+      {props.trails.map((mark, index)=>
+      <Marker
+         key={index} 
+         position={{lat:mark.latitude, lng: mark.longitude}}
+         onClick={() => {
+           props.openModal('trail-item',mark)}}
+         labelAnchor={new google.maps.Point(0,0)}
+        >
+      </Marker>
+      )}
+ 
   </GoogleMap>
 );
 

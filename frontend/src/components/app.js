@@ -20,7 +20,7 @@ const App = () => (
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
             {/* <Route exact path='/images' component={ImageUploadContainer} /> */}
-            <Route exact path="/" component={MainPage} />  
+            <AuthRoute exact path="/" component={MainPage} />  
             <ProtectedRoute path='/dashboard' component={DashBoard}/>
             <Route exact path='/trails' component={TrailsIndexContainer} /> {/* REMOVE AFTER TESTING */}
             <ProtectedRoute exact path="/trails/:id" component={TrailShowContainer} />

@@ -17,7 +17,7 @@ export default class TrailShow extends React.Component{
                 <div className="trail-show">
                     <h1>{trail.name}</h1>
                     <div className="trail-info">
-                        {trail.image !== "" ? <img src={trail.image}/> : null}
+                        {trail.image !== "" ?<div className="img-container"><img src={trail.image}/></div>  : null}
                         {/* Maybe also include a still map with the droped pin at the trail head */}
                         <div className="stats">
                             <span><h3>Difficulty:</h3><p>{trail.difficulty}</p></span>
@@ -26,7 +26,7 @@ export default class TrailShow extends React.Component{
                             <span><h3>Descent:</h3><p>{trail.descent} feet</p></span>
                             <span><h3>Highest point:</h3><p>{trail.high} feet</p></span>
                         </div>
-                        <p>{trail.summary}</p>
+                        <p className="summary">{trail.summary}</p>
                         <a href={trail.url}>More info</a>
                         <div className="buttons">
                             <button>Save to favorites</button>
