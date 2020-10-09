@@ -158,3 +158,9 @@ transform: translate(-50%, -50%);
   color: red;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+#rating {
+    width: 10px;
+    margin-right: 100px;
+    outline: none;
+}
