@@ -1,5 +1,6 @@
 import React from "react";
 import ReactQuill from "react-quill";
+import { editor } from 'react-quill';
 import {Toolbar, formats, modules} from './editor_toolbar';
 import Parser from 'html-react-parser';
 // import { Block } from ReactQuill
@@ -29,8 +30,8 @@ export default class RichTextEditor extends React.Component{
         this.props.closeModal();
     }
     
-    // handleBodyChange(value, editor){
-    //     const text = editor.getText(value)
+    // handleBodyChange(value){
+    //     const text = ReactQuill.getText(value)
     //     this.setState({body: text})
     // }
 
