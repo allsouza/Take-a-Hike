@@ -4,6 +4,7 @@ import '../../stylesheets/reset.css'
 import '../../stylesheets/dashboard.css';
 import ListIndex from '../lists/list_index_container';
 import path from '../../images/path.jpg'
+import {formatDate} from '../../util/date_utils';
 
 class DashBoard extends React.Component {
 
@@ -12,11 +13,36 @@ class DashBoard extends React.Component {
     }
 
     componentDidMount(){
+        this.props.grabUser()
         //need to grab user info, this.props.fetchUsers()
     }
 
+    profile(){
+        if(this.props.user){
+            
+           const { email, firstName, lastName, birthdate, zipcode } = this.props.user
+           return (
+               <div> Profile
+                        <div className='profile' >
+                        <img src={path} alt="profile-pic" className='profile-pic'/>
+                            <p>{`${firstName} ${lastName}`}</p>
+                            <br/>
+                            <p>{email}</p>
+                            <br/>
+                            <p>{formatDate(birthdate)}</p>
+                            <br/>
+                            <p>{zipcode}</p>
+                        </div> 
+                </div>
+           )
+        }
+    }
+
     render() {
-        // const { email, firstName, lastName, birthDate } = this.props
+        
+        // debugger
+        
+       
         return(
             <div className='dashboard-container'>
                 <div className='dashboard'>
@@ -32,18 +58,7 @@ class DashBoard extends React.Component {
                         </ul>
                         <button>Find More Trails</button>
                     </div>
-                    <div> Profile
-                        <div className='profile' >
-                        <img src={path} alt="profile-pic" className='profile-pic'/>
-                            <p>firstName lastName</p>
-                            <p>zipcode</p>
-                            <p>Following</p>
-                            <p>Followers</p>
-                            <p>Favorite Trails</p>
-                            <p>Reviews</p>
-                        </div> 
-                        <div className='feed'>Following/Feed</div>
-                    </div>
+                    {this.profile()}
                 </div>
                 
             </div>
