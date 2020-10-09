@@ -3,7 +3,7 @@
     justify-content: space-between;
     align-items: center;
     position: relative;
-    background-color: rgb(192, 245, 192);
+    background-color: rgba(48, 112, 5, 0.8);
     font-family: bukhari;
 }
 
@@ -18,22 +18,23 @@
 .nav-components {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    align-items: flex-end;
+    margin-right: 20px;
 }
 .nav-title{
     font-size: large;
 }
-button {
+.nav-components button {
     padding: 5px;
     border: none;
     font-family: bukhari;
-    background-color: rgb(192, 245, 192);
-    color: rgb(34, 34, 170);
+    background-color: transparent;
+    color: rgb(255, 255, 255);
 }
 
 button:hover{
-    color: purple;
     text-decoration: underline;
+    cursor: pointer;
 }
 .dropdown-content>a{
     padding-bottom: 8px

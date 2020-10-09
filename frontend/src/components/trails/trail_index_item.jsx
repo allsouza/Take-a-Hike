@@ -18,8 +18,8 @@ export default class TrailIndexitem extends React.Component {
         return(
             <div className="trail-index-item">
                 {trail.image !== "" ?<div className="img-container"> <img src={trail.image} alt=""/> </div>: null}
-                <h1>{trail.name}</h1>
-                <p>{trail.summary}</p>
+                <h1 className="name">{trail.name}</h1>
+                <p className="summary">{trail.summary}</p>
                 <button onClick={this.redirect}>View Trail</button>
             </div>
         )
