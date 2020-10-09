@@ -11,7 +11,7 @@ import TrailsIndexContainer from './trails/trail_index_container';
 import Map from './trails/map_container';
 import DashBoard from './dashboard/dashboard_container'
 import TrailShowContainer from './trails/trail_show_container';
-import SearchBox from './trails/searchbox';
+
 
 
 
@@ -23,13 +23,7 @@ const App = () => (
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
             {/* <Route exact path='/images' component={ImageUploadContainer} /> */}
-<<<<<<< HEAD
             <AuthRoute exact path="/" component={MainPage} />  
-=======
-            <Route exact path='/map' component={Map} />
-            <Route exact path='/search' component={SearchBox}/>
-            <Route exact path="/" component={MainPage} />  
->>>>>>> master
             <ProtectedRoute path='/dashboard' component={DashBoard}/>
             <Route exact path='/trails' component={TrailsIndexContainer} /> {/* REMOVE AFTER TESTING */}
             <ProtectedRoute exact path="/trails/:id" component={TrailShowContainer} />
