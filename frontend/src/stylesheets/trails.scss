@@ -1,0 +1,30 @@
+.trail-index-item {
+    img{
+        height: 100px;
+    }
+    .img-container{
+        height: 100px; 
+        max-width: 200px;
+        overflow: hidden;
+    }
+}
+
+.trail-show{
+    .trail-info{
+        width: 50%;
+        overflow: hidden;
+        h1{
+            font-size: 30px;
+            font-weight: bold;
+        }
+        img{
+            max-height: 300px;
+        }
+        .stats{
+            span{
+                display: flex;
+            }
+        }
+    }
+    .trail-reviews{
+        width: 50%;

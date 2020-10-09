@@ -14,17 +14,32 @@ class LoginForm extends React.Component {
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
+        this.loginGuest = this.loginGuest.bind(this)
+
     }
 
-    componentWillReceiveProps(nextProps) {
-        if (nextProps.currentUser === true) {
+    // componentWillReceiveProps(nextProps) {
+    //     if (nextProps.currentUser === true) {
+    //         this.props.history.push('/dashboard');
+    //     }
+
+    //     this.setState({ errors: nextProps.errors })
+    // }
+
+    componentDidUpdate(nextProps) {
+      if (nextProps.currentUser === true) {
             this.props.history.push('/dashboard');
-        }
-
-        this.setState({ errors: nextProps.errors })
+            }
+    
+            // this.setState({ errors: nextProps.errors })
     }
 
-    update(field) {
+    componentWillUnmount(){
+    //   this.props.clearErrors()
+      this.forceUpdate()
+    }
+
+    update(field) { 
         return e => this.setState({
             [field]: e.currentTarget.value
         });
@@ -38,23 +53,50 @@ class LoginForm extends React.Component {
             password: this.state.password
         };
 
-        this.props.login(user).then(this.props.closeModal);
+        
+        this.props.login(user)
+
+        if (!this.props.loggedIn){
+  
+        //   this.props.openModal('login')
+        // this.props.login(user).then(this.props.closeModal());
+        }else{
+          this.props.closeModal()
+        }
+        // this.props.login(user);
     }
 
     // Render the session errors if there are any
     renderErrors() {
         return (
             <ul>
-                {Object.keys(this.state.errors).map((error, i) => (
-                    <li key={`error-${i}`}>
-                        {this.state.errors[error]}
+                {this.props.errors.map((error, i) => (
+                    <li key={`error-${i}`}className='errors'>
+                        {error}
                     </li>
                 ))}
             </ul>
         );
     }
 
+    loginGuest() {
+      // this.setState({ email: 'demo@mail.com', password: 'hunter12' });
+      let demo = {
+        email: 'demo@mail.com',
+        password: 'hunter12'
+      }
+    //   this.props.login(demo)
+      this.props.login(demo).then(this.props.closeModal)
+    }
+
     render() {
+      const guestLoginButton = (
+        <button
+          onClick={this.loginGuest}
+          className="button" >
+          Demo as Guest
+        </button>
+      )
         return (
             <div>
                 <form onSubmit={this.handleSubmit} >
@@ -71,9 +113,14 @@ class LoginForm extends React.Component {
                             value={this.state.password}
                             onChange={this.update('password')}
                             placeholder="Password"
-                        />
-                        <input type="submit" value="Submit" className='button' />
-                        {this.renderErrors()}
+                        /> 
+                        <div>
+                          {guestLoginButton}
+                          {this.renderErrors()}
+                          <input type="submit" value="Submit" className='button' />
+                        </div>
+                        
+                       
                     </div>
                 </form>
             </div>

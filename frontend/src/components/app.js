@@ -9,19 +9,23 @@ import MainPage from './main/main_page';
 import Footer from './footer/footer';
 import Map from './trails/map_container';
 import ListIndexContainer from './lists/list_index_container';
+import TrailsIndexContainer from './trails/trail_index_container';
 import DashBoard from './dashboard/dashboard_container'
+import TrailShowContainer from './trails/trail_show_container';
 
 const App = () => (
     <div>
         <Modal />
         <NavBarContainer />
         <Switch>
-            <Route path='/lists' component={ListIndexContainer} /> {/* REMOVE AFTER TESTING */}
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
             {/* <Route exact path='/images' component={ImageUploadContainer} /> */}
             <Route exact path="/" component={MainPage} />  
-            <ProtectedRoute exact path= '/maps' component={Map}/>
+            <ProtectedRoute path='/dashboard' component={DashBoard}/>
+            <Route exact path='/trails' component={TrailsIndexContainer} /> {/* REMOVE AFTER TESTING */}
+            <ProtectedRoute exact path="/trails/:id" component={TrailShowContainer} />
+            <ProtectedRoute exact path='/map' component={Map}/>
         </Switch>
           <Footer />
     </div>
