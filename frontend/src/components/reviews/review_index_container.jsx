@@ -16,7 +16,7 @@ const mSTP = state => {
 const mDTP = dispatch => {
     debugger
     return {
-        fetchReviews: () => dispatch(fetchReviews()),
+        fetchReviews: (trail) => dispatch(fetchReviews(trail)),
         deleteReview: reviewId => dispatch(deleteReview(reviewId)),
         updateReview: reviewId => dispatch(updateReview(reviewId)),
         editReview: (data) => dispatch(openModal('review', data)),

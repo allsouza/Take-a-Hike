@@ -4,9 +4,9 @@ import axios from 'axios';
 //test with no reviews => 5f7f90a1d9ca64186d137aa5
 //test with reviews => 5f7e0e930cdb287979bc8eb4
 
-export const fetchReviews = () => {
+export const fetchReviews = (trail) => {
     debugger
-    return axios.get(`/api/reviews/trails/5f7f90a1d9ca64186d137aa5`)
+    return axios.get(`/api/reviews/trails/${trail._id}`)
 };
 
 //

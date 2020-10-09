@@ -12,7 +12,7 @@ class ReviewIndex extends React.Component {
 
     componentDidMount() {
         debugger
-        this.props.fetchReviews()
+        this.props.fetchReviews(this.props.trail)
     }
 
     // map in props from Review index to list index item
