@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Peddana&family=Sansita+Swashed:wght@500&display=swap');
 .trail-index-item {
     img{
         height: 100px;
@@ -10,23 +11,106 @@
 }
 
 .trail-show{
+    width: 80%;
+    margin: auto;
+    p{
+        color: black;
+        padding: 0 5px;
+        font-family: 'Peddana', serif;
+        font-size: 16px;
+    }
+    h1{
+        text-align: center;
+        font-size: 32px;
+        padding: 20px;
+        font-family: 'Sansita Swashed', cursive;
+    }
     .trail-info{
         width: 50%;
         overflow: hidden;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        border-right: 1px solid rgb(245, 245, 245);
+        text-align: center;
         h1{
             font-size: 30px;
             font-weight: bold;
         }
-        img{
+        .img-container{
             max-height: 300px;
+            margin: auto;
+            img{
+                max-height: 300px;
+            }
         }
         .stats{
+            margin: 20px auto;
             span{
                 display: flex;
+                justify-content: center;
+                align-items: baseline;
+                padding: 10px;
+                display: flex;
+                font-size: 18px;
+                p{
+                    font-size: 20px;
+                }
             }
+        }
+
+        .summary{
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .buttons{
+            margin-top: 20px;
         }
     }
     .trail-reviews{
         width: 50%;
+    }
+}
+
+.modal-background{
+    display: flex;
+    >div{
+        margin: auto;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        padding: 10px;
+        width: 330px;
+        min-height: 240px;
+        // background: rgb(64, 109, 4);
+        background: rgb(41,71,1);
+        background: linear-gradient(180deg, rgba(41,71,1,1) 20%, rgba(53,88,5,1) 50%, rgba(41,71,1,1) 80%);
+        border-radius: 5px 80px 80px;
+        border: 1px solid rgb(0, 63, 0);
+        box-shadow: 0 0 10px rgb(0, 39, 0);
+        .trail-index-item{
+            margin: auto;
+        }
+        .img-container{
+            margin: auto;
+            img{
+                border-radius: 10px;
+            }
+        }
+
+        .summary{
+            color: white;
+            padding: 5px;
+        }
+        .name{
+            margin: 10px 0;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+        }
+        button{
+            margin-top: 10px;
+        }
     }
 }

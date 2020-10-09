@@ -1,37 +1,34 @@
+/* global google */
 import React from 'react';
-import {compose, withProps} from 'recompose';
-import {withScriptjs, withGoogleMap, GoogleMap, Marker} from 'react-google-maps';
-import SearchBox from './searchbox';
+import MapComponent from './searchmap';
 
+class Map extends React.Component{
+  constructor(props){
+    super(props);
+    this.getTrails = this.getTrails.bind(this);
+  }
 
-const MapComponent = compose(
-    withProps({
-        googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyD82UDrvQNsF2WNrTjXGc7-buTzyFFBrlY&v=3.exp&libraries=places,geometry,drawing,places",
-        loadingElement: <div style={{ height: `100%` }} />,
-        containerElement: <div style={{ height: `700px` }} />,
-        mapElement: <div style={{ height: `100%` }} />,
-    }),
-    withScriptjs,
-    withGoogleMap
-    )((props) =>
-  <GoogleMap
-    defaultZoom={8}
-    defaultCenter={{ lat: 40.6602, lng: -73.969 }}
-  >
-    {props.isMarkerShown && <Marker position={{ lat: 40.6602, lng: -73.969 }} />}
-    
-  </GoogleMap>
-)
+  getTrails(centerCoords){
+    this.props.fetchApiTrails(centerCoords);
+    clearTimeout();
+    setTimeout(() => {
+      this.props.fetchTrails()}, 2000);
+  }
 
-class Trails extends React.Component{
   render(){
     return(
       <div>
-        <SearchBox/>
-        <MapComponent/>
+        <MapComponent
+          getTrails= {this.getTrails}
+          updateBounds={this.props.updateFilter}
+          trails= {this.props.trails}
+          openModal={this.props.openModal}
+          // get filter setter from props
+          />
+     
       </div>
     )
   }
 }
 
-export default Trails;
+export default Map;
