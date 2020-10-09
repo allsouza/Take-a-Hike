@@ -1,5 +1,5 @@
 module.exports = {
-    mongoURI: process.env.MONGO_URI,
-    secretOrKey: process.env.SECRET_OR_KEY,
-    googleMapsApi: process.env.GOOGLE_MAPS_KEY
+    mongoURI: process.env.REACT_APP_MONGO_URI,
+    secretOrKey: process.env.REACT_APP_SECRET_OR_KEY,
+    googleMapsApi: process.env.REACT_APP_GOOGLE_MAPS_KEY
   }
