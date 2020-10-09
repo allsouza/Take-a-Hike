@@ -26,18 +26,22 @@ class LoginForm extends React.Component {
     //     this.setState({ errors: nextProps.errors })
     // }
 
-    componentDidUpdate(nextProps) {
-      if (nextProps.currentUser === true) {
-            this.props.history.push('/dashboard');
+    componentDidUpdate() {
+      // debugger
+      if (this.props.loggedIn === true) {
+        debugger
+        this.props.closeModal()
+            // this.props.history.push('/dashboard');
             }
     
             // this.setState({ errors: nextProps.errors })
     }
 
-    componentWillUnmount(){
-    //   this.props.clearErrors()
-      this.forceUpdate()
-    }
+    // componentWillUnmount(){
+    //   debugger
+    // //   this.props.clearErrors()
+    //   this.forceUpdate()
+    // }
 
     update(field) { 
         return e => this.setState({
@@ -61,6 +65,7 @@ class LoginForm extends React.Component {
         //   this.props.openModal('login')
         // this.props.login(user).then(this.props.closeModal());
         }else{
+          debugger
           this.props.closeModal()
         }
         // this.props.login(user);

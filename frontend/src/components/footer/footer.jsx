@@ -10,25 +10,25 @@ export default () => {
         <div className='footer'>
             <ul className='footer-container'>
                 <li className='foot'>
-                    Project Lead: Andre Souza 
+                    Andre Souza 
                     <br/>
                     <a href='https://www.linkedin.com/in/andre-souza-2ab6a3155/'><img src={In} alt="" className='linkedin'/></a>
                     <a href="https://github.com/allsouza"><img src={github} alt="" className='git'/></a>
                 </li>
                 <li className='foot'>
-                    Backend: Arash Afghahi
+                     Arash Afghahi
                     <br/> 
                     <a href='https://www.linkedin.com/in/arash-afghahi-4aa05193/'><img src={In} alt="" className='linkedin'/></a>
                     <a href="https://github.com/AAfghahi"><img src={github} alt="" className='git'/></a>
                 </li>
                 <li className='foot'>
-                    Flex: John Cody 
+                    John Cody 
                     <br/>
                     <a href='https://www.linkedin.com/in/johnhcody/'><img src={In} alt="" className='linkedin'/></a>
                     <a href="https://github.com/johnhcody"><img src={github} alt="" className='git'/><img src="" alt=""/></a>
                 </li>
                 <li className='foot'>
-                    Frontend: Brendon Biagi 
+                     Brendon Biagi 
                     <br/>
                     <a href='https://www.linkedin.com/in/brendonbiagi/'><img src={In} alt="" className='linkedin'/></a>
                     <a href="https://github.com/Bman2386"><img src={github} alt="" className='git'/></a>
