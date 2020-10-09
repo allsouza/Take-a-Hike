@@ -33,7 +33,8 @@ class ReviewIndexItem extends React.Component {
                         <i className="fa fa-pencil"
                             onClick={(e) => {
                                 e.stopPropagation();
-                                this.props.updateReview(this.props.review._id)
+                                // this.props.updateReview(this.props.review._id)
+                                this.props.editReview(this.props.review)
                             }}
                         ></i>
                     </div>

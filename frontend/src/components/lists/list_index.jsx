@@ -27,7 +27,7 @@ class ListIndex extends React.Component {
                 <ul>
                     {this.props.lists.map(list => {
                         return <li key={list._id} onClick={() => {this.props.editList(list)}}>
-                            <ListIndexItem list={list} deleteList={this.props.deleteList}/>  </li>
+                            <ListIndexItem list={list} deleteList={this.props.deleteList} editList={this.props.editList}/>  </li>
                     })} 
                 </ul>
                  <button onClick={this.newList}>Create List</button>

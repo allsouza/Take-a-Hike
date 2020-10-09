@@ -39,10 +39,11 @@ class ReviewIndex extends React.Component {
                                     this.props.reviews.map(review => {
                                         debugger
                                         if (typeof review !== 'undefined') {
-                                        return <li key={review.id} onClick={() => this.props.editReview(review)}>
+                                        return <li key={review.id} >
                                             <ReviewIndexItem review={review} 
                                             deleteReview={this.props.deleteReview} 
                                             fetchImage={this.props.fetchImage}
+                                            editReview={this.props.editReview}
                                             //photo={this.props.photoId}
                                             />
                                         </li>
