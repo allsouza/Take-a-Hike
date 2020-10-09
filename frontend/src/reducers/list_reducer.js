@@ -7,11 +7,11 @@ const ListsReducer = ( state = {}, action) => {
     
     switch(action.type) {
         case RECEIVE_ALL_LISTS:
-            debugger
+            
             action.lists.forEach( list => newState[list._id] = list)
             return newState;
         case RECEIVE_LIST:
-            debugger
+            
             newState[action.list.data._id] = action.list.data;
             return newState;
         case REMOVE_LIST:

@@ -11,8 +11,6 @@ class ReviewIndex extends React.Component {
     }
 
     componentDidMount() {
-        debugger
-        console.log(this.props.trail._id)
         this.props.fetchReviews(this.props.trail)
     }
 
@@ -23,7 +21,7 @@ class ReviewIndex extends React.Component {
     }
 
     render() {
-        debugger
+        
             if (this.props.reviews.length === 0) {
                 return (
                     <div>
@@ -32,14 +30,14 @@ class ReviewIndex extends React.Component {
                     </div>
                 )
             } else {
-                debugger
+                
                 return (
                     <div>
                         <h1>Reviews for {this.props.trail.name}</h1>
                             <ul>
                                 {
                                     this.props.reviews.map(review => {
-                                        //debugger
+                                        //
                                         if (typeof review !== 'undefined') {
                                         return <li key={review.id} >
                                             <ReviewIndexItem review={review} 

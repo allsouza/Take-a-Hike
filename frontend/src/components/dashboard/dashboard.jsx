@@ -38,10 +38,7 @@ class DashBoard extends React.Component {
         }
     }
 
-    render() {
-        
-        // debugger
-        
+    render() {  
        
         return(
             <>

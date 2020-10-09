@@ -7,7 +7,6 @@ import '../../stylesheets/modal.css'
 class ReviewForm extends React.Component {
 
     render() {
-        debugger
         return (
             <div className="modal-list">
                 <h1>{this.props.formType}</h1>
