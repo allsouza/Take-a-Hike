@@ -8,9 +8,6 @@ import { logout } from './actions/session_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   
-
-
-
   let store;
   if (localStorage.jwtToken) {
     setAuthToken(localStorage.jwtToken);
@@ -29,6 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore({});
   }
   const root = document.getElementById('root');
+
+  window.getState = store.getState;
 
   ReactDOM.render(<Root store={store} />, root);
 });

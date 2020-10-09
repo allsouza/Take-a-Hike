@@ -8,7 +8,7 @@ import path from '../../images/path.jpg'
 class DashBoard extends React.Component {
 
     constructor(props) {
-        super(props)
+        super(props);
     }
 
     componentDidMount(){
