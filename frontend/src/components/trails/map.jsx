@@ -4,7 +4,6 @@ import MapComponent from './searchmap';
 
 class Map extends React.Component{
   constructor(props){
-    
     super(props);
     this.getTrails = this.getTrails.bind(this);
   }
@@ -13,7 +12,6 @@ class Map extends React.Component{
     this.props.fetchApiTrails(centerCoords);
     clearTimeout();
     setTimeout(() => {
-      // debugger
       this.props.fetchTrails()}, 2000);
   }
 

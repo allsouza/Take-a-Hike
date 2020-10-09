@@ -4,19 +4,45 @@ import '../../stylesheets/reset.css'
 import '../../stylesheets/dashboard.css';
 import ListIndex from '../lists/list_index_container';
 import path from '../../images/path.jpg'
+import {formatDate} from '../../util/date_utils';
 
 class DashBoard extends React.Component {
 
     constructor(props) {
-        super(props);
+        super(props)
     }
 
     componentDidMount(){
+        this.props.grabUser()
         //need to grab user info, this.props.fetchUsers()
     }
 
+    profile(){
+        if(this.props.user){
+            
+           const { email, firstName, lastName, birthdate, zipcode } = this.props.user
+           return (
+               <div> 
+                        <div className='profile' >
+                        <img src={path} alt="profile-pic" className='profile-pic'/>
+                            <p>{`${firstName} ${lastName}`}</p>
+                            <br/>
+                            <p>{email}</p>
+                            <br/>
+                            <p>{formatDate(birthdate)}</p>
+                            <br/>
+                            <p>{zipcode}</p>
+                        </div> 
+                </div>
+           )
+        }
+    }
+
     render() {
-        // const { email, firstName, lastName, birthDate } = this.props
+        
+        // debugger
+        
+       
         return(
             <div className='dashboard-container'>
                 <div className='dashboard'>
@@ -25,25 +51,13 @@ class DashBoard extends React.Component {
                    </div>
                     <div className='index2'>    
                         <ul> 
-                            <header>My Favorite Trails:</header> 
-                            <li>1st trail</li>
-                            <li>2nd trail</li>
-                            <li>3rd trail</li>
+                            
+                            <li>You don't have any trails, find some!</li>
+                            
                         </ul>
-                        <button>Find More Trails</button>
+                        <button onClick={() => this.props.history.push('/map')}>Find More Trails</button>
                     </div>
-                    <div> Profile
-                        <div className='profile' >
-                        <img src={path} alt="profile-pic" className='profile-pic'/>
-                            <p>firstName lastName</p>
-                            <p>zipcode</p>
-                            <p>Following</p>
-                            <p>Followers</p>
-                            <p>Favorite Trails</p>
-                            <p>Reviews</p>
-                        </div> 
-                        <div className='feed'>Following/Feed</div>
-                    </div>
+                    {this.profile()}
                 </div>
                 
             </div>

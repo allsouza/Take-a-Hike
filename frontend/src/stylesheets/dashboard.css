@@ -36,6 +36,7 @@ margin: 0;
 
 .index2>ul>li{
     padding: 8px;
+    margin-bottom: 30px;
 }
 /* .index2>button{
     width: 50%;
@@ -48,8 +49,11 @@ margin: 0;
 .profile {
     height: 275px;
     width: 380px;
-    border: 1px solid lightgreen;
+    border: 1px solid lightgray;
     margin: 0; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .feed {
@@ -60,8 +64,10 @@ margin: 0;
 }
 
 .profile-pic {
-    height: 15%;
-    width: 15%;
+    height: 35%;
+    width: 35%;
+    align-self: center;
+    padding: 20px;
 }
 
 .lists {
@@ -78,7 +84,11 @@ color: rgb(97, 68, 15);
     font-size: large;
 }
 
-
+.lists{
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+}
 .lists:hover {
     cursor: pointer;
 }
@@ -89,7 +99,19 @@ color: rgb(97, 68, 15);
 .list-index>ul{
     text-align: -webkit-center;
     margin: 8px;
+    border: 1px solid lightgray;
+    overflow: hidden;
 }
 .list-index>ul>p{
     margin-bottom: 10px;
+}
+
+.list-index > ul > li{
+    border: none;
+    width: 95%;
+    padding: 0 10px;
+}
+
+.list-index li:hover{
+    background-color: rgb(236, 236, 236);
 }
