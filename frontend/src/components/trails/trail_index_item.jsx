@@ -1,7 +1,6 @@
 import React from 'react';
 import { openModal } from '../../actions/modal_actions';
 import '../../stylesheets/trails.scss'
-import '../../stylesheets/trails.css'
 
 export default class TrailIndexitem extends React.Component {
     constructor(props){
