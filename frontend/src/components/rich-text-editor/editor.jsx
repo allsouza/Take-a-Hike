@@ -14,6 +14,7 @@ export default class RichTextEditor extends React.Component{
         this.handleBodyChange = this.handleBodyChange.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.save = this.save.bind(this);
+        debugger
     }
 
     handleBodyChange(value){
@@ -42,6 +43,7 @@ export default class RichTextEditor extends React.Component{
     // }
 
     render(){
+        debugger
         return(
             <div className="rich-text-editor" >
                 <Toolbar/>
@@ -53,7 +55,8 @@ export default class RichTextEditor extends React.Component{
                         />
                     {this.props.editor === "review" ? 
                         <input type='text' 
-                                className="rating" 
+                                className="rating"
+                                id="rating" 
                                 value={this.state.rating}
                                 onChange={this.handleChange('rating')}/> : null}
                     <ReactQuill value={this.state.body}
@@ -67,8 +70,8 @@ export default class RichTextEditor extends React.Component{
                         />
                 </form>
                 <div className= "buttons">
-                    <button onClick={this.props.closeModal}>Cancel</button>
-                    <button onClick={this.save}>Save</button>
+                    <button onClick={this.props.closeModal}>Return</button>
+                    {this.props.currentUser.id === this.state.author ? <button onClick={this.save}>Save</button> : null }
                 </div>
             </div>
         )
