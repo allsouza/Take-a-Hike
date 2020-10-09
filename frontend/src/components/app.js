@@ -31,7 +31,7 @@ const App = () => (
             <ProtectedRoute exact path="/trails/:id" component={TrailShowContainer} />
             <ProtectedRoute exact path='/map' component={Map}/>
         </Switch>
-          <Footer />
+          {/* <Footer /> */}
     </div>
 );
 

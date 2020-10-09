@@ -47,13 +47,19 @@ margin: 0;
 } */
 
 .profile {
-    height: 275px;
-    width: 380px;
+    max-width: 33%;
     border: 1px solid lightgray;
-    margin: 0; 
+    margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-right: 0;
+}
+
+/* .profile-wrapper is coming from dashboard.jsx and has a bunch of extra padding because of the way it is nested, tried to refactor but it looked awful */
+
+.profile-wrapper {
+
 }
 
 .feed {
@@ -101,6 +107,7 @@ color: rgb(97, 68, 15);
     margin: 8px;
     border: 1px solid lightgray;
     overflow: hidden;
+    border-radius: 5px;
 }
 .list-index>ul>p{
     margin-bottom: 10px;

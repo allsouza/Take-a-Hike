@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../stylesheets/trails.scss'
+import Footer from '../footer/footer';
 
 export default class TrailShow extends React.Component{
     constructor(props){
@@ -14,6 +15,7 @@ export default class TrailShow extends React.Component{
         if(this.props.trail !== undefined){
             const {trail} = this.props;
             return(
+                <>
                 <div className="trail-show">
                     <h1>{trail.name}</h1>
                     <div className="trail-info">
@@ -36,6 +38,8 @@ export default class TrailShow extends React.Component{
                         {/* Review index for the trail */}
                     </div>
                 </div>
+                    <Footer />
+                </>
             )
         }
         return null        
