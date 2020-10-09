@@ -33,7 +33,6 @@ class ReviewIndexItem extends React.Component {
                         <i className="fa fa-pencil"
                             onClick={(e) => {
                                 e.stopPropagation();
-                                // this.props.updateReview(this.props.review._id)
                                 this.props.editReview(this.props.review)
                             }}
                         ></i>
@@ -60,11 +59,12 @@ class ReviewIndexItem extends React.Component {
                             this.props.deleteReview(this.props.review._id)
                         }}></i>
                     <br />
-                    {/* <i className="fa fa-pencil"
+                    <i className="fa fa-pencil"
                         onClick={(e) => {
                             e.stopPropagation();
                             this.props.editReview(this.props.review)
-                        }}></i> */}
+                        }}
+                    ></i>
                     <img src={this.props.image.Location} alt=""/>
                 </div>
             )

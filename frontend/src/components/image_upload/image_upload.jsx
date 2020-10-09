@@ -51,9 +51,9 @@ class ImageUpload extends React.Component {
                         <input type="text" placeholder="Photo Title" name="discription" onChange={this.onChange} />
                         <label class="custom-file-upload">
                             <input type="file" />
-                            <div className="custom-upload"><i class="fa fa-cloud-upload"></i><h2>Choose a File</h2></div> 
+                            <div className="custom-upload"><h2>Choose a File</h2></div> 
                         </label>
-                        <button type="submit">Upload</button>
+                        <div className="btn-wrapper"><button type="submit"><i class="fa fa-cloud-upload"></i>Upload</button></div>
                     </form>
                 </div>
             )

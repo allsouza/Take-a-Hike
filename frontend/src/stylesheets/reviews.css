@@ -5,6 +5,7 @@
     background-color: lightblue;
     align-items: flex-start;
     max-width: 400px;
+    padding-bottom: 20px;
 }    
 
 .review-idx-item-wrapper h1 {
@@ -72,4 +73,17 @@ input[type="file"] {
     font-size: 14px;
     padding-left: 14px;
     font-family: bukhari;
+}
+
+.btn-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.btn-wrapper i {
+    padding-right: 10px;
+}
+
+.btn-wrapper button {
+    padding-left: 10px;
 }
