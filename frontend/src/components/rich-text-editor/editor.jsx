@@ -2,6 +2,9 @@ import React from "react";
 import ReactQuill from "react-quill";
 import {Toolbar, formats, modules} from './editor_toolbar';
 import Parser from 'html-react-parser';
+// import { Block } from ReactQuill
+// Block.tagName = 'DIV';
+// ReactQuill.register(Block, true);
 
 export default class RichTextEditor extends React.Component{
     constructor(props){
@@ -57,6 +60,7 @@ export default class RichTextEditor extends React.Component{
                                 theme="snow"
                                 modules={modules}
                                 formats={formats}
+                                matchVisual={false}
                                 bounds={'.rich-text-editor'}
                                 placeholder="Start writing your list"
                         />

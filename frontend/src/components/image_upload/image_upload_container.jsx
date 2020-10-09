@@ -5,7 +5,7 @@ import { uploadImage } from '../../actions/image_actions';
 //can I pass in a review object here???
 
 const mSTP = state => {
-    debugger
+    // debugger
     return {
         image: Object.values(state.entities.images)
     }
@@ -13,7 +13,7 @@ const mSTP = state => {
 }
 
 const mDTP = dispatch => {
-    debugger
+    //debugger
     return {
         uploadImage: (file) => dispatch(uploadImage(file))
     }

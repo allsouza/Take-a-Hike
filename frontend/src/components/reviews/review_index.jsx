@@ -31,13 +31,14 @@ class ReviewIndex extends React.Component {
                     </div>
                 )
             } else {
+                debugger
                 return (
                     <div>
                         <h1>Review Index</h1>
                             <ul>
                                 {
                                     this.props.reviews.map(review => {
-                                        debugger
+                                        //debugger
                                         if (typeof review !== 'undefined') {
                                         return <li key={review.id} >
                                             <ReviewIndexItem review={review} 

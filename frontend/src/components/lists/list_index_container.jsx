@@ -10,11 +10,13 @@ const mSTP = state => {
     }
 };
 
-const mDTP = dispatch => ({
-    fetchLists: () => dispatch(fetchLists()),
-    deleteList: listId => dispatch(deleteList(listId)),
-    editList: (data) => dispatch(openModal('list', data)),
-    openModal: (type, data) => dispatch(openModal(type, data))
-});
+const mDTP = dispatch => {
+    return {
+        fetchLists: () => dispatch(fetchLists()),
+        deleteList: listId => dispatch(deleteList(listId)),
+        editList: (data) => dispatch(openModal('list', data)),
+        openModal: (type, data) => dispatch(openModal(type, data))
+    }
+};
 
 export default connect(mSTP, mDTP)(ListIndex);

@@ -1,10 +1,12 @@
 import axios from 'axios';
 
 // will need to take in a trail object and interpolate trail._id
+//test with no reviews => 5f7f90a1d9ca64186d137aa5
+//test with reviews => 5f7e0e930cdb287979bc8eb4
 
 export const fetchReviews = () => {
     debugger
-    return axios.get(`/api/reviews/trails/5f7e0e930cdb287979bc8eb4`)
+    return axios.get(`/api/reviews/trails/5f7f90a1d9ca64186d137aa5`)
 };
 
 //
