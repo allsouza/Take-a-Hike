@@ -12,6 +12,7 @@ import Map from './trails/map_container';
 import DashBoard from './dashboard/dashboard_container'
 import TrailShowContainer from './trails/trail_show_container';
 
+
 const App = () => (
     <div>
         <Modal />
