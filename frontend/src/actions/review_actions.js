@@ -23,10 +23,12 @@ const removeReview = reviewId => ({
 });
 
 
-export const fetchReviews = (trail) => dispatch => (
+export const fetchReviews = (trail) => dispatch => {
+    debugger
+    console.log(trail._id);
     ReviewApiUtil.fetchReviews(trail)
         .then(reviews => dispatch(receiveAllReviews(reviews.data)))
-);
+};
 
 export const fetchReview = reviewId => dispatch => (
     ReviewApiUtil.fetchReview(reviewId)

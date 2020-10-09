@@ -30,7 +30,7 @@ function Modal({modal, closeModal, info}){
             component = <SignupFormContainer />;
             break;
         case 'newReview':
-            component = <NewReview />;
+            component = <NewReview info={info}/>;
             break;
         case 'review':
             component = <Review info={info} />;

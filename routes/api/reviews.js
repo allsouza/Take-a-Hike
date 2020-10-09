@@ -10,6 +10,8 @@ const Trails = require('../../models/Trails');
 validateReviewInput = require('../../validation/reviews');
 
 router.get('/trails/:trail_id', (req,res)=>{
+    debugger
+    console.log(req.params.trail_id);
     Review.find({trail: req.params.trail_id})
         .sort({date: -1})
         .then(reviews => res.json(reviews))
@@ -17,6 +19,7 @@ router.get('/trails/:trail_id', (req,res)=>{
             res.status(404).json({trailnotfound: 'No trail found with that ID'}
             )
         );
+        debugger
 });
 
 router.get('/user/:user_id', (req,res)=>{

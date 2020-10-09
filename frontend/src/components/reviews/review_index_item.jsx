@@ -12,8 +12,9 @@ class ReviewIndexItem extends React.Component {
 
 
     componentDidMount() {
-        debugger
-        this.props.fetchImage(this.props.review._id)
+        //debugger
+        //this.props.fetchImage(this.props.review._id)
+        //this.props.fetchReviews(this.props.trail);
     }
 
     render() {
@@ -38,12 +39,12 @@ class ReviewIndexItem extends React.Component {
                         ></i>
                     </div>
 
-                    <ImageUpload
+                    {/* <ImageUpload
                         updateReview={() => this.props.updateReview}
                         reviewId={this.props.review._id}
                         imageUrl={this.props.imageUrl}
                         review={this.props.review}
-                    />
+                    /> */}
                 </div>
             )
         } else {

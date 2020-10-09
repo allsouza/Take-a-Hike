@@ -16,6 +16,7 @@ $darkgreen: rgb(41,71,1);
 .trail-show{
     width: 80%;
     margin: auto;
+    display: flex;
     p{
         color: black;
         padding: 0 5px;
@@ -85,8 +86,15 @@ $darkgreen: rgb(41,71,1);
         }
     }
     .trail-reviews{
+        padding-top: 100px;
         width: 50%;
     }
+}
+
+.title-and-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .modal-background{

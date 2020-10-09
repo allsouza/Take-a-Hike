@@ -3,14 +3,14 @@ import { createReview } from '../../actions/review_actions';
 import ReviewForm from './review_form';
 
 
-const mSTP = state => {
+const mSTP = (state, ownProps) => {
     return {
         review: {
             body: '',
             title: '',
             rating: 0,
             user: state.session.user,
-            trail: "5f7e0e930cdb287979bc8eb4"
+            trail: ownProps.info
         },
         formType: 'Create Review',
         editor: 'review'

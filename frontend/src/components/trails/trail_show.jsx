@@ -18,6 +18,7 @@ export default class TrailShow extends React.Component{
             return(
                 <>
                 <div className="trail-show">
+                    <div className="title-and-info">
                     <h1>{trail.name}</h1>
                     <div className="trail-info">
                         {trail.image !== "" ?<div className="img-container"><img src={trail.image}/></div>  : null}
@@ -34,6 +35,8 @@ export default class TrailShow extends React.Component{
                         <div className="buttons">
                             <button>Save to favorites</button>
                         </div>
+                    </div>
+
                     </div>
                     <div className="trail-reviews">
                         <Reviews trail={trail}/>

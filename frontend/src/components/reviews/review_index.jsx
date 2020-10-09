@@ -12,13 +12,14 @@ class ReviewIndex extends React.Component {
 
     componentDidMount() {
         debugger
+        console.log(this.props.trail._id)
         this.props.fetchReviews(this.props.trail)
     }
 
     // map in props from Review index to list index item
 
     newReview() {
-        this.props.openModal('newReview');
+        this.props.openModal('newReview', this.props.trail._id);
     }
 
     render() {
@@ -34,7 +35,7 @@ class ReviewIndex extends React.Component {
                 debugger
                 return (
                     <div>
-                        <h1>Review Index</h1>
+                        <h1>Reviews for {this.props.trail.name}</h1>
                             <ul>
                                 {
                                     this.props.reviews.map(review => {

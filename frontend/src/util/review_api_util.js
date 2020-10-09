@@ -6,6 +6,7 @@ import axios from 'axios';
 
 export const fetchReviews = (trail) => {
     debugger
+    console.log(trail._id);
     return axios.get(`/api/reviews/trails/${trail._id}`)
 };
 
