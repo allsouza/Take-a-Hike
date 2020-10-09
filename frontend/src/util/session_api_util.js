@@ -16,8 +16,3 @@ export const signup = (userData) => {
 export const login = (userData) => {
     return axios.post('/api/users/login', userData);
 };
-
-export const currentUser = () => (
-    axios.get('/api/users/current')
-)
-

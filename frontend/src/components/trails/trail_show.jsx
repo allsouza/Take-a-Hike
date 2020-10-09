@@ -1,6 +1,5 @@
 import React from 'react';
 import '../../stylesheets/trails.scss'
-import '../../stylesheets/trails.css'
 
 export default class TrailShow extends React.Component{
     constructor(props){

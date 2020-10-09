@@ -50,9 +50,6 @@ margin: 0;
     width: 380px;
     border: 1px solid lightgreen;
     margin: 0; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .feed {
@@ -63,9 +60,8 @@ margin: 0;
 }
 
 .profile-pic {
-    height: 35%;
-    width: 35%;
-    align-self: flex-start;
+    height: 15%;
+    width: 15%;
 }
 
 .lists {
