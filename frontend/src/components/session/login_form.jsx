@@ -57,8 +57,10 @@ class LoginForm extends React.Component {
             password: this.state.password
         };
 
-        
-        this.props.login(user)
+        if (user.email !== "") {
+            this.props.login(user)
+        }
+
 
         if (!this.props.loggedIn){
   
