@@ -21,8 +21,17 @@ export default class RichTextEditor extends React.Component{
     }
     
     handleChange(field){
+        debugger
         return e => this.setState({[field]: e.target.value})
     }
+
+    // handleRadio = e => {
+    //     const { name, value } = e.target;
+    //     debugger
+    //     this.setState({
+    //         [name]: value
+    //     });
+    // };
     
     save(){
         
@@ -41,6 +50,30 @@ export default class RichTextEditor extends React.Component{
     //     console.log(text)
     // }
 
+    // 
+
+    // <input type='text'
+    // className="rating"
+    // id="rating"
+    // value={this.state.rating}
+    // onChange={this.handleChange('rating')} />
+
+    handleRating() {
+        debugger
+        return <div>
+            <input type="radio" name="" id="1" value="1" onChange={this.handleChange('rating')} checked={this.state.rating === "1"}/>
+                <label htmlFor="1">1</label>
+            <input type="radio" name="" id="2" value="2" onChange={this.handleChange('rating')} checked={this.state.rating === "2"}/>
+                <label htmlFor="2">2</label>
+            <input type="radio" name="" id="3" value="3" onChange={this.handleChange('rating')} checked={this.state.rating === "3"}/>
+                <label htmlFor="3">3</label>
+            <input type="radio" name="" id="4" value="4" onChange={this.handleChange('rating')} checked={this.state.rating === "4"}/>
+                <label htmlFor="4">4</label>
+            <input type="radio" name="" id="5" value="5" onChange={this.handleChange('rating')} checked={this.state.rating === "5"}/>
+                <label htmlFor="5">5</label>
+        </div>
+    }
+
     render(){
         return(
             <div className="rich-text-editor" >
@@ -52,11 +85,7 @@ export default class RichTextEditor extends React.Component{
                             onChange={this.handleChange('title')} 
                         />
                     {this.props.editor === "review" ? 
-                        <input type='text' 
-                                className="rating"
-                                id="rating" 
-                                value={this.state.rating}
-                                onChange={this.handleChange('rating')}/> : null}
+                        this.handleRating() : null}
                     <ReactQuill value={this.state.body}
                                 onChange={this.handleBodyChange}
                                 theme="snow"
