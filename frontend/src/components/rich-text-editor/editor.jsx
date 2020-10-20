@@ -3,6 +3,11 @@ import ReactQuill from "react-quill";
 import { editor } from 'react-quill';
 import {Toolbar, formats, modules} from './editor_toolbar';
 import Parser from 'html-react-parser';
+import oneStar from '../../images/1-star.png'
+import twoStar from '../../images/2-star.png'
+import threeStar from '../../images/3-star.png'
+import fourStar from '../../images/4-star.png'
+import fiveStar from '../../images/5-star.png'
 // import { Block } from ReactQuill
 // Block.tagName = 'DIV';
 // ReactQuill.register(Block, true);
@@ -35,16 +40,26 @@ export default class RichTextEditor extends React.Component{
         debugger
         return <div className="radio-wrapper">
             <h3>Rating: </h3>
-            <input type="radio" name="" id="1" value="1" onChange={this.handleChange('rating')} checked={this.state.rating == "1"}/>
-                <label htmlFor="1">1</label>
-            <input type="radio" name="" id="2" value="2" onChange={this.handleChange('rating')} checked={this.state.rating == "2"}/>
-                <label htmlFor="2">2</label>
-            <input type="radio" name="" id="3" value="3" onChange={this.handleChange('rating')} checked={this.state.rating == "3"}/>
-                <label htmlFor="3">3</label>
-            <input type="radio" name="" id="4" value="4" onChange={this.handleChange('rating')} checked={this.state.rating == "4"}/>
-                <label htmlFor="4">4</label>
-            <input type="radio" name="" id="5" value="5" onChange={this.handleChange('rating')} checked={this.state.rating == "5"}/>
-                <label htmlFor="5">5</label>
+                <label htmlFor="1">
+                    <input type="radio" name="" id="1" value="1" onChange={this.handleChange('rating')} checked={this.state.rating == "1"}/>
+                    <img src={oneStar} alt="" srcset=""/>
+                </label>
+                <label htmlFor="2">
+                    <input type="radio" name="" id="2" value="2" onChange={this.handleChange('rating')} checked={this.state.rating == "2"}/>
+                    <img src={twoStar} alt="" srcset=""/>
+                </label>
+                <label htmlFor="3">
+                    <input type="radio" name="" id="3" value="3" onChange={this.handleChange('rating')} checked={this.state.rating == "3"}/>
+                    <img src={threeStar} alt="" srcset=""/>
+                </label>
+                <label htmlFor="4">
+                    <input type="radio" name="" id="4" value="4" onChange={this.handleChange('rating')} checked={this.state.rating == "4"}/>
+                    <img src={fourStar} alt="" srcset=""/>
+                </label>
+                <label htmlFor="5">
+                    <input type="radio" name="" id="5" value="5" onChange={this.handleChange('rating')} checked={this.state.rating == "5"}/>
+                    <img src={fiveStar} alt="" srcset=""/>
+                </label>
         </div>
     }
 

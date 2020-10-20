@@ -115,9 +115,22 @@ input[type="file"] {
     margin: -2px 3px 0px 0px;
 }
 
-.radio-wrapper input {
-    margin: 0px 0px 0px 0px;
+.radio-wrapper input[type=radio] { 
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
+
+.radio-wrapper input[type=radio] + img {
+  cursor: pointer;
+}
+
+.radio-wrapper[type=radio]:checked + img {
+  outline: 2px solid blue;
+}
+
 .radio-wrapper label {
     margin: 0px 7px 0px 3px;
 }
+
