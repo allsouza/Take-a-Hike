@@ -7,7 +7,7 @@ import '../../stylesheets/reviews.css'
 class ReviewIndexItem extends React.Component {
     constructor(props) {
         super(props)
-
+        this.renderRating = this.renderRating.bind(this);
     }
 
 
@@ -17,6 +17,22 @@ class ReviewIndexItem extends React.Component {
         //this.props.fetchReviews(this.props.trail);
     }
 
+    renderRating() {
+        debugger
+        if (this.props.review.rating == 1) {
+            return <i className="fas fa-star"></i>
+        } else if (this.props.review.rating == 2) {
+            return <div><i className="fas fa-star"></i><i className="fas fa-star"></i></div>
+        } else if (this.props.review.rating == 3) {
+            return <div><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i></div>
+        } else if (this.props.review.rating == 4) {
+            return <div><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i></div>
+        } else if (this.props.review.rating == 5) {
+            return <div><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i></div>
+        }
+          
+    }
+
     render() {
         const Div = document.createElement('div');
         Div.innerHTML = this.props.review.body;
@@ -24,7 +40,7 @@ class ReviewIndexItem extends React.Component {
             return (
                 <div className="review-idx-item-wrapper">
                     <h1>{this.props.review.title}</h1>
-                    <p>Rating: {this.props.review.rating}</p>
+                    <p>Rating: {this.renderRating()}</p>
                     <p>{Div.innerText}</p>
                     <div className="review-icon-wrapper">
                         <i className="fas fa-trash"

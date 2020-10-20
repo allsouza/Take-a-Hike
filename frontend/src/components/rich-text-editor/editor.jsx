@@ -21,17 +21,8 @@ export default class RichTextEditor extends React.Component{
     }
     
     handleChange(field){
-        debugger
         return e => this.setState({[field]: e.target.value})
     }
-
-    // handleRadio = e => {
-    //     const { name, value } = e.target;
-    //     debugger
-    //     this.setState({
-    //         [name]: value
-    //     });
-    // };
     
     save(){
         
@@ -39,27 +30,8 @@ export default class RichTextEditor extends React.Component{
         this.props.closeModal();
     }
     
-    // handleBodyChange(value){
-    //     const text = ReactQuill.getText(value)
-    //     this.setState({body: text})
-    // }
-
-    // onChange(content, delta, source, editor) {
-    //     const text = editor.getText(content);
-    //     this.setState({ content: text });
-    //     console.log(text)
-    // }
-
-    // 
-
-    // <input type='text'
-    // className="rating"
-    // id="rating"
-    // value={this.state.rating}
-    // onChange={this.handleChange('rating')} />
 
     handleRating() {
-        debugger
         return <div>
             <input type="radio" name="" id="1" value="1" onChange={this.handleChange('rating')} checked={this.state.rating === "1"}/>
                 <label htmlFor="1">1</label>
