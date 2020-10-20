@@ -17,19 +17,7 @@ class SignupForm extends React.Component {
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
-        // this.clearedErrors = false;
     }
-
-    // componentWillReceiveProps(nextProps) {
-    //     
-    //     if (nextProps.signedIn === true) {
-    //         
-    //         this.props.closeModal()
-    //         // this.props.history.push('/login');
-    //     }
-
-    //     this.setState({ errors: nextProps.errors })
-    // }
 
     componentDidUpdate(){
         let newUser = {
@@ -42,12 +30,6 @@ class SignupForm extends React.Component {
             this.props.login(newUser)
                 }
     }
-    // componentWillUnmount(){
-    //     
-    //     //   this.props.clearErrors()
-    //     //   this.forceUpdate()
-    //       this.props.closeModal()
-    //     }
 
     update(field) {
         return e => this.setState({
@@ -67,9 +49,7 @@ class SignupForm extends React.Component {
             birthdate: this.state.birthdate
         };
         
-        // this.props.signup(user, this.props.history);
         this.props.signup(user);
-        // this.props.signup(user, this.props.history).then(this.props.closeModal);
     }
 
     renderErrors() {
