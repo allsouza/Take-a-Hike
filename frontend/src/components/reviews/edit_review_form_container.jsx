@@ -4,9 +4,10 @@ import { fetchReview, updateReview } from '../../actions/review_actions';
 import ReviewForm from './review_form';
 
 const mSTP = (state, ownProps) => {
-    debugger
+    
     return {
-        review: ownProps.info,
+        review: ownProps.info.data,
+        readOnly: ownProps.info.readOnly,
         formType: 'Update Review',
         errors: state.errors
     }

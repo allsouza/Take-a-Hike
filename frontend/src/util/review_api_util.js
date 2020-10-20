@@ -9,7 +9,7 @@ export const fetchReviews = (trail) => {
 };
 
 export const fetchAuthor = (authorId) => {
-    debugger
+    
     return axios.get(`/api/users/${authorId}`)
 }
 
