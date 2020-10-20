@@ -57,7 +57,6 @@ class LoginForm extends React.Component {
             password: this.state.password
         };
 
-        
         this.props.login(user)
 
         if (!this.props.loggedIn){
@@ -91,6 +90,8 @@ class LoginForm extends React.Component {
         password: 'hunter12'
       }
     //   this.props.login(demo)
+    this.state.email = 'demo@mail.com'
+    this.state.password ='hunter12' 
       this.props.login(demo).then(this.props.closeModal)
     }
 
@@ -113,16 +114,16 @@ class LoginForm extends React.Component {
                             value={this.state.email}
                             onChange={this.update('email')}
                             placeholder="Email"
-                        />
+                        /> 
                         <input type="password"
                             value={this.state.password}
                             onChange={this.update('password')}
                             placeholder="Password"
                         /> 
                         <div>
-                          {guestLoginButton}
                           {this.renderErrors()}
                           <input type="submit" value="Submit" className='button' />
+                          {guestLoginButton}
                         </div>
                         
                        
