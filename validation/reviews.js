@@ -4,7 +4,7 @@ const validText = require('./valid-text');
 module.exports = function validateReviewInput(data){
     let errors = {};
     data.rating = validText(data.rating) ? data.rating : '';
-
+    
     if (Validator.isEmpty(data.rating)){
         errors.text = 'Your review needs a rating!';
     }

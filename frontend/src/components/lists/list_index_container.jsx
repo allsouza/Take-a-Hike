@@ -4,8 +4,10 @@ import { fetchLists, deleteList, createList } from '../../actions/list_actions';
 import { openModal } from '../../actions/modal_actions';
 
 const mSTP = state => {
+    const userId = state.session.user ? state.session.user.id : ""
     return {
-        lists: Object.values(state.entities.lists)
+        lists: Object.values(state.entities.lists),
+        currentUser: userId
     }
 };
 
@@ -13,8 +15,7 @@ const mDTP = dispatch => {
     return {
         fetchLists: () => dispatch(fetchLists()),
         deleteList: listId => dispatch(deleteList(listId)),
-        editList: (data) => dispatch(openModal('list', data)),
-        openModal: (type, data) => dispatch(openModal(type, data))
+        editList: (data, readOnly) => dispatch(openModal('list', {data: data, readOnly: readOnly})),
     }
 };
 

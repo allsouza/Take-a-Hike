@@ -4,6 +4,7 @@ import ReviewForm from './review_form';
 
 
 const mSTP = (state, ownProps) => {
+    
     return {
         review: {
             body: '',
@@ -14,7 +15,8 @@ const mSTP = (state, ownProps) => {
             author: state.session.user.id
         },
         formType: 'Create Review',
-        editor: 'review'
+        editor: 'review',
+        errors: state.errors
     }
 };
 

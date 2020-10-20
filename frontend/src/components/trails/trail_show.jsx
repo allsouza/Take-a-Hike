@@ -12,6 +12,19 @@ export default class TrailShow extends React.Component{
         this.props.fetchTrail(this.props.match.params.id)
     }
 
+    findAverage() {
+        const len = this.props.reviews.length
+        let totalRating = 0;
+        this.props.reviews.forEach(review => {
+            totalRating += review.rating
+        })
+
+        let avgRating = totalRating / len
+        return (
+            <p>{avgRating.toFixed(1)} Stars</p>
+        )
+    }
+
     render(){
         if(this.props.trail !== undefined){
             const {trail} = this.props;
@@ -25,10 +38,12 @@ export default class TrailShow extends React.Component{
                         {/* Maybe also include a still map with the droped pin at the trail head */}
                         <div className="stats">
                                 <span><h3>Difficulty:</h3><p>{trail.difficulty.charAt(0).toUpperCase() + trail.difficulty.slice(1)}</p></span>
-                                <span><h3>Length:</h3><p>{trail.length} miles</p></span>
-                            <span><h3>Ascent:</h3><p>{trail.ascent} feet</p></span>
-                            <span><h3>Descent:</h3><p>{trail.descent} feet</p></span>
-                            <span><h3>Highest point:</h3><p>{trail.high} feet</p></span>
+                                <span><h3>Length:</h3><p>{trail.length} Miles</p></span>
+                            <span><h3>Ascent:</h3><p>{trail.ascent} Feet</p></span>
+                            <span><h3>Descent:</h3><p>{trail.descent} Feet</p></span>
+                            <span><h3>Highest point:</h3><p>{trail.high} Feet</p></span>
+                            {this.props.reviews.length == 0 ? null : <span><h3>Average Rating:</h3>{this.findAverage()}</span>}
+                            
                         </div>
                         <p className="summary">{trail.summary}</p>
                         <a href={trail.url}>More info</a>

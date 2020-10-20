@@ -1,12 +1,15 @@
 import { connect } from "react-redux"
 import { withRouter } from "react-router-dom";
 import { fetchTrail } from "../../actions/trails_actions";
-import TrailShow from "./trail_show"
+import TrailShow from "./trail_show";
+// import { fetchReviews } from '../../actions/review_actions';
 
 const mSTP = (state, ownProps) => {
+
     const trail = state.entities.trails ? state.entities.trails[ownProps.match.params.id] : null;
     return({
-        trail: trail
+        trail: trail,
+        reviews: Object.values(state.entities.reviews)
     })
 }
 
