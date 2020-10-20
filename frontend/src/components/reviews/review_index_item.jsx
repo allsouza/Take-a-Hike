@@ -47,7 +47,7 @@ class ReviewIndexItem extends React.Component {
         let day = d.getDay(this.props.review.date);
         let month = monthNames[d.getMonth(this.props.review.date) - 1];
         let year = d.getFullYear(this.props.review.date);
-        const authorName = this.findAuthor();
+        // const authorName = this.findAuthor();
 
         let date = "Created - " + month + " " + day + ", " + year
         return (
