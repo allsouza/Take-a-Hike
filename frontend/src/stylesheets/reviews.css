@@ -27,7 +27,15 @@
     padding: 10px 0px 30px 3px;
 }
 .review-icon-wrapper i {
-    padding: 5px;
+    padding: 0px 17px 0px 0px;
+}
+
+.review-icon-wrapper h5 {
+    color: black;
+    font-family: 'Peddana', serif;
+    font-size: 20px;
+    padding: 0px 0px 0px 0px;
+    margin: -9px 0px 0px 0px;
 }
 
 .img-uploader-wrapper {

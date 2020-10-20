@@ -41,23 +41,23 @@ export default class RichTextEditor extends React.Component{
         return <div className="radio-wrapper">
             <h3>Rating: </h3>
                 <label htmlFor="1">
-                    <input type="radio" name="" id="1" value="1" onChange={this.handleChange('rating')} checked={this.state.rating == "1"}/>
+                    <input type="radio" name="rating" id="1" value="1" onChange={this.handleChange('rating')} checked={this.state.rating == "1"} required/>
                     <img src={oneStar} alt=""/>
                 </label>
                 <label htmlFor="2">
-                    <input type="radio" name="" id="2" value="2" onChange={this.handleChange('rating')} checked={this.state.rating == "2"}/>
+                <input type="radio" name="rating" id="2" value="2" onChange={this.handleChange('rating')} checked={this.state.rating == "2"} required/>
                     <img src={twoStar} alt=""/>
                 </label>
                 <label htmlFor="3">
-                    <input type="radio" name="" id="3" value="3" onChange={this.handleChange('rating')} checked={this.state.rating == "3"}/>
+                <input type="radio" name="rating" id="3" value="3" onChange={this.handleChange('rating')} checked={this.state.rating == "3"} required/>
                     <img src={threeStar} alt=""/>
                 </label>
                 <label htmlFor="4">
-                    <input type="radio" name="" id="4" value="4" onChange={this.handleChange('rating')} checked={this.state.rating == "4"}/>
+                <input type="radio" name="rating" id="4" value="4" onChange={this.handleChange('rating')} checked={this.state.rating == "4"} required/>
                     <img src={fourStar} alt=""/>
                 </label>
                 <label htmlFor="5">
-                    <input type="radio" name="" id="5" value="5" onChange={this.handleChange('rating')} checked={this.state.rating == "5"}/>
+                <input type="radio" name="rating" id="5" value="5" onChange={this.handleChange('rating')} checked={this.state.rating == "5"} required/>
                     <img src={fiveStar} alt=""/>
                 </label>
         </div>

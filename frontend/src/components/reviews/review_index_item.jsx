@@ -33,6 +33,23 @@ class ReviewIndexItem extends React.Component {
           
     }
 
+    findReviewTime() {
+        const d = new Date();
+        debugger
+        const monthNames = ["January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
+        ];
+        let day = d.getDay(this.props.review.date);
+        let month = monthNames[d.getMonth(this.props.review.date) - 1];
+        let year = d.getFullYear(this.props.review.date);
+
+
+        let date = "Created - " + month + " " + day + ", " + year
+        return (
+            <h5>{date}</h5>
+        )
+    }
+
     render() {
         const Div = document.createElement('div');
         Div.innerHTML = this.props.review.body;
@@ -53,7 +70,7 @@ class ReviewIndexItem extends React.Component {
                             onClick={(e) => {
                                 e.stopPropagation();
                                 this.props.editReview(this.props.review)
-                            }}></i> : null }
+                            }}></i> : this.findReviewTime() }
                     </div>
 
                     {/* <ImageUpload

@@ -10,7 +10,8 @@ const mSTP = state => {
     return {
         reviews: Object.values(state.entities.reviews),
         image: state.entities.images,
-        currentUserId: state.session.user.id
+        currentUserId: state.session.user.id,
+        currentUser: state.session.user
     }
 };
 
