@@ -42,6 +42,8 @@ class ReviewIndex extends React.Component {
                                         if (typeof review !== 'undefined') {
                                         return <li key={review.id} >
                                             <ReviewIndexItem review={review} 
+                                            
+                                            // author={this.props.author}
                                             fetchAuthor={this.props.fetchAuthor}
                                             currentUser={this.props.currentUser}
                                             currentUserId={this.props.currentUserId}

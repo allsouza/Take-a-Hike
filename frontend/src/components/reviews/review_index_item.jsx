@@ -12,6 +12,8 @@ class ReviewIndexItem extends React.Component {
 
 
     componentDidMount() {
+        //debugger
+        //this.props.fetchAuthor(this.props.review)
         //
         //this.props.fetchImage(this.props.review._id)
         //this.props.fetchReviews(this.props.trail);
@@ -33,10 +35,10 @@ class ReviewIndexItem extends React.Component {
           
     }
 
-    findAuthor() {
-        debugger
-        this.props.fetchAuthor(this.props.review)
-    }
+    // findAuthor() {
+    //    debugger
+    //    this.props.fetchAuthor(this.props.review)
+    // }
 
     findReviewTime() {
         const d = new Date();
@@ -47,7 +49,7 @@ class ReviewIndexItem extends React.Component {
         let day = d.getDay(this.props.review.date);
         let month = monthNames[d.getMonth(this.props.review.date) - 1];
         let year = d.getFullYear(this.props.review.date);
-        const authorName = this.findAuthor();
+        // const authorName = this.findAuthor();
 
         let date = "Created - " + month + " " + day + ", " + year
         return (
