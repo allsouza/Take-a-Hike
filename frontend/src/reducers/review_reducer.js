@@ -1,4 +1,4 @@
-import { RECEIVE_ALL_REVIEWS, RECEIVE_REVIEW, REMOVE_REVIEW, RECEIVE_ERRORS } from '../actions/review_actions';
+import { RECEIVE_ALL_REVIEWS, RECEIVE_REVIEW, REMOVE_REVIEW, RECEIVE_ERRORS, RECEIVE_AUTHOR } from '../actions/review_actions';
 
 const ReviewsReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -20,6 +20,8 @@ const ReviewsReducer = (state = {}, action) => {
         case RECEIVE_ERRORS:
             debugger
             return action.errors;
+        case RECEIVE_AUTHOR:
+            return action.author;
         default:
             return state;
     }
