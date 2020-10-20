@@ -42,23 +42,23 @@ export default class RichTextEditor extends React.Component{
             <h3>Rating: </h3>
                 <label htmlFor="1">
                     <input type="radio" name="" id="1" value="1" onChange={this.handleChange('rating')} checked={this.state.rating == "1"}/>
-                    <img src={oneStar} alt="" srcset=""/>
+                    <img src={oneStar} alt=""/>
                 </label>
                 <label htmlFor="2">
                     <input type="radio" name="" id="2" value="2" onChange={this.handleChange('rating')} checked={this.state.rating == "2"}/>
-                    <img src={twoStar} alt="" srcset=""/>
+                    <img src={twoStar} alt=""/>
                 </label>
                 <label htmlFor="3">
                     <input type="radio" name="" id="3" value="3" onChange={this.handleChange('rating')} checked={this.state.rating == "3"}/>
-                    <img src={threeStar} alt="" srcset=""/>
+                    <img src={threeStar} alt=""/>
                 </label>
                 <label htmlFor="4">
                     <input type="radio" name="" id="4" value="4" onChange={this.handleChange('rating')} checked={this.state.rating == "4"}/>
-                    <img src={fourStar} alt="" srcset=""/>
+                    <img src={fourStar} alt=""/>
                 </label>
                 <label htmlFor="5">
                     <input type="radio" name="" id="5" value="5" onChange={this.handleChange('rating')} checked={this.state.rating == "5"}/>
-                    <img src={fiveStar} alt="" srcset=""/>
+                    <img src={fiveStar} alt=""/>
                 </label>
         </div>
     }
