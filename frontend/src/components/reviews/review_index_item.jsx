@@ -34,19 +34,11 @@ class ReviewIndexItem extends React.Component {
     }
 
     findAuthor() {
-<<<<<<< HEAD
-=======
-        
->>>>>>> master
         this.props.fetchAuthor(this.props.review)
     }
 
     findReviewTime() {
         const d = new Date();
-<<<<<<< HEAD
-=======
-        
->>>>>>> master
         const monthNames = ["January", "February", "March", "April", "May", "June",
             "July", "August", "September", "October", "November", "December"
         ];
