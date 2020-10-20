@@ -38,32 +38,6 @@ class ReviewIndex extends React.Component {
                 
                 return (
                     <div>
-<<<<<<< HEAD
-                        <h1>Reviews for {this.props.trail.name}</h1>
-                            <ul>
-                                {
-                                    this.props.reviews.map(review => {
-                                        //
-                                        if (typeof review !== 'undefined') {
-                                        return <li key={review.id} >
-                                            <ReviewIndexItem review={review} 
-                                            
-                                            // author={this.props.author}
-                                            fetchAuthor={this.props.fetchAuthor}
-                                            currentUser={this.props.currentUser}
-                                            currentUserId={this.props.currentUserId}
-                                            deleteReview={this.props.deleteReview} 
-                                            fetchImage={this.props.fetchImage}
-                                            editReview={this.props.editReview}
-                                            //photo={this.props.photoId}
-                                            />
-                                        </li>
-                                        }
-                                    })
-                                }
-                            </ul>
-                            <button onClick={this.newReview}>Create Review</button>
-=======
                     <h1>Reviews for {this.props.trail.name}</h1>
                     <button onClick={this.newReview}>Create Review</button>    
                     <ul>
@@ -84,7 +58,6 @@ class ReviewIndex extends React.Component {
                             }
                         </ul>
                         
->>>>>>> master
                     </div>
                 )
             }

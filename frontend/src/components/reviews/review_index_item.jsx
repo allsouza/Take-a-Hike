@@ -35,16 +35,9 @@ class ReviewIndexItem extends React.Component {
           
     }
 
-<<<<<<< HEAD
-    // findAuthor() {
-    //    debugger
-    //    this.props.fetchAuthor(this.props.review)
-    // }
-=======
     findAuthor() {
         this.props.fetchAuthor(this.props.review)
     }
->>>>>>> master
 
     findReviewTime() {
         const d = new Date();
