@@ -60,7 +60,13 @@ class SignupForm extends React.Component {
             zipcode: this.state.zipcode,
             birthdate: this.state.birthdate
         };
-        this.props.signup(user, this.props.history);
+        let newUser = {
+            email: this.state.email,
+            password: this.state.password
+        };
+        // this.props.signup(user, this.props.history);
+        this.props.signup(user);
+        this.props.login(newUser)
         // this.props.signup(user, this.props.history).then(this.props.closeModal);
     }
 
