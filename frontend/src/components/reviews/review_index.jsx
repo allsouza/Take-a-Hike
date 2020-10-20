@@ -30,6 +30,7 @@ class ReviewIndex extends React.Component {
                     </div>
                 )
             } else {
+                debugger
                 
                 return (
                     <div>
@@ -41,6 +42,9 @@ class ReviewIndex extends React.Component {
                                         if (typeof review !== 'undefined') {
                                         return <li key={review.id} >
                                             <ReviewIndexItem review={review} 
+                                            fetchAuthor={this.props.fetchAuthor}
+                                            currentUser={this.props.currentUser}
+                                            currentUserId={this.props.currentUserId}
                                             deleteReview={this.props.deleteReview} 
                                             fetchImage={this.props.fetchImage}
                                             editReview={this.props.editReview}

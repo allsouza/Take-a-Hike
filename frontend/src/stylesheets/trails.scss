@@ -19,14 +19,14 @@ $darkgreen: rgb(41,71,1);
     display: flex;
     p{
         color: black;
-        padding: 0 5px;
+        padding: 0px;
         font-family: 'Peddana', serif;
         // font-size: 16px;
     }
     h1{
         text-align: center;
         font-size: 32px;
-        padding: 20px;
+        padding: 21px 0px 35px 0px;
         font-family: 'Sansita Swashed', cursive;
         color: $brown;
     }
@@ -36,7 +36,6 @@ $darkgreen: rgb(41,71,1);
         padding: 20px;
         display: flex;
         flex-direction: column;
-        border-right: 1px solid rgb(245, 245, 245);
         text-align: center;
         h1{
             font-size: 30px;
@@ -44,10 +43,10 @@ $darkgreen: rgb(41,71,1);
         }
         .img-container{
             max-height: 300px;
-            margin: auto;
             img{
-                max-height: 300px;
                 border-radius: 5px;
+                width: 100%;
+                box-shadow: 5px 5px 9px 0px rgba(0,0,0,0.75);
             }
         }
         a {
