@@ -89,6 +89,15 @@ color: rgb(97, 68, 15);
     font-size: large;
 }
 
+.list-index ul li span{
+    font-style: italic;
+    font-size: 12px;
+}
+
+.list-index ul li i{
+    padding-right: 10px;
+}
+
 .lists{
     display: flex;
     justify-content: space-between;
