@@ -10,6 +10,7 @@ const ReviewsReducer = (state = {}, action) => {
             action.reviews.forEach( review => newState[review._id] = review)
             return newState;
         case RECEIVE_REVIEW:
+            debugger
             newState[action.review.data._id] = action.review.data
             return newState;
         case REMOVE_REVIEW:
@@ -19,7 +20,9 @@ const ReviewsReducer = (state = {}, action) => {
             
             return action.errors;
         case RECEIVE_AUTHOR:
-            return action.author;
+            debugger
+            newState[action.author.data._id] = action.author.data
+            return newState;
         default:
             return state;
     }

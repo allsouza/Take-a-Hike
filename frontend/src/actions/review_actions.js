@@ -53,6 +53,7 @@ export const fetchAuthor = review => dispatch => {
 };
 
 export const createReview = review => dispatch => {
+    debugger
     return ReviewApiUtil.createReview(review)
         .then(review => dispatch(receiveReview(review))
         ), err => (

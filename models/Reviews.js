@@ -1,14 +1,17 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-//
-//
+// 
+// authorName: type:Schema.Types.String
 
 
 const ReviewSchema = new Schema({
     author:{
         type:Schema.Types.ObjectId, 
         ref: 'users'
+    },
+    user:{
+        type:Object
     },
     trail:{
         type: Schema.Types.ObjectId, 
