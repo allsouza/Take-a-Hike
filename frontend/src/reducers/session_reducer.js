@@ -13,7 +13,6 @@ export default function (state = initialState, action) {
                 user: undefined
             };
         case RECEIVE_CURRENT_USER:
-            // 
             return {
                 isAuthenticated: true,
                 user: action.currentUser.data

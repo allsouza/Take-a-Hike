@@ -18,7 +18,7 @@ class DashBoard extends React.Component {
     }
 
     profile(){
-        if(this.props.user){
+        if(this.props.user !== ""){
             
            const { email, firstName, lastName, birthdate, zipcode } = this.props.user
            return (

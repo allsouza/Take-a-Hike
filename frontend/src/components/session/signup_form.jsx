@@ -32,8 +32,14 @@ class SignupForm extends React.Component {
     // }
 
     componentDidUpdate(){
+        let newUser = {
+            email: this.state.email,
+            password: this.state.password
+        };
+
         if (this.props.auth === true) {
-            this.props.closeModal()
+            this.props.closeModal();
+            this.props.login(newUser)
                 }
     }
     // componentWillUnmount(){
@@ -60,7 +66,9 @@ class SignupForm extends React.Component {
             zipcode: this.state.zipcode,
             birthdate: this.state.birthdate
         };
-        this.props.signup(user, this.props.history);
+        
+        // this.props.signup(user, this.props.history);
+        this.props.signup(user);
         // this.props.signup(user, this.props.history).then(this.props.closeModal);
     }
 

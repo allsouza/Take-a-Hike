@@ -34,13 +34,11 @@ class ReviewIndexItem extends React.Component {
     }
 
     findAuthor() {
-        
         this.props.fetchAuthor(this.props.review)
     }
 
     findReviewTime() {
         const d = new Date();
-        
         const monthNames = ["January", "February", "March", "April", "May", "June",
             "July", "August", "September", "October", "November", "December"
         ];
@@ -59,7 +57,6 @@ class ReviewIndexItem extends React.Component {
         const Div = document.createElement('div');
         Div.innerHTML = this.props.review.body;
         if (!this.props.image) {
-            
             return (
                 <div className="review-idx-item-wrapper">
                     <h2>{this.props.review.title}</h2>
