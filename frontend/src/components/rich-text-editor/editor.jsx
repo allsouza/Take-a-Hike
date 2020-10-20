@@ -44,11 +44,12 @@ export default class RichTextEditor extends React.Component{
     render(){
         return(
             <div className="rich-text-editor" >
-                <Toolbar/>
+                {this.props.readOnly ? null : <Toolbar />}
                 <form>
                     <input  type="text" className="title" 
                             value={this.state.title} 
                             placeholder="Title"
+                            readOnly={this.props.readOnly}
                             onChange={this.handleChange('title')} 
                         />
                     {this.props.editor === "review" ? 
@@ -60,7 +61,7 @@ export default class RichTextEditor extends React.Component{
                     <ReactQuill value={this.state.body}
                                 onChange={this.handleBodyChange}
                                 theme="snow"
-                                modules={modules}
+                                modules={this.props.readOnly ? Object.assign({}, modules, {toolbar:false}) : modules}
                                 formats={formats}
                                 matchVisual={false}
                                 bounds={'.rich-text-editor'}

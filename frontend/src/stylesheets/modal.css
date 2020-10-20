@@ -8,13 +8,18 @@
   z-index: 10;
 }
 
-
+.modal-list .quill{
+  height: 450px;
+  overflow: auto;
+}
 .modal-list {
   position: absolute;
   top: 50%;
   left: 50%;
+  width: 700px;
   transform: translate(-50%, -50%);
   background-color: rgb(245, 245, 245);
+  border-radius: 10px 40px;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
 } 

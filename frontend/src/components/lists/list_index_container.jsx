@@ -14,8 +14,7 @@ const mDTP = dispatch => {
     return {
         fetchLists: () => dispatch(fetchLists()),
         deleteList: listId => dispatch(deleteList(listId)),
-        editList: (data) => dispatch(openModal('list', data)),
-        openModal: (type, data) => dispatch(openModal(type, data)),
+        editList: (data, readOnly) => dispatch(openModal('list', {data: data, readOnly: readOnly})),
     }
 };
 

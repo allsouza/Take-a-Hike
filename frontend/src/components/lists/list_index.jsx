@@ -20,7 +20,7 @@ class ListIndex extends React.Component {
     // map in props from List index to list index item
 
     openList(list){
-        this.props.currentUser === list.author ? this.props.editList(list) : this.props.openModal('show-list', list);
+        this.props.currentUser === list.author ? this.props.editList(list, false) : this.props.editList(list, true);
     }
 
     render() {
