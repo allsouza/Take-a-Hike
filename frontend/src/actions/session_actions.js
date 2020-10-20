@@ -36,6 +36,7 @@ export const logoutUser = () => ({
 });
 
 export const signup = user => dispatch => {
+    debugger
     return APIUtil.signup(user).then((currentUser) => (
         dispatch(receiveUserSignIn(currentUser))
     ), err => (
@@ -51,9 +52,9 @@ export const login = user => dispatch => (
         const decoded = jwt_decode(token);
         dispatch(receiveCurrentUser(decoded))
     })
-        .catch(err => {
-         return dispatch(receiveErrors(err.response.data));
-        })
+        // .catch(err => {
+        //  return dispatch(receiveErrors(err.response.data));
+        // })
 )
 
 export const logout = () => dispatch => {

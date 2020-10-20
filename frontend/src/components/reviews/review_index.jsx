@@ -30,7 +30,7 @@ class ReviewIndex extends React.Component {
                     </div>
                 )
             } else {
-                debugger
+                
                 
                 return (
                     <div>

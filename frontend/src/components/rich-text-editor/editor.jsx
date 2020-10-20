@@ -37,7 +37,7 @@ export default class RichTextEditor extends React.Component{
     
 
     handleRating() {
-        debugger
+        
         return <div className="radio-wrapper">
             <h3>Rating: </h3>
                 <label htmlFor="1">

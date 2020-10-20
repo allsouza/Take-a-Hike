@@ -7,7 +7,7 @@ import { openModal } from '../../actions/modal_actions';
 
 const mSTP = state => { 
     // find author and map to props
-    debugger
+    
     return {
         reviews: Object.values(state.entities.reviews),
         image: state.entities.images,
