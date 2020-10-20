@@ -8,12 +8,12 @@ class ReviewForm extends React.Component {
 
     render() {
         return (
-            <div className="modal-list">
-                <h1>{this.props.formType}</h1>
+            <div className="modal-review">
+                <h1>{this.props.readOnly ? this.props.review.title : this.props.formType}</h1>
                 <EditorContainer 
                 review={this.props.review} 
                 save={this.props.action} 
-                editor={this.props.editor}/>
+                readOnly={this.props.readOnly}/>
             </div>
         )
     }

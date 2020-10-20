@@ -22,7 +22,7 @@ const mDTP = dispatch => {
         fetchReviews: (trail) => dispatch(fetchReviews(trail)),
         deleteReview: reviewId => dispatch(deleteReview(reviewId)),
         updateReview: reviewId => dispatch(updateReview(reviewId)),
-        editReview: (data) => dispatch(openModal('review', data)),
+        editReview: (data, readOnly) => dispatch(openModal('review', {data: data, readOnly: readOnly})),
         openModal: (type, data) => dispatch(openModal(type, data)),
         fetchImage: (reviewId) => dispatch(fetchImage(reviewId)),
         fetchAuthor: (review) => dispatch(fetchAuthor(review))
