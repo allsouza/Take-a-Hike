@@ -47,7 +47,7 @@ export const fetchReview = reviewId => dispatch => (
 );
 
 export const fetchAuthor = review => dispatch => {
-    debugger
+    
     return ReviewApiUtil.fetchAuthor(review.author)
         .then(author => dispatch(receiveAuthor(author)))
 };

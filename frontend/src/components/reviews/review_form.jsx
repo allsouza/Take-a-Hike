@@ -13,7 +13,7 @@ class ReviewForm extends React.Component {
                 <EditorContainer 
                 review={this.props.review} 
                 save={this.props.action} 
-                editor={this.props.editor}/>
+                readOnly={this.props.readOnly}/>
             </div>
         )
     }

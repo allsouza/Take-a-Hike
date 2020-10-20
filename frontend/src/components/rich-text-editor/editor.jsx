@@ -37,7 +37,7 @@ export default class RichTextEditor extends React.Component{
     
 
     handleRating() {
-        debugger
+        
         return <div className="radio-wrapper">
             <h3>Rating: </h3>
                 <label htmlFor="1">
@@ -63,7 +63,24 @@ export default class RichTextEditor extends React.Component{
         </div>
     }
 
+    renderRating() {
+        
+        if (this.state.rating == 1) {
+            return <div className="star-wrapper"> <i className="fas fa-star"></i></div>   
+        } else if (this.state.rating == 2) {
+            return <div className="star-wrapper"> <i className="fas fa-star"></i><i className="fas fa-star"></i></div>
+        } else if (this.state.rating == 3) {
+            return <div className="star-wrapper"> <i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i></div>
+        } else if (this.state.rating == 4) {
+            return <div className="star-wrapper"> <i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i></div>
+        } else if (this.state.rating == 5) {
+            return <div className="star-wrapper"> <i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i></div>
+        }
+          
+    }
+
     render(){
+        
         return(
             <div className="rich-text-editor" >
                 {this.props.readOnly ? null : <Toolbar />}
@@ -75,7 +92,7 @@ export default class RichTextEditor extends React.Component{
                             onChange={this.handleChange('title')} 
                         />
                     {this.props.editor === "review" ? 
-                        this.handleRating() : null}
+                        (this.props.readOnly ? this.renderRating() : this.handleRating()) : null}
                     <ReactQuill value={this.state.body}
                                 onChange={this.handleBodyChange}
                                 theme="snow"

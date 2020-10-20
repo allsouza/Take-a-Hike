@@ -18,7 +18,7 @@ const ReviewsReducer = (state = {}, action) => {
             delete newState[action.reviewId];
             return newState;
         case RECEIVE_ERRORS:
-            debugger
+            
             return action.errors;
         case RECEIVE_AUTHOR:
             return action.author;
