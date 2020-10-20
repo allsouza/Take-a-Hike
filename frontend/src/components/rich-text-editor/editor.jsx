@@ -85,12 +85,12 @@ export default class RichTextEditor extends React.Component{
             <div className="rich-text-editor" >
                 {this.props.readOnly ? null : <Toolbar />}
                 <form>
-                    <input  type="text" className="title" 
+                    {this.props.readOnly ? null : <input  type="text" className="title" 
                             value={this.state.title} 
                             placeholder="Title"
                             readOnly={this.props.readOnly}
                             onChange={this.handleChange('title')} 
-                        />
+                        />}
                     {this.props.editor === "review" ? 
                         (this.props.readOnly ? this.renderRating() : this.handleRating()) : null}
                     <ReactQuill value={this.state.body}
