@@ -89,12 +89,11 @@ input[type="file"] {
 
 .star-wrapper {
     display: flex;
-    padding: 6px 0px 0px 0px;
+    padding: 14px 0px 0px 0px;
 }
 
 .star-wrapper p {
-    padding: 0px 0px 0px 0px;
-    margin: 4px 9px 0px 0px;
+    margin: -5px 9px 0px 0px;
     font-size: 32px;
 }
 
