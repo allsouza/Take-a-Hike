@@ -7,13 +7,11 @@
     padding-bottom: 20px;
 }    
 
-.review-idx-item-wrapper h1 {
+.review-idx-item-wrapper > h2 {
     font-size: 18px;
     color: rgb(97, 68, 15);
     font-family: bukhari;
-    padding: 5px;
-    padding-top: 20px;
-    padding-bottom: 10px;
+    padding: 0px 0px 0px 0px;
 }    
 
 .review-idx-item-wrapper p {
@@ -87,4 +85,39 @@ input[type="file"] {
     padding-left: 10px;
     outline: none;
     border: none;
+}
+
+.star-wrapper {
+    display: flex;
+    padding: 6px 0px 0px 0px;
+}
+
+.star-wrapper p {
+    padding: 0px 0px 0px 0px;
+    margin: 4px 9px 0px 0px;
+    font-size: 39px;
+}
+
+.star-wrapper i {
+    color: rgba(48, 112, 5, 0.8);
+}
+
+.radio-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 14px 0px 14px 0px;
+}
+
+.radio-wrapper h3 {
+    font-size: 16px;
+    color: rgb(41,71,1);
+    padding: 0px 5px 0px 0px;
+    margin: -2px 3px 0px 0px;
+}
+
+.radio-wrapper input {
+    margin: 0px 0px 0px 0px;
+}
+.radio-wrapper label {
+    margin: 0px 7px 0px 3px;
 }

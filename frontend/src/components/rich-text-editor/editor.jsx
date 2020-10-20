@@ -32,16 +32,18 @@ export default class RichTextEditor extends React.Component{
     
 
     handleRating() {
-        return <div>
-            <input type="radio" name="" id="1" value="1" onChange={this.handleChange('rating')} checked={this.state.rating === "1"}/>
+        debugger
+        return <div className="radio-wrapper">
+            <h3>Rating: </h3>
+            <input type="radio" name="" id="1" value="1" onChange={this.handleChange('rating')} checked={this.state.rating == "1"}/>
                 <label htmlFor="1">1</label>
-            <input type="radio" name="" id="2" value="2" onChange={this.handleChange('rating')} checked={this.state.rating === "2"}/>
+            <input type="radio" name="" id="2" value="2" onChange={this.handleChange('rating')} checked={this.state.rating == "2"}/>
                 <label htmlFor="2">2</label>
-            <input type="radio" name="" id="3" value="3" onChange={this.handleChange('rating')} checked={this.state.rating === "3"}/>
+            <input type="radio" name="" id="3" value="3" onChange={this.handleChange('rating')} checked={this.state.rating == "3"}/>
                 <label htmlFor="3">3</label>
-            <input type="radio" name="" id="4" value="4" onChange={this.handleChange('rating')} checked={this.state.rating === "4"}/>
+            <input type="radio" name="" id="4" value="4" onChange={this.handleChange('rating')} checked={this.state.rating == "4"}/>
                 <label htmlFor="4">4</label>
-            <input type="radio" name="" id="5" value="5" onChange={this.handleChange('rating')} checked={this.state.rating === "5"}/>
+            <input type="radio" name="" id="5" value="5" onChange={this.handleChange('rating')} checked={this.state.rating == "5"}/>
                 <label htmlFor="5">5</label>
         </div>
     }
@@ -65,7 +67,7 @@ export default class RichTextEditor extends React.Component{
                                 formats={formats}
                                 matchVisual={false}
                                 bounds={'.rich-text-editor'}
-                                placeholder="Start writing your list"
+                                placeholder="Leave a review to help out other hikers"
                         />
                 </form>
                 <div className= "buttons">
