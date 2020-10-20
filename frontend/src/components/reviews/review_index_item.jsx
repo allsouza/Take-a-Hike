@@ -7,7 +7,7 @@ import '../../stylesheets/reviews.css'
 class ReviewIndexItem extends React.Component {
     constructor(props) {
         super(props)
-
+        this.renderRating = this.renderRating.bind(this);
     }
 
 
@@ -17,28 +17,65 @@ class ReviewIndexItem extends React.Component {
         //this.props.fetchReviews(this.props.trail);
     }
 
+    renderRating() {
+        debugger
+        if (this.props.review.rating == 1) {
+            return <div className="star-wrapper"> <p>Rating:</p><i className="fas fa-star"></i></div>   
+        } else if (this.props.review.rating == 2) {
+            return <div className="star-wrapper"> <p>Rating:</p> <i className="fas fa-star"></i><i className="fas fa-star"></i></div>
+        } else if (this.props.review.rating == 3) {
+            return <div className="star-wrapper"> <p>Rating:</p> <i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i></div>
+        } else if (this.props.review.rating == 4) {
+            return <div className="star-wrapper"> <p>Rating:</p> <i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i></div>
+        } else if (this.props.review.rating == 5) {
+            return <div className="star-wrapper"> <p>Rating:</p> <i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i></div>
+        }
+          
+    }
+
+    findAuthor() {
+        debugger
+        this.props.fetchAuthor(this.props.review)
+    }
+
+    findReviewTime() {
+        const d = new Date();
+        debugger
+        const monthNames = ["January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
+        ];
+        let day = d.getDay(this.props.review.date);
+        let month = monthNames[d.getMonth(this.props.review.date) - 1];
+        let year = d.getFullYear(this.props.review.date);
+        const authorName = this.findAuthor();
+
+        let date = "Created - " + month + " " + day + ", " + year
+        return (
+            <h5>{date}</h5>
+        )
+    }
+
     render() {
         const Div = document.createElement('div');
         Div.innerHTML = this.props.review.body;
         if (!this.props.image) {
+            debugger
             return (
                 <div className="review-idx-item-wrapper">
-                    <h1>{this.props.review.title}</h1>
-                    <p>Rating: {this.props.review.rating}</p>
+                    <h2>{this.props.review.title}</h2>
+                    <div className="rating-wrapper">{this.renderRating()}</div>
                     <p>{Div.innerText}</p>
                     <div className="review-icon-wrapper">
-                        <i className="fas fa-trash"
+                        {this.props.review.author === this.props.currentUserId ? <i className="fas fa-trash"
                             onClick={(e) => {
                                 e.stopPropagation();
                                 this.props.deleteReview(this.props.review._id)
-                            }}></i>
-
-                        <i className="fa fa-pencil"
+                            }}></i> : null }
+                        {this.props.review.author === this.props.currentUserId ? <i className="fa fa-pencil"
                             onClick={(e) => {
                                 e.stopPropagation();
                                 this.props.editReview(this.props.review)
-                            }}
-                        ></i>
+                            }}></i> : this.findReviewTime() }
                     </div>
 
                     {/* <ImageUpload
@@ -50,6 +87,7 @@ class ReviewIndexItem extends React.Component {
                 </div>
             )
         } else {
+            debugger
             return (
                 <div>
                     <h1>{this.props.review.title}</h1>

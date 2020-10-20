@@ -20,6 +20,14 @@ router.get('/current', passport.authenticate('jwt', {session: false}), (req, res
     });
   })
 
+router.get('/:id', (req, res)=> {
+    User.findById(req.params.id)
+        .then(user => res.json(user))
+        .catch(err => 
+            res.status(404).json({noUserFound: 'No User Found with that ID'})
+            );
+});
+
 router.post('/register', (req,res)=> {
     const { errors, isValid } = validateRegisterInput(req.body);
 

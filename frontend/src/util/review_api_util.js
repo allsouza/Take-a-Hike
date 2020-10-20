@@ -8,9 +8,10 @@ export const fetchReviews = (trail) => {
     return axios.get(`/api/reviews/trails/${trail._id}`)
 };
 
-//
-
-// fetchReview may be problematic...is it possible to take in a review object or does it need to be a reviewID
+export const fetchAuthor = (authorId) => {
+    debugger
+    return axios.get(`/api/users/${authorId}`)
+}
 
 export const fetchReview = (review) => {
     return axios.get(`/api/trails/${review.trailId}/reviews/${review._id}`)
