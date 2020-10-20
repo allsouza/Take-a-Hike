@@ -5,7 +5,7 @@ import TrailShow from "./trail_show";
 // import { fetchReviews } from '../../actions/review_actions';
 
 const mSTP = (state, ownProps) => {
-    debugger
+
     const trail = state.entities.trails ? state.entities.trails[ownProps.match.params.id] : null;
     return({
         trail: trail,

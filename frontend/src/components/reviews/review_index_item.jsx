@@ -37,24 +37,23 @@ class ReviewIndexItem extends React.Component {
         const Div = document.createElement('div');
         Div.innerHTML = this.props.review.body;
         if (!this.props.image) {
+            debugger
             return (
                 <div className="review-idx-item-wrapper">
                     <h2>{this.props.review.title}</h2>
                     <div className="rating-wrapper">{this.renderRating()}</div>
                     <p>{Div.innerText}</p>
                     <div className="review-icon-wrapper">
-                        <i className="fas fa-trash"
+                        {this.props.review.author === this.props.currentUserId ? <i className="fas fa-trash"
                             onClick={(e) => {
                                 e.stopPropagation();
                                 this.props.deleteReview(this.props.review._id)
-                            }}></i>
-
-                        <i className="fa fa-pencil"
+                            }}></i> : null }
+                        {this.props.review.author === this.props.currentUserId ? <i className="fa fa-pencil"
                             onClick={(e) => {
                                 e.stopPropagation();
                                 this.props.editReview(this.props.review)
-                            }}
-                        ></i>
+                            }}></i> : null }
                     </div>
 
                     {/* <ImageUpload
@@ -66,6 +65,7 @@ class ReviewIndexItem extends React.Component {
                 </div>
             )
         } else {
+            debugger
             return (
                 <div>
                     <h1>{this.props.review.title}</h1>

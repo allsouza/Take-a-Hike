@@ -9,7 +9,8 @@ const mSTP = state => {
     debugger
     return {
         reviews: Object.values(state.entities.reviews),
-        image: state.entities.images
+        image: state.entities.images,
+        currentUserId: state.session.user.id
     }
 };
 

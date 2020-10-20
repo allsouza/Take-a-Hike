@@ -13,7 +13,6 @@ export default class TrailShow extends React.Component{
     }
 
     findAverage() {
-        debugger
         const len = this.props.reviews.length
         let totalRating = 0;
         this.props.reviews.forEach(review => {
@@ -43,7 +42,8 @@ export default class TrailShow extends React.Component{
                             <span><h3>Ascent:</h3><p>{trail.ascent} Feet</p></span>
                             <span><h3>Descent:</h3><p>{trail.descent} Feet</p></span>
                             <span><h3>Highest point:</h3><p>{trail.high} Feet</p></span>
-                            <span><h3>Average Rating:</h3>{this.findAverage()}</span>
+                            {this.props.reviews.length == 0 ? null : <span><h3>Average Rating:</h3>{this.findAverage()}</span>}
+                            
                         </div>
                         <p className="summary">{trail.summary}</p>
                         <a href={trail.url}>More info</a>
