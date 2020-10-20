@@ -7,6 +7,7 @@ class ReviewIndex extends React.Component {
     constructor(props) {
         super(props)
         this.newReview = this.newReview.bind(this);
+        this.openReview = this.openReview.bind(this);
         // this.openModal = this.openModal.bind(this);
     }
 
@@ -20,8 +21,11 @@ class ReviewIndex extends React.Component {
         this.props.openModal('newReview', this.props.trail._id);
     }
 
+    openReview(review){
+        this.props.currentUser.id === review.author ? this.props.editReview(review, false) : this.props.editReview(review, true);
+    }
+
     render() {
-        
             if (this.props.reviews.length === 0) {
                 return (
                     <div>
@@ -30,32 +34,28 @@ class ReviewIndex extends React.Component {
                     </div>
                 )
             } else {
-                debugger
-                
                 return (
                     <div>
-                        <h1>Reviews for {this.props.trail.name}</h1>
-                            <ul>
-                                {
-                                    this.props.reviews.map(review => {
-                                        //
-                                        if (typeof review !== 'undefined') {
-                                        return <li key={review.id} >
-                                            <ReviewIndexItem review={review} 
-                                            fetchAuthor={this.props.fetchAuthor}
-                                            currentUser={this.props.currentUser}
-                                            currentUserId={this.props.currentUserId}
-                                            deleteReview={this.props.deleteReview} 
-                                            fetchImage={this.props.fetchImage}
-                                            editReview={this.props.editReview}
-                                            //photo={this.props.photoId}
-                                            />
-                                        </li>
-                                        }
-                                    })
-                                }
-                            </ul>
-                            <button onClick={this.newReview}>Create Review</button>
+                    <h1>Reviews for {this.props.trail.name}</h1>
+                    <button onClick={this.newReview}>Create Review</button>    
+                    <ul>
+                            {
+                            this.props.reviews.map(review => {
+                                return <li key={review._id} onClick={() => this.openReview(review)}>
+                                    <ReviewIndexItem review={review} 
+                                    fetchAuthor={this.props.fetchAuthor}
+                                    currentUser={this.props.currentUser}
+                                    currentUserId={this.props.currentUserId}
+                                    deleteReview={this.props.deleteReview} 
+                                    fetchImage={this.props.fetchImage}
+                                    editReview={this.props.editReview}
+                                    //photo={this.props.photoId}
+                                    />
+                                </li>
+                            })
+                            }
+                        </ul>
+                        
                     </div>
                 )
             }

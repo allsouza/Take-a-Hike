@@ -7,9 +7,7 @@ const ReviewsReducer = (state = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_ALL_REVIEWS:
-            
-            newState = Array.from(action.reviews)
-            //action.reviews.forEach( review => newState[review._id] = review)
+            action.reviews.forEach( review => newState[review._id] = review)
             return newState;
         case RECEIVE_REVIEW:
             newState[action.review.data._id] = action.review.data
@@ -18,7 +16,7 @@ const ReviewsReducer = (state = {}, action) => {
             delete newState[action.reviewId];
             return newState;
         case RECEIVE_ERRORS:
-            debugger
+            
             return action.errors;
         case RECEIVE_AUTHOR:
             return action.author;

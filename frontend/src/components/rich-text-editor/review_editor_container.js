@@ -8,7 +8,8 @@ const mSTP = (state, ownProps) => {
         data: ownProps.review,
         save: ownProps.save,
         editor: 'review',
-        currentUser: state.session.user
+        currentUser: state.session.user,
+        readOnly: ownProps.readOnly
     }
 }
 
