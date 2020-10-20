@@ -5,8 +5,9 @@ import ListForm from './list_form';
 
 const mSTP = (state, ownProps) => {
     return {
-        list: ownProps.info,
-        formType: 'Update List'
+        list: ownProps.info.data,
+        readOnly: ownProps.info.readOnly,
+        formType: ownProps.info.readOnly ? 'View List' : 'Update List'
     }
 };
 

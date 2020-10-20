@@ -6,7 +6,7 @@ class ListForm extends React.Component {
         return (
             <div className="modal-list">
                 <h1 >{this.props.formType}</h1>
-                <EditorContainer list={this.props.list} save={this.props.action}/>
+                <EditorContainer list={this.props.list} save={this.props.action} readOnly={this.props.readOnly}/>
             </div>
         )
     }

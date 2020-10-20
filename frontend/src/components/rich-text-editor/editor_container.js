@@ -7,7 +7,8 @@ const mSTP = (state, ownProps) => {
         data: ownProps.list,
         save: ownProps.save,
         editor: 'list',
-        currentUser: state.session.user
+        currentUser: state.session.user,
+        readOnly: ownProps.readOnly
 })}
 
 const mDTP = dispatch => ({
