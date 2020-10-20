@@ -40,7 +40,7 @@ class ReviewIndexItem extends React.Component {
             return (
                 <div className="review-idx-item-wrapper">
                     <h2>{this.props.review.title}</h2>
-                    <div className="rating-wrapper"><p>{this.renderRating()}</p></div>
+                    <div className="rating-wrapper">{this.renderRating()}</div>
                     <p>{Div.innerText}</p>
                     <div className="review-icon-wrapper">
                         <i className="fas fa-trash"
