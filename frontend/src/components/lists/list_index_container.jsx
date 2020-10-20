@@ -5,7 +5,8 @@ import { openModal } from '../../actions/modal_actions';
 
 const mSTP = state => {
     return {
-        lists: Object.values(state.entities.lists)
+        lists: Object.values(state.entities.lists),
+        currentUser: state.session.user.id
     }
 };
 
@@ -14,7 +15,7 @@ const mDTP = dispatch => {
         fetchLists: () => dispatch(fetchLists()),
         deleteList: listId => dispatch(deleteList(listId)),
         editList: (data) => dispatch(openModal('list', data)),
-        openModal: (type, data) => dispatch(openModal(type, data))
+        openModal: (type, data) => dispatch(openModal(type, data)),
     }
 };
 

@@ -65,6 +65,7 @@ export default class RichTextEditor extends React.Component{
                                 matchVisual={false}
                                 bounds={'.rich-text-editor'}
                                 placeholder="Start writing your list"
+                                readOnly = {this.props.readOnly}
                         />
                 </form>
                 <div className= "buttons">

@@ -6,6 +6,7 @@ class ListIndex extends React.Component {
     constructor(props) {
         super(props)
         this.newList = this.newList.bind(this);
+        this.openList = this.openList.bind(this);
     }
 
     componentDidMount() {
@@ -18,14 +19,23 @@ class ListIndex extends React.Component {
 
     // map in props from List index to list index item
 
+    openList(list){
+        this.props.currentUser === list.author ? this.props.editList(list) : this.props.openModal('show-list', list);
+    }
+
     render() {
         return (
             <div className="list-index">
                 
                 <ul>
                     {this.props.lists.map(list => {
-                        return <li key={list._id} onClick={() => {this.props.editList(list)}}>
-                            <ListIndexItem list={list} deleteList={this.props.deleteList} editList={this.props.editList}/>  </li>
+                        return <li key={list._id} onClick={() => this.openList(list)}>
+                            <ListIndexItem 
+                                list={list} 
+                                deleteList={this.props.deleteList} 
+                                editList={this.props.editList}
+                                userId = {this.props.currentUser}
+                                />  </li>
                     })} 
                 </ul>
                  <button onClick={this.newList}>Create List</button>
