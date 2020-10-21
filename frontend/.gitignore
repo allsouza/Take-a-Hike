@@ -26,3 +26,4 @@ src/config/keys_dev.js
 src/config/keys_prod.js
 /config/keys_dev.js
 /frontend/src/config/keys_dev.js
+/config/my_keys_dev.js
