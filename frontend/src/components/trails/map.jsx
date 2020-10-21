@@ -8,33 +8,36 @@ class Map extends React.Component{
     this.getTrails = this.getTrails.bind(this);
     this.state = {
       ready:false,
-      trails: this.props.trails
+      trails: this.props.trails,
+      coords: {lat:40.6602, lon:-73.9690}
     }
     
   }
 
-  componentDidMount(){
+  async componentDidMount(){
     
-    this.getTrails({lat:40.6602, lon:-73.9690});
+    const geoData = await fetch(`https://public.opendatasoft.com/api/records/1.0/search/?dataset=us-zip-code-latitude-and-longitude&q=${this.props.zipcode}&facet=state&facet=timezone&facet=dst`)
+    .then(res => res.json())
+    if(geoData.records.length > 0){
+      this.setState({coords: { lat: geoData.records[0].fields.latitude, lon: geoData.records[0].fields.longitude}})
+    }
+    this.getTrails(this.state.coords);
     this.setState({
       ready:true,
-   
     })
 
   }
 
+  componentDidUpdate(){
+    
+  }
+
   getTrails(centerCoords){
     this.props.fetchApiTrails(centerCoords);
-    clearTimeout();
-    setTimeout(() => {
-      this.props.fetchTrails()}, 2000);
-
   }
 
   render(){
-    
       if(this.state.ready){
-
         return(
   
           <div>
@@ -43,6 +46,7 @@ class Map extends React.Component{
               updateBounds={this.props.updateFilter}
               trails= {this.props.trails}
               openModal={this.props.openModal}
+              center={this.state.coords}
               // get filter setter from props
               />
          

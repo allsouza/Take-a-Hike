@@ -12,6 +12,7 @@ const {
 } = require("react-google-maps");
 const { SearchBox } = require("react-google-maps/lib/components/places/SearchBox");
 const { MarkerWithLabel} = require("react-google-maps/lib/components/addons/MarkerWithLabel");
+
 const MapWithASearchBox = compose(
   withProps({
     googleMapURL: `https://maps.googleapis.com/maps/api/js?key=${googleMapsApi}&v=3.exp&libraries=geometry,drawing,places`,
@@ -21,14 +22,13 @@ const MapWithASearchBox = compose(
   }),
   lifecycle({
     componentDidMount() {
-     
       const refs = {}
       this.setState({
         bounds: null,
         center: {
-          lat: 40.6602, lng: -73.9690
+          lat: this.props.center.lat, lng: this.props.center.lon
         },
-        markers: [{ascent:181, descent:-179, difficulty:'blue', high:163, image:"https://cdn2.apstatic.com/photos/hike/7052635_medium_1555696756.jpg", latitude:40.668, length: 4.8, location:"Brooklyn, New York", longitude:-73.9738, name:"Prospect Park Trail Loop", summary:"A great hike to explore the Prospect Park trails.", _id:"5f7f968ad2d8b82ca21aac3d"}],
+        markers: [], 
         trails: Object.values(this.props.trails),
         onMapMounted: ref => {
           refs.map = ref;
@@ -77,6 +77,12 @@ const MapWithASearchBox = compose(
         },
       })
     },
+    componentDidUpdate() {
+      const trails = Object.values(this.props.trails)
+      if(trails.length > 0 && this.state.trails.length === 0){
+        this.setState({trails})
+      }
+    }
   }),
   withScriptjs,
   withGoogleMap
@@ -111,24 +117,17 @@ const MapWithASearchBox = compose(
         }}
       />
     </SearchBox>
-        <Marker
-          position={{lat:props.markers[0].latitude, lng:props.markers[0].longitude}}
-          onClick={()=>{
-            props.openModal('trail-item', props.markers[0])
-          }}>
-        </Marker>
 
       {props.trails.map((mark, index)=>{
         return(
-
-      <Marker
-         key={index} 
-         position={{lat:mark.latitude, lng: mark.longitude}}
-         onClick={() => {
-           props.openModal('trail-item',mark)}}
-         labelAnchor={new google.maps.Point(0,0)}
-        >
-      </Marker>
+          <Marker
+            key={index} 
+            position={{lat:mark.latitude, lng: mark.longitude}}
+            onClick={() => {
+              props.openModal('trail-item',mark)}}
+            labelAnchor={new google.maps.Point(0,0)}
+            >
+          </Marker>
         )
       }
       )}
