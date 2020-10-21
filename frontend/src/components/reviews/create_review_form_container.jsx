@@ -4,7 +4,7 @@ import ReviewForm from './review_form';
 
 
 const mSTP = (state, ownProps) => {
-    
+  
     return {
         review: {
             body: '',

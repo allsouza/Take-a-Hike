@@ -13,14 +13,16 @@ export default function (state = initialState, action) {
                 user: undefined
             };
         case RECEIVE_CURRENT_USER:
-            return {
-                isAuthenticated: true,
-                user: action.currentUser.data
-            }
-        case RECEIVE_USER_SIGN_IN: 
+            
             return {
                 isAuthenticated: true,
                 user: action.currentUser
+            }
+        case RECEIVE_USER_SIGN_IN: 
+        
+            return {
+                isAuthenticated: true,
+                user: action.currentUser.data
             }
         case CLEAR_ERRORS:
                 return [];

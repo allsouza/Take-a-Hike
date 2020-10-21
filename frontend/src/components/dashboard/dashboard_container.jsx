@@ -6,7 +6,7 @@ import {grabUser} from '../../actions/session_actions'
 const mSTP = state => {
     
     const userData = state.session.user ? 
-     state.session.user.data ? state.session.user.data : state.session.user : ""
+    state.session.user.data ? state.session.user.data : state.session.user : ""
     return {
         user: userData
     }
