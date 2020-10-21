@@ -54,18 +54,7 @@ router.post('/register', (req,res)=> {
                     if (err) throw err;
                     newUser.password = hash;
                     newUser.save()
-                        .then(user => {
-                            // jwt.sign(
-                            //     user,
-                            //     keys.secretOrKey,
-                            //     {expiresIn: 3600},
-                            //     (err, token) => {
-                            //     res.json({
-                            //         success: true,
-                            //         token: 'Bearer ' + token
-                            //     });
-                            // });
-                            return res.json(user)})
+                        .then(user => res.json(user))
                         .catch(err=> console.log(err))
                 })
             })
