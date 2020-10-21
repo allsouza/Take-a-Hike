@@ -13,13 +13,15 @@ class DashBoard extends React.Component {
     }
 
     componentDidMount(){
+        // if (this.props.user !== "" && this.props.user.lastname === undefined) {
+        //     this.props.grabUser()
+        // }
         // this.props.grabUser()
         //need to grab user info, this.props.fetchUsers()
     }
 
     profile(){
-        if(this.props.user !== ""){
-            
+        if(this.props.user !== ""){    
            const { email, firstName, lastName, birthdate, zipcode } = this.props.user
            return (
                <div className="profile-wrapper"> 
