@@ -18,23 +18,23 @@ class Map extends React.Component{
     this.getTrails({lat:40.6602, lon:-73.9690});
     this.setState({
       ready:true,
-   
     })
 
   }
 
+  componentDidUpdate(){
+    
+    if (!this.state.ready && Object.keys(this.props.trails).length > 0){
+      this.setState({ready: true})
+    }
+  }
+
   getTrails(centerCoords){
     this.props.fetchApiTrails(centerCoords);
-    clearTimeout();
-    setTimeout(() => {
-      this.props.fetchTrails()}, 2000);
-
   }
 
   render(){
-    
       if(this.state.ready){
-
         return(
   
           <div>
