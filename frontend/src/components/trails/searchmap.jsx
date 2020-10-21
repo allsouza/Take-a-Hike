@@ -26,7 +26,7 @@ const MapWithASearchBox = compose(
       this.setState({
         bounds: null,
         center: {
-          lat: 40.6602, lng: -73.9690
+          lat: this.props.center.lat, lng: this.props.center.lon
         },
         markers: [], 
         trails: Object.values(this.props.trails),
