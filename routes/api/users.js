@@ -121,4 +121,25 @@ router.post('/login', (req, res) => {
       })
   })
 
+  router.patch('/:userId', passport.authenticate('jwt', {session:false}), (req,res)=>{
+        
+    User.findById(req.params.userId, function(err, user){
+        if(!user){
+            return res.status(400).json('We could not find that user');
+        }else if (user.id != req.user.id){
+            return res.status(400).json('Wrong User');
+        }else{
+            User.findOneAndUpdate({ _id: req.params.userId}, req.body, function(err, user){
+                if(err){
+                    return res.status(400).json(err);
+                }else{
+                    updatedUser = req.body;
+                    res.send(updatedUser);
+                }
+
+            });
+        }
+    });
+});
+
 module.exports = router;
