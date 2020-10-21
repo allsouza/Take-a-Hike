@@ -9,7 +9,7 @@ const mSTP = (state, ownProps) => {
         review: {
             body: '',
             title: '',
-            rating: 0,
+            rating: '1',
             user: state.session.user,
             trail: ownProps.info,
             author: state.session.user.id

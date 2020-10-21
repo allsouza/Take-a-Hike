@@ -12,6 +12,8 @@ class ReviewIndexItem extends React.Component {
 
 
     componentDidMount() {
+        //debugger
+        //this.props.fetchAuthor(this.props.review)
         //
         //this.props.fetchImage(this.props.review._id)
         //this.props.fetchReviews(this.props.trail);
