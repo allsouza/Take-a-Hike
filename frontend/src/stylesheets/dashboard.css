@@ -1,5 +1,6 @@
 .dashboard-container {
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5vw;
     /* display: flex;
     justify-content: space-between;
     align-items: center;
@@ -129,4 +130,13 @@ color: rgb(97, 68, 15);
 
 .list-index li:hover{
     background-color: rgb(236, 236, 236);
+}
+
+.dashboard-header {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: large;
+    margin: 2%;
+    color: rgba(48, 112, 5, 0.8);
 }

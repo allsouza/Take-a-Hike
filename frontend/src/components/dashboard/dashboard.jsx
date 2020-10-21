@@ -44,6 +44,7 @@ class DashBoard extends React.Component {
        
         return(
             <>
+            <h1 className='dashboard-header'>Dashboard</h1>
             <div className='dashboard-container'>
                 <div className='dashboard'>
                    <div className='index' >
