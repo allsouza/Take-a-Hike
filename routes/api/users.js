@@ -20,6 +20,14 @@ router.get('/current', passport.authenticate('jwt', {session: false}), (req, res
     });
   })
 
+router.get('/', (req,res)=>{
+    User.find()
+        .sort({id:-1})
+        .then(users => res.json(users))
+        .catch(err => res.status(404).json({notrailsfound: 'No Users found!'}));
+});
+
+
 router.get('/:id', (req, res)=> {
     User.findById(req.params.id)
         .then(user => res.json(user))
