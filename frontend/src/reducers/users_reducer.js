@@ -9,9 +9,10 @@ const UsersReducer = (state = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_ALL_USERS:
+
             return action.users;
         case RECEIVE_USER:
-            debugger
+ 
             newState[action.user.data._id] = action.user.data;
             return newState;
         default:

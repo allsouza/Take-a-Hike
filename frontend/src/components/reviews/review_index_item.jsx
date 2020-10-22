@@ -7,23 +7,27 @@ import '../../stylesheets/reviews.css'
 class ReviewIndexItem extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {user: this.props.currentUser, followed: true}
-                    
+        this.state = { user: this.props.currentUser, followed: true }
+
         this.renderRating = this.renderRating.bind(this);
     }
 
 
     componentDidMount() {
-        //this.props.fetchAuthor(this.props.review)
+        this.findAuthor();
         //
         //this.props.fetchImage(this.props.review._id)
         //this.props.fetchReviews(this.props.trail);
     }
 
+    componentDidUpdate() {
+        this.findAuthor();
+    }
+
     renderRating() {
-        
+
         if (this.props.review.rating == 1) {
-            return <div className="star-wrapper"> <p>Rating:</p><i className="fas fa-star"></i></div>   
+            return <div className="star-wrapper"> <p>Rating:</p><i className="fas fa-star"></i></div>
         } else if (this.props.review.rating == 2) {
             return <div className="star-wrapper"> <p>Rating:</p> <i className="fas fa-star"></i><i className="fas fa-star"></i></div>
         } else if (this.props.review.rating == 3) {
@@ -33,18 +37,28 @@ class ReviewIndexItem extends React.Component {
         } else if (this.props.review.rating == 5) {
             return <div className="star-wrapper"> <p>Rating:</p> <i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i></div>
         }
-          
+
     }
 
     findAuthor() {
-        this.props.fetchAuthor(this.props.review)
+
+        if (Object.keys(this.props.allUsers).length === 0 && this.props.allUsers.constructor === Object) {
+            return null;
+        } else {
+            const variable = this.props.allUsers[this.props.review.author];
+            debugger
+            this.setState({
+                name: variable.firstName + ' ' + variable.lastName
+    
+            })
+        }
+
     }
 
     followerUser() {
         this.state.user.following.push(this.props.review.author);
-        debugger
         this.props.updateUser(this.state.user);
-        this.setState({followed: false})
+        this.setState({ followed: false })
     }
 
     findReviewTime() {
@@ -59,8 +73,9 @@ class ReviewIndexItem extends React.Component {
 
         let date = "Created - " + month + " " + day + ", " + year
         return (
-            <div className ="user-info-follow-wrapper">
+            <div className="user-info-follow-wrapper">
                 <h5>{date}</h5>
+                <h5>{this.state.name}</h5>
             </div>
         )
     }
@@ -69,7 +84,7 @@ class ReviewIndexItem extends React.Component {
         const Div = document.createElement('div');
         Div.innerHTML = this.props.review.body;
         if (!this.props.image) {
-            debugger
+
             return (
                 <div className="review-idx-item-wrapper">
                     <h2>{this.props.review.title}</h2>
@@ -80,19 +95,20 @@ class ReviewIndexItem extends React.Component {
                             onClick={(e) => {
                                 e.stopPropagation();
                                 this.props.deleteReview(this.props.review._id)
-                            }}></i> : null }
+                            }}></i> : null}
                         {this.props.review.author === this.props.currentUserId ? <i className="fa fa-pencil"
                             onClick={(e) => {
                                 e.stopPropagation();
                                 this.props.editReview(this.props.review)
-                            }}></i> : this.findReviewTime() }
-                        {this.props.currentUser.following.includes(this.props.review.author) || this.props.review.author === this.props.currentUserId ? null : <i class="fas fa-user-plus"
+                            }}></i> : this.findReviewTime()}
+                        {this.props.currentUser.following.includes(this.props.review.author) || this.props.review.author === this.props.currentUserId ? null : <i className="fas fa-user-plus"
                             onClick={(e) => {
                                 e.stopPropagation();
-                                this.followerUser()}}
+                                this.followerUser()
+                            }}
                         ></i>}
                     </div>
-                 
+
 
                     {/* <ImageUpload
                         updateReview={() => this.props.updateReview}
@@ -103,7 +119,7 @@ class ReviewIndexItem extends React.Component {
                 </div>
             )
         } else {
-            
+
             return (
                 <div>
                     <h1>{this.props.review.title}</h1>
@@ -122,7 +138,7 @@ class ReviewIndexItem extends React.Component {
                             this.props.editReview(this.props.review)
                         }}
                     ></i>
-                    <img src={this.props.image.Location} alt=""/>
+                    <img src={this.props.image.Location} alt="" />
                 </div>
             )
         }
