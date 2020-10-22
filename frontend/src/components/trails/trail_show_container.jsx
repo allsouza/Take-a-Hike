@@ -8,7 +8,7 @@ import TrailShow from "./trail_show";
 const mSTP = (state, ownProps) => {
 
     const trail = state.entities.trails ? state.entities.trails[ownProps.match.params.id] : null;
-    const user = state.entities.users ? state.entities.users[state.session.user.id] : {};
+    const user = Object.values(state.entities.users).length > 0 ? state.entities.users[state.session.user.id] : {};
     
     return ({
         trail: trail,
