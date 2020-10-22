@@ -10,7 +10,8 @@ const UsersReducer = (state = {}, action) => {
             action.users.forEach(user => {newState[user.id] = user})
             return newState;
         case RECEIVE_USER:
-            newState[action.user.data._id] = action.user.data;
+            
+            newState[action.user.data.id] = action.user.data;
             return newState;
         default:
             return state;
