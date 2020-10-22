@@ -9,7 +9,6 @@ export const fetchReviews = (trail) => {
 };
 
 export const fetchAuthor = (authorId) => {
-    
     return axios.get(`/api/users/${authorId}`)
 }
 
