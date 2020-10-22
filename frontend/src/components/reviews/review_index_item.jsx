@@ -7,6 +7,8 @@ import '../../stylesheets/reviews.css'
 class ReviewIndexItem extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {user: this.props.currentUser, followed: true}
+                    
         this.renderRating = this.renderRating.bind(this);
     }
 
@@ -38,6 +40,13 @@ class ReviewIndexItem extends React.Component {
         this.props.fetchAuthor(this.props.review)
     }
 
+    followerUser() {
+        this.state.user.following.push(this.props.review.author);
+        debugger
+        this.props.updateUser(this.state.user);
+        this.setState({followed: false})
+    }
+
     findReviewTime() {
         const d = new Date();
         const monthNames = ["January", "February", "March", "April", "May", "June",
@@ -50,7 +59,9 @@ class ReviewIndexItem extends React.Component {
 
         let date = "Created - " + month + " " + day + ", " + year
         return (
-            <h5>{date}</h5>
+            <div className ="user-info-follow-wrapper">
+                <h5>{date}</h5>
+            </div>
         )
     }
 
@@ -58,6 +69,7 @@ class ReviewIndexItem extends React.Component {
         const Div = document.createElement('div');
         Div.innerHTML = this.props.review.body;
         if (!this.props.image) {
+            debugger
             return (
                 <div className="review-idx-item-wrapper">
                     <h2>{this.props.review.title}</h2>
@@ -74,7 +86,13 @@ class ReviewIndexItem extends React.Component {
                                 e.stopPropagation();
                                 this.props.editReview(this.props.review)
                             }}></i> : this.findReviewTime() }
+                        {this.props.currentUser.following.includes(this.props.review.author) || this.props.review.author === this.props.currentUserId ? null : <i class="fas fa-user-plus"
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                this.followerUser()}}
+                        ></i>}
                     </div>
+                 
 
                     {/* <ImageUpload
                         updateReview={() => this.props.updateReview}

@@ -35,12 +35,10 @@ const UserSchema = new Schema({
     //     ref: 'lists'
     // },
     followers: {
-        type: Schema.Types.ObjectId,
-        ref: 'users'
+        type: Array,
     },
     following: {
-        type: Schema.Types.ObjectId,
-        ref: 'users'
+        type: Array,
     }
     },{ 
     timestamps: true
