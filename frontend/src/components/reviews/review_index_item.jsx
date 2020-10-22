@@ -47,10 +47,8 @@ class ReviewIndexItem extends React.Component {
         } else {
             const variable = this.props.allUsers[this.props.review.author];
             debugger
-            this.setState({
-                name: variable.firstName + ' ' + variable.lastName
-    
-            })
+            const name = variable.firstName + ' ' + variable.lastName;
+            return name;
         }
 
     }
@@ -70,13 +68,12 @@ class ReviewIndexItem extends React.Component {
         let day = d.getDay(this.props.review.date);
         let month = monthNames[d.getMonth(this.props.review.date) - 1];
         let year = d.getFullYear(this.props.review.date);
-        // const authorName = this.findAuthor();
+        const authorName = this.findAuthor();
 
         let date = "Created - " + month + " " + day + ", " + year
         return (
             <div className="user-info-follow-wrapper">
-                <h5>{date}</h5>
-                <h5>{this.state.name}</h5>
+                <h5>{date + ' by ' + authorName}</h5>
             </div>
         )
     }
