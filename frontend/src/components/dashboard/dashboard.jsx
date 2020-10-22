@@ -13,6 +13,9 @@ class DashBoard extends React.Component {
     }
 
     componentDidMount(){
+        // if (this.props.user !== "" && this.props.user.lastname === undefined) {
+        //     this.props.grabUser()
+        // }
         // this.props.grabUser()
         //need to grab user info, this.props.fetchUsers()
         
@@ -20,8 +23,7 @@ class DashBoard extends React.Component {
     }
 
     profile(){
-        if(this.props.user !== ""){
-            
+        if(this.props.user !== ""){    
            const { email, firstName, lastName, birthdate, zipcode } = this.props.user
            return (
                <div className="profile-wrapper"> 
@@ -44,6 +46,7 @@ class DashBoard extends React.Component {
        
         return(
             <>
+            <h1 className='dashboard-header'>Dashboard</h1>
             <div className='dashboard-container'>
                 <div className='dashboard'>
                    <div className='index' >

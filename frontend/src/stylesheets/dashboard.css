@@ -1,5 +1,6 @@
 .dashboard-container {
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5vw;
     /* display: flex;
     justify-content: space-between;
     align-items: center;
@@ -41,7 +42,12 @@ margin: 0;
 /* .index2>button{
     width: 50%;
 } */
-
+i {
+    color: rgb(97, 68, 15);
+}
+i:hover{
+    color: green;
+}
 /* .index2>header{
     color: rgb(97, 68, 15);
 } */
@@ -57,9 +63,9 @@ margin: 0;
 
 /* .profile-wrapper is coming from dashboard.jsx and has a bunch of extra padding because of the way it is nested, tried to refactor but it looked awful */
 
-.profile-wrapper {
+/* .profile-wrapper {
 
-}
+} */
 
 .feed {
     height: 275px;
@@ -96,6 +102,7 @@ color: rgb(97, 68, 15);
 
 .list-index ul li i{
     padding-right: 10px;
+    /* color: red; */
 }
 
 .lists{
@@ -130,3 +137,13 @@ color: rgb(97, 68, 15);
 .list-index li:hover{
     background-color: rgb(236, 236, 236);
 }
+
+.dashboard-header {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: large;
+    margin: 2%;
+    color: rgba(48, 112, 5, 0.8);
+}
+
