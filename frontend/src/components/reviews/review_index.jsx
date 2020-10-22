@@ -8,11 +8,13 @@ class ReviewIndex extends React.Component {
         super(props)
         this.newReview = this.newReview.bind(this);
         this.openReview = this.openReview.bind(this);
+        this.updateUser = this.props.updateUser.bind(this);
         // this.openModal = this.openModal.bind(this);
     }
 
     componentDidMount() {
-        this.props.fetchReviews(this.props.trail)
+        this.props.fetchReviews(this.props.trail);
+        this.props.fetchAllUsers();
     }
 
     // map in props from Review index to list index item
@@ -45,6 +47,8 @@ class ReviewIndex extends React.Component {
                             this.props.reviews.map(review => {
                                 return <li key={review._id} onClick={() => this.openReview(review)}>
                                     <ReviewIndexItem review={review} 
+                                    allUsers={this.props.allUsers}
+                                    updateUser={this.updateUser}
                                     fetchAuthor={this.props.fetchAuthor}
                                     currentUser={this.props.currentUser}
                                     currentUserId={this.props.currentUserId}

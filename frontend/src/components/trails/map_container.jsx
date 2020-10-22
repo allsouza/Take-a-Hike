@@ -6,9 +6,10 @@ import { openModal } from '../../actions/modal_actions';
 import Map from './map';
 
 const mapStateToProps = (state) => {
-    return {
-        trails: state.entities.trails
-    };
+    return ({
+        trails: state.entities.trails,
+        zipcode: state.session.user.zipcode
+    });
 };
 
 const mapDispatchToProps = (dispatch) => {

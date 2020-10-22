@@ -6,10 +6,20 @@ import Reviews from '../reviews/review_index_container';
 export default class TrailShow extends React.Component{
     constructor(props){
         super(props)
+        this.state = { user:{id: ""}, ready: false};
+        this.saveTrail = this.saveTrail.bind(this);
+        this.removeTrail = this.removeTrail.bind(this);
     }
 
     componentDidMount(){
         this.props.fetchTrail(this.props.match.params.id)
+        this.props.fetchUsers();
+    }
+
+    componentDidUpdate(){
+        if(Object.keys(this.props.user).length > 0 && this.props.user.id !== this.state.user.id){
+            this.setState({user: Object.assign({}, this.props.user), ready: true})
+        }
     }
 
     findAverage() {
@@ -25,9 +35,20 @@ export default class TrailShow extends React.Component{
         )
     }
 
+    saveTrail(){
+        this.state.user.savedTrails.push(this.props.trail._id)
+        this.props.updateUser(this.state.user);
+    }
+
+    removeTrail(){
+        this.state.user.savedTrails = this.state.user.savedTrails.filter(trail => trail !== this.props.trail._id)
+        this.props.updateUser(this.state.user);
+    }
+
     render(){
-        if(this.props.trail !== undefined){
+        if(this.state.ready){
             const {trail} = this.props;
+            const saved = this.state.user.savedTrails.includes(trail._id)
             return(
                 <>
                 <div className="trail-show">
@@ -35,7 +56,6 @@ export default class TrailShow extends React.Component{
                     <h1>{trail.name}</h1>
                     <div className="trail-info">
                         {trail.image !== "" ?<div className="img-container"><img src={trail.image}/></div>  : null}
-                        {/* Maybe also include a still map with the droped pin at the trail head */}
                         <div className="stats">
                                 <span><h3>Difficulty:</h3><p>{trail.difficulty.charAt(0).toUpperCase() + trail.difficulty.slice(1)}</p></span>
                                 <span><h3>Length:</h3><p>{trail.length} Miles</p></span>
@@ -46,16 +66,16 @@ export default class TrailShow extends React.Component{
                             
                         </div>
                         <p className="summary">{trail.summary}</p>
-                        <a href={trail.url}>More info</a>
+                        <a href={trail.url} target="_blank">More info</a>
                         <div className="buttons">
-                            <button>Save to favorites</button>
+                            {!saved ? <button onClick={this.saveTrail}>Save to favorites</button> :
+                            <button onClick={this.removeTrail}>Remove from favorites</button> }
                         </div>
                     </div>
 
                     </div>
                     <div className="trail-reviews">
                         <Reviews trail={trail}/>
-                        {/* Review index for the trail */}
                     </div>
                 </div>
                     <Footer />

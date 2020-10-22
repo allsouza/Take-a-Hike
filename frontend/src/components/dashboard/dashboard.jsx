@@ -18,6 +18,8 @@ class DashBoard extends React.Component {
         // }
         // this.props.grabUser()
         //need to grab user info, this.props.fetchUsers()
+        
+        this.props.fetchAllUsers();
     }
 
     profile(){

@@ -16,13 +16,44 @@ router.get('/current', passport.authenticate('jwt', {session: false}), (req, res
         firstName: req.user.firstName,
         lastName: req.user.lastName, 
         zipcode: req.user.zipcode,
-        birthdate: req.user.birthdate
+        birthdate: req.user.birthdate,
+        following: req.user.following
     });
   })
 
+router.get('/', (req,res)=>{
+    User.find()
+        .sort({id:-1})
+        .then(users => {
+            const payload = users.map(user => {
+                return {
+                    id: user.id, 
+                    email: user.email, 
+                    firstName: user.firstName, 
+                    lastName: user.lastName, 
+                    savedTrails: user.savedTrails, 
+                    following: user.following, 
+                    follower: user.follower, 
+                    zipcode:user.zipcode}
+            })
+            res.json(payload)})
+        .catch(err => res.status(404).json({notrailsfound: 'No Users found!'}));
+});
+
+
 router.get('/:id', (req, res)=> {
     User.findById(req.params.id)
-        .then(user => res.json(user))
+        .then(user => {
+            const payload = {
+                id: user.id, 
+                email: user.email, 
+                firstName: user.firstName, 
+                lastName: user.lastName, 
+                savedTrails: user.savedTrails, 
+                following: user.following, 
+                follower: user.follower, 
+                zipcode:user.zipcode}
+            res.json(payload)})
         .catch(err => 
             res.status(404).json({noUserFound: 'No User Found with that ID'})
             );
@@ -54,18 +85,7 @@ router.post('/register', (req,res)=> {
                     if (err) throw err;
                     newUser.password = hash;
                     newUser.save()
-                        .then(user => {
-                            // jwt.sign(
-                            //     user,
-                            //     keys.secretOrKey,
-                            //     {expiresIn: 3600},
-                            //     (err, token) => {
-                            //     res.json({
-                            //         success: true,
-                            //         token: 'Bearer ' + token
-                            //     });
-                            // });
-                            return res.json(user)})
+                        .then(user => res.json(user))
                         .catch(err=> console.log(err))
                 })
             })
@@ -94,13 +114,7 @@ router.post('/login', (req, res) => {
         bcrypt.compare(password, user.password)
             .then(isMatch => {
                 if (isMatch) {
-                const payload = {
-                    id: user.id,
-                    email: user.email,
-                    firstName: user.firstName,
-                    lastName: user.lastName,
-                    birthdate: user.birthdate,
-                    zipcode: user.zipcode};
+                const payload = {id: user.id, email: user.email, firstName: user.firstName, savedTrails: user.savedTrails, lastName: user.lastName, following: user.following, follower: user.follower, zipcode:user.zipcode};
 
                 jwt.sign(
                     payload,
@@ -118,5 +132,26 @@ router.post('/login', (req, res) => {
             })
       })
   })
+
+  router.patch('/:userId', passport.authenticate('jwt', {session:false}), (req,res)=>{
+        
+    User.findById(req.params.userId, function(err, user){
+        if(!user){
+            return res.status(400).json('We could not find that user');
+        }else if (user.id != req.user.id){
+            return res.status(400).json('Wrong User');
+        }else{
+            User.findOneAndUpdate({ _id: req.params.userId}, req.body, function(err, user){
+                if(err){
+                    return res.status(400).json(err);
+                }else{
+                    updatedUser = req.body;
+                    res.send(updatedUser);
+                }
+
+            });
+        }
+    });
+});
 
 module.exports = router;

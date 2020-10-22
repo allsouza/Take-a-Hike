@@ -27,20 +27,17 @@ const UserSchema = new Schema({
         required: true
     },
     savedTrails: {
-        type: Schema.Types.ObjectId,
-        ref: 'trails'
+        type: Array
     },
     // lists: {
     //     type: Schema,
     //     ref: 'lists'
     // },
     followers: {
-        type: Schema.Types.ObjectId,
-        ref: 'users'
+        type: Array,
     },
     following: {
-        type: Schema.Types.ObjectId,
-        ref: 'users'
+        type: Array,
     }
     },{ 
     timestamps: true
