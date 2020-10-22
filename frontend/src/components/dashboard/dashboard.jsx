@@ -5,6 +5,7 @@ import '../../stylesheets/dashboard.css';
 import ListIndex from '../lists/list_index_container';
 import path from '../../images/path.jpg'
 import {formatDate} from '../../util/date_utils';
+import Follower from './dashboard_following_item';
 import Footer from '../footer/footer';
 class DashBoard extends React.Component {
 
@@ -24,6 +25,7 @@ class DashBoard extends React.Component {
             
            const { email, firstName, lastName, birthdate, zipcode } = this.props.user
            return (
+               <div>
                <div className="profile-wrapper"> 
                         <div className='profile' >
                         <img src={path} alt="profile-pic" className='profile-pic'/>
@@ -36,6 +38,19 @@ class DashBoard extends React.Component {
                             <p>{zipcode}</p>
                         </div> 
                 </div>
+
+                <div className= 'profile-wrapper'>
+                    <ul>
+                        {this.props.user.following.map(follower => 
+                            <Follower 
+                                follower={follower}
+                                allUsers = {this.props.allUsers}
+                            />
+                        )
+                        }
+                    </ul>
+                </div>
+               </div>
            )
         }
     }
