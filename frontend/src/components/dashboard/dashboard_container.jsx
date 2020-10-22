@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import DashBoard from './dashboard'
 import { fetchAllUsers, updateUser, fetchUser } from '../../actions/user_actions';
+import { fetchTrails } from '../../actions/trails_actions';
 // import { grabUser } from '../actions/session_actions'
 
 const mSTP = state => {
@@ -16,7 +17,8 @@ const mSTP = state => {
 const mDTP = dispatch => ({
     fetchAllUsers: () => dispatch(fetchAllUsers()),
     fetchUser: () => dispatch(fetchUser()),
-    updateUser: () => dispatch(updateUser()) 
+    updateUser: () => dispatch(updateUser()),
+    fetchTrails: () => dispatch(fetchTrails)
 })
 
 export default connect(mSTP, mDTP)(DashBoard)
