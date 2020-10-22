@@ -1,12 +1,11 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
 import '../../stylesheets/reset.css'
 import '../../stylesheets/dashboard.css';
 import ListIndex from '../lists/list_index_container';
-import path from '../../images/path.jpg'
-import {formatDate} from '../../util/date_utils';
+import FollowerIndex from './follower_index';
 import Footer from '../footer/footer';
 import SavedTrails from './saved_trails/saved_trails_index_container';
+import Profile from './profile';
 
 class DashBoard extends React.Component {
 
@@ -14,33 +13,13 @@ class DashBoard extends React.Component {
         super(props)
     }
 
-    componentDidMount(){        
+    componentDidMount(){
         this.props.fetchAllUsers();
         this.props.fetchTrails();
     }
 
-    profile(){
-        if(this.props.user !== ""){    
-           const { email, firstName, lastName, birthdate, zipcode } = this.props.user
-           return (
-               <div className="profile-wrapper"> 
-                        <div className='profile' >
-                        <img src={path} alt="profile-pic" className='profile-pic'/>
-                            <p>{`${firstName} ${lastName}`}</p>
-                            <br/>
-                            <p>{email}</p>
-                            <br/>
-                            <p>{formatDate(birthdate)}</p>
-                            <br/>
-                            <p>{zipcode}</p>
-                        </div> 
-                </div>
-           )
-        }
-    }
 
-    render() {  
-       
+    render() {        
         return(
             <>
             <h1 className='dashboard-header'>Dashboard</h1>
@@ -53,7 +32,15 @@ class DashBoard extends React.Component {
                         <SavedTrails />
                         <button onClick={() => this.props.history.push('/map')}>Find More Trails</button>
                     </div>
-                    {this.profile()}
+                    <div>
+
+                    <Profile 
+                        user={this.props.user}/>
+                    <FollowerIndex
+                        user= {this.props.user}
+                        allUsers ={this.props.allUsers}
+                        />
+                    </div>
                 </div>
             </div>
                 <Footer />

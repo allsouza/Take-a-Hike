@@ -34,7 +34,8 @@ router.get('/', (req,res)=>{
                     savedTrails: user.savedTrails, 
                     following: user.following, 
                     follower: user.follower, 
-                    zipcode:user.zipcode}
+                    zipcode:user.zipcode,
+                    birthdate: user.birthdate}
             })
             res.json(payload)})
         .catch(err => res.status(404).json({notrailsfound: 'No Users found!'}));
@@ -52,7 +53,8 @@ router.get('/:id', (req, res)=> {
                 savedTrails: user.savedTrails, 
                 following: user.following, 
                 follower: user.follower, 
-                zipcode:user.zipcode}
+                zipcode:user.zipcode,
+                birthdate: user.birthdate}
             res.json(payload)})
         .catch(err => 
             res.status(404).json({noUserFound: 'No User Found with that ID'})
@@ -114,7 +116,7 @@ router.post('/login', (req, res) => {
         bcrypt.compare(password, user.password)
             .then(isMatch => {
                 if (isMatch) {
-                const payload = {id: user.id, email: user.email, firstName: user.firstName, savedTrails: user.savedTrails, lastName: user.lastName, following: user.following, follower: user.follower, zipcode:user.zipcode};
+                const payload = {id: user.id, email: user.email, firstName: user.firstName, savedTrails: user.savedTrails, lastName: user.lastName, following: user.following, follower: user.follower, zipcode:user.zipcode, birthdate: user.birthdate};
 
                 jwt.sign(
                     payload,
