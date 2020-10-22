@@ -63,9 +63,9 @@ i:hover{
 
 /* .profile-wrapper is coming from dashboard.jsx and has a bunch of extra padding because of the way it is nested, tried to refactor but it looked awful */
 
-.profile-wrapper {
+/* .profile-wrapper {
 
-}
+} */
 
 .feed {
     height: 275px;
