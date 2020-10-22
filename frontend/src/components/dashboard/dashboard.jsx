@@ -6,19 +6,15 @@ import ListIndex from '../lists/list_index_container';
 import path from '../../images/path.jpg'
 import {formatDate} from '../../util/date_utils';
 import Footer from '../footer/footer';
+import SavedTrails from './saved_trails/saved_trails_index_container';
+
 class DashBoard extends React.Component {
 
     constructor(props) {
         super(props)
     }
 
-    componentDidMount(){
-        // if (this.props.user !== "" && this.props.user.lastname === undefined) {
-        //     this.props.grabUser()
-        // }
-        // this.props.grabUser()
-        //need to grab user info, this.props.fetchUsers()
-        
+    componentDidMount(){        
         this.props.fetchAllUsers();
         this.props.fetchTrails();
     }
@@ -54,11 +50,7 @@ class DashBoard extends React.Component {
                         <ListIndex />
                    </div>
                     <div className='index2'>    
-                        <ul> 
-                            
-                            <li>You don't have any trails, find some!</li>
-                            
-                        </ul>
+                        <SavedTrails />
                         <button onClick={() => this.props.history.push('/map')}>Find More Trails</button>
                     </div>
                     {this.profile()}
