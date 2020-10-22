@@ -46,7 +46,6 @@ class ReviewIndexItem extends React.Component {
             return null;
         } else {
             const variable = this.props.allUsers[this.props.review.author];
-            debugger
             const name = variable.firstName + ' ' + variable.lastName;
             return name;
         }
