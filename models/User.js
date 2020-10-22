@@ -27,8 +27,7 @@ const UserSchema = new Schema({
         required: true
     },
     savedTrails: {
-        type: Schema.Types.ObjectId,
-        ref: 'trails'
+        type: Array
     },
     // lists: {
     //     type: Schema,

@@ -8,7 +8,7 @@ import Map from './map';
 const mapStateToProps = (state) => {
     return ({
         trails: state.entities.trails,
-        zipcode: '06810'
+        zipcode: state.session.user.zipcode
     });
 };
 

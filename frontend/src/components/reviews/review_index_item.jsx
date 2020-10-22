@@ -57,6 +57,7 @@ class ReviewIndexItem extends React.Component {
 
     followerUser() {
         this.state.user.following.push(this.props.review.author);
+        
         this.props.updateUser(this.state.user);
         this.setState({ followed: false })
     }
@@ -84,7 +85,7 @@ class ReviewIndexItem extends React.Component {
         const Div = document.createElement('div');
         Div.innerHTML = this.props.review.body;
         if (!this.props.image) {
-
+            
             return (
                 <div className="review-idx-item-wrapper">
                     <h2>{this.props.review.title}</h2>
