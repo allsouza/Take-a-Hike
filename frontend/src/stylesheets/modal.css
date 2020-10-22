@@ -9,7 +9,7 @@
 }
 
 .modal-list .quill, .modal-review .quill{
-  height: 450px;
+  height: 70%;
   width: 95%;
   overflow: auto;
 }
