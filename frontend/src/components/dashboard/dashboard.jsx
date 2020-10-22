@@ -13,40 +13,9 @@ class DashBoard extends React.Component {
     }
 
     componentDidMount(){
-<<<<<<< HEAD
         this.props.fetchAllUsers();
     }
 
-=======
-        // if (this.props.user !== "" && this.props.user.lastname === undefined) {
-        //     this.props.grabUser()
-        // }
-        // this.props.grabUser()
-        //need to grab user info, this.props.fetchUsers()
-        
-        this.props.fetchAllUsers();
-    }
-
-    profile(){
-        if(this.props.user !== ""){    
-           const { email, firstName, lastName, birthdate, zipcode } = this.props.user
-           return (
-               <div className="profile-wrapper"> 
-                        <div className='profile' >
-                        <img src={path} alt="profile-pic" className='profile-pic'/>
-                            <p>{`${firstName} ${lastName}`}</p>
-                            <br/>
-                            <p>{email}</p>
-                            <br/>
-                            <p>{formatDate(birthdate)}</p>
-                            <br/>
-                            <p>{zipcode}</p>
-                        </div> 
-                </div>
-           )
-        }
-    }
->>>>>>> master
 
     render() {        
         return(
