@@ -6,10 +6,12 @@ import Reviews from '../reviews/review_index_container';
 export default class TrailShow extends React.Component{
     constructor(props){
         super(props)
+        this.saveTrail = this.saveTrail.bind(this);
     }
 
     componentDidMount(){
         this.props.fetchTrail(this.props.match.params.id)
+        this.props.fetchUsers();
     }
 
     findAverage() {
@@ -23,6 +25,10 @@ export default class TrailShow extends React.Component{
         return (
             <p>{avgRating.toFixed(1)} Stars</p>
         )
+    }
+
+    saveTrail(){
+        debugger
     }
 
     render(){
@@ -46,9 +52,9 @@ export default class TrailShow extends React.Component{
                             
                         </div>
                         <p className="summary">{trail.summary}</p>
-                        <a href={trail.url}>More info</a>
+                        <a href={trail.url} target="_blank">More info</a>
                         <div className="buttons">
-                            <button>Save to favorites</button>
+                            <button onClick={this.saveTrail}>Save to favorites</button>
                         </div>
                     </div>
 

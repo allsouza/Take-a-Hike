@@ -11,6 +11,6 @@ export const fetchUser = (user) => {
 }
 
 export const updateUser = (data) => {
-    debugger
+    
     return axios.patch(`/api/users/${data.id}`, data)
 }
