@@ -1,5 +1,6 @@
 import * as MapApiUtil from '../util/map_api_util';
 import { fetchTrails } from './trails_actions';
+import {receiveAllTrails} from './trails_actions';
 
 export const RECEIVE_API_TRAILS = "RECEIVE_API_TRAILS";
 
@@ -10,5 +11,5 @@ const receiveApiTrails = () => {
 };
 
 export const fetchApiTrails = params => dispatch => {
-    MapApiUtil.fetchApiTrails(params).then(() => dispatch(receiveApiTrails()));
+    MapApiUtil.fetchApiTrails(params).then(() => fetchTrails());
 };
