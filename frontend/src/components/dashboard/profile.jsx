@@ -9,7 +9,6 @@ class Profile extends React.Component {
 
     render() {
         const { email, firstName, lastName, birthdate, zipcode } = this.props.user
-        debugger
         return (
             <div>
                 <div className="profile-wrapper">

@@ -17,8 +17,7 @@ class DashBoard extends React.Component {
         this.props.fetchAllUsers();
         this.props.fetchTrails();
     }
-
-
+    
     render() {        
         return(
             <>

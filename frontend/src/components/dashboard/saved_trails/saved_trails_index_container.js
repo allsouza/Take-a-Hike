@@ -3,7 +3,8 @@ import SavedTrails from './saved_trails_index';
 
 const mSTP = state => {
     debugger
-    const trails = state.entities.users ? state.entities.users[state.session.user.id].savedTrails : [];
+    const currentUser = state.session.user.id;
+    const trails = Object.values(state.entities.users).length > 0 ? state.entities.users[currentUser].savedTrails : [];
     return({
         trails: trails.map(trail => state.entities.trails[trail])
     })
