@@ -1,6 +1,12 @@
+
 @font-face {
     font-family: bukhari;
     src: url('./fonts/BukhariScript-Regular.ttf')
+}
+
+@font-face {
+    font-family: peddana;
+    src: url('https://fonts.googleapis.com/css2?family=Peddana&family=Sansita+Swashed:wght@500&display=swap')
 }
 
 .main {
@@ -8,8 +14,8 @@
     flex-direction: column;
     text-align: center;
     position: relative;
-    font-family: sans-serif;
-    font-size: 1.5vw;
+    font-family: 'Sansita Swashed', cursive;
+    font-size: 2.5vw;
     font-weight: bold;
     text-decoration: none;
     margin: 0;
@@ -37,17 +43,31 @@
     object-fit: none;
 }
 
-.logo-container {
-    padding-left: 2%;
-    padding-top: 5%;
-    width: 25%;
-}
+
 
 .logo {
     height: auto;
     width: 100%;
     border-radius: 50%;
+    
 }
+
+.logo-and-li {
+    display: flex;
+}
+
+.logo-container {
+    padding-left: 2%;
+    width: 30%;
+}
+
+.li-container {
+    max-width: 60%;
+    margin-left: 4%;
+    line-height: 130%;
+    color: rgb(97, 68, 15)
+}
+
 .display>ul {
     color: green;
     list-style-type:none;
@@ -61,5 +81,10 @@
     text-align: left;
     padding-left: 20%;
     color: rgb(97, 68, 15);
+    max-width: 75%;
 }
 
+.display header {
+    max-width: 90%;
+    padding-left: 2%;
+}
