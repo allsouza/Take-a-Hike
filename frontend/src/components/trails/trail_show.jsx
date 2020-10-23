@@ -17,7 +17,7 @@ export default class TrailShow extends React.Component{
     }
 
     componentDidUpdate(){
-        if(Object.keys(this.props.user).length > 0 && this.props.user.id !== this.state.user.id){
+        if(Object.keys(this.props.user).length > 0 && this.props.user.id !== this.state.user.id && typeof this.props.trail !== 'undefined'){
             this.setState({user: Object.assign({}, this.props.user), ready: true})
         }
     }
@@ -48,7 +48,7 @@ export default class TrailShow extends React.Component{
     render(){
         if(this.state.ready){
             const {trail} = this.props;
-            const saved = this.state.user.savedTrails.includes(trail._id)
+            const saved = this.state.user.savedTrails.includes(this.props.match.params.id)
             return(
                 <>
                 <div className="trail-show">

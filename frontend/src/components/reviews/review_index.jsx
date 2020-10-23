@@ -17,6 +17,11 @@ class ReviewIndex extends React.Component {
         this.props.fetchAllUsers();
     }
 
+    // componentWillUnmount(){
+    //     window.alert("unmounting")
+    //     this.setState({reviews: ""})
+    // }
+
     // map in props from Review index to list index item
 
     newReview() {
@@ -28,6 +33,7 @@ class ReviewIndex extends React.Component {
     }
 
     render() {
+        debugger
             if (this.props.reviews.length === 0) {
                 return (
                     <div>
