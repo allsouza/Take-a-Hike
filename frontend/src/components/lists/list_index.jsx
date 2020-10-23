@@ -1,11 +1,11 @@
 import React from 'react';
-import { openModal } from '../../actions/modal_actions';
+// import { openModal } from '../../actions/modal_actions';
 import ListIndexItem from './list_index_item';
 
 class ListIndex extends React.Component {
     constructor(props) {
         super(props)
-        this.newList = this.newList.bind(this);
+        this.newList = this.newList.bind(this)
         this.openList = this.openList.bind(this);
     }
 

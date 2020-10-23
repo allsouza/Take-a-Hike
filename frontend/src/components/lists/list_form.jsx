@@ -2,6 +2,7 @@ import React from 'react';
 import EditorContainer from '../rich-text-editor/editor_container';
 
 class ListForm extends React.Component {
+
     render() {
         return (
             <div className="modal-list">
