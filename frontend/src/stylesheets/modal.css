@@ -9,10 +9,13 @@
 }
 
 .modal-list .quill, .modal-review .quill{
-  height: 70%;
+  height: 450px;
   width: 95%;
   overflow: auto;
+  padding: 0px 0px 0px 17px;
 }
+
+
 .modal-list, .modal-review {
   position: absolute;
   top: 50%;
@@ -97,6 +100,7 @@ transform: translate(-50%, -50%);
 .form-name input[type=text] {
     border: none;
     padding: 15px 0px 12px 17px;
+    border-radius: 5px 5px 0px 0px;
 }
 .form-name input[type=text]:focus {
   outline: none;
@@ -104,6 +108,7 @@ transform: translate(-50%, -50%);
 .form-name input[type=password] {
     border: none;
     padding: 4px 0px 12px 17px;
+    border-radius: 0px 0px 5px 5px;
 }
 .form-name input[type=password]:focus {
   outline: none;
@@ -142,6 +147,7 @@ width: 350px;
 
 .form-name .title, .form-name-signup .title{
   color: white;
+    padding: 0px 0px 9px 0px;
 }
 
 /* .form-name-signup input[type=password] {
@@ -194,3 +200,21 @@ width: 350px;
 /* .ql-editor {
       height: 40vh;
 } */
+
+.login-form-buttons {
+  padding-top: 9px;
+}
+
+#input-first {
+  border-radius: 5px 5px 0px 0px;
+  padding-top: 5px;
+}
+
+#input-last {
+  border-radius: 0px 0px 5px 5px;
+  padding-bottom: 5px;
+}
+
+#signup-btn {
+  margin: 13px 0px 14px 0px;
+}

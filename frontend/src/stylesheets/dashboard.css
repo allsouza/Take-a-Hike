@@ -59,6 +59,10 @@ i:hover{
     display: flex;
     flex-direction: column;
     align-items: center;
+    line-height: 24px;
+    padding-bottom: 8px;
+    margin-bottom: 7px;
+    border-radius: 4px;
 }
 
 /* .profile-wrapper is coming from dashboard.jsx and has a bunch of extra padding because of the way it is nested, tried to refactor but it looked awful */

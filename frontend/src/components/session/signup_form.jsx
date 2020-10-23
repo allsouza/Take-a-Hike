@@ -70,7 +70,7 @@ class SignupForm extends React.Component {
                 <form onSubmit={this.handleSubmit} >
                     <div className='form-name-signup'>
                     <div className='title'>Sign Up</div>
-                        <input type="text"
+                        <input type="text" id="input-first"
                             value={this.state.email}
                             onChange={this.update('email')}
                             placeholder="Email"
@@ -100,12 +100,12 @@ class SignupForm extends React.Component {
                             onChange={this.update('zipcode')}
                             placeholder="Enter ZipCode"
                         />
-                        <input type="text"
+                        <input type="text" id="input-last"
                             value={this.state.birthdate}
                             onChange={this.update('birthdate')}
                             placeholder="Birthdate (MM/DD/YYYY)"
                         />
-                        <input type="submit" value="Submit" className='button' />
+                        <input type="submit" value="Submit" className='button' id="signup-btn"/>
                         {this.renderErrors()}
                     </div>
                 </form>
