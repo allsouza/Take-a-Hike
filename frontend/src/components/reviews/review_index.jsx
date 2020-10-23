@@ -33,7 +33,7 @@ class ReviewIndex extends React.Component {
     }
 
     render() {
-        debugger
+        // debugger
             if (this.props.reviews.length === 0) {
                 return (
                     <div>
