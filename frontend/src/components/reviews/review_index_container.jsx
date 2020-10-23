@@ -7,11 +7,17 @@ import { updateUser, fetchAllUsers } from '../../actions/user_actions';
 
 
 
-const mSTP = state => { 
+const mSTP = (state, ownProps) => { 
     // find author and map to props
-    
+    const sendReviews = [];
+    Object.values(state.entities.reviews).forEach(review => {
+        if (review.trail === ownProps.trail._id){
+            sendReviews.push(review);
+        }
+    })
+
     return {
-        reviews: Object.values(state.entities.reviews),
+        reviews: sendReviews,
         image: state.entities.images,
         currentUserId: state.session.user.id,
         currentUser: state.session.user,
