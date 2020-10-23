@@ -55,7 +55,7 @@ class NavBar extends React.Component {
         return (
             <div className='nav'>
                 <Link to='/'><img src={path} alt="logo" className='logo1'/></Link>
-                <Link to='/'><p className='nav-title'>Take a Hike</p></Link>
+                <Link to='/'><p className='nav-title'>Dashboard</p></Link>
                 {ifCurrentUser()}
                 {this.props.loggedIn ? <Link to='/map'>Map</Link> : null}
                 {/* <Link to='/trails'>Trails</Link> */}

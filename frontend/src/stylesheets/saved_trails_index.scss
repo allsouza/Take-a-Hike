@@ -1,0 +1,47 @@
+.saved-trails-index{
+    margin-bottom: 5px;
+    img{
+        max-height: 80px;
+        max-width: 100px;
+        border-radius: 5px;
+    }
+
+    div{
+        width: 80%;
+    }
+
+    h1{
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    h3{
+        font-size: 15px;
+        font-style: italic;
+    }
+
+    li{
+        width: 100%;
+        display: flex;
+        color: black;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        transition: all 0.5s linear;
+    }
+    
+    li:hover{
+        animation: pop-up 0.5s ease;
+        transform: scale(1.05);
+        background-color: lightgrey;
+    }
+}
+
+@keyframes pop-up{
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.05);
+    }
+}

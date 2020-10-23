@@ -4,6 +4,7 @@ import '../../stylesheets/dashboard.css';
 import ListIndex from '../lists/list_index_container';
 import FollowerIndex from './follower_index';
 import Footer from '../footer/footer';
+import SavedTrails from './saved_trails/saved_trails_index_container';
 import Profile from './profile';
 
 class DashBoard extends React.Component {
@@ -15,8 +16,7 @@ class DashBoard extends React.Component {
     componentDidMount(){
         this.props.fetchAllUsers();
     }
-
-
+    
     render() {        
         return(
             <>
@@ -27,11 +27,7 @@ class DashBoard extends React.Component {
                         <ListIndex />
                    </div>
                     <div className='index2'>    
-                        <ul> 
-                            
-                            <li>You don't have any trails, find some!</li>
-                            
-                        </ul>
+                        <SavedTrails />
                         <button onClick={() => this.props.history.push('/map')}>Find More Trails</button>
                     </div>
                     <div>
