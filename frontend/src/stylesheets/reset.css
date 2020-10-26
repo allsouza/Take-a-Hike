@@ -76,3 +76,17 @@ i:hover{
 html{
 	overflow: hidden;
 }
+
+/* Rich text editor code don't delete */
+
+.ql-editor strong{
+	font-weight:bold;
+}
+
+.ql-editor em{
+	font-style: italic;
+}
+
+.ql-editor u{
+	text-decoration: underline;
+}
