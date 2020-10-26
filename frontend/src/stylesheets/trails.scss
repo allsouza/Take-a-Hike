@@ -17,8 +17,10 @@ $darkgreen: rgb(41,71,1);
     width: 80%;
     margin: auto;
     display: flex;
-    justify-content: space-between;
-    min-height: 700px;
+    flex-direction: column;
+    // justify-content: space-between;
+    height: 87vh;
+    overflow: hidden;
     p{
         color: black;
         padding: 0px;
@@ -32,70 +34,81 @@ $darkgreen: rgb(41,71,1);
         font-family: 'Sansita Swashed', cursive;
         color: $brown;
     }
-    .trail-info{
-        width: 62%;
-        overflow: hidden;
-        padding: 20px;
+    .content{
         display: flex;
-        flex-direction: column;
-        text-align: center;
-        h1{
-            font-size: 30px;
-            font-weight: bold;
-        }
-        .img-container{
-            padding-bottom: 20px;
-            img{
-                border-radius: 5px;
-                width: 100%;
-                box-shadow: 5px 5px 9px 0px rgba(0,0,0,0.75);
+        height: 75vh;
+        .trail-info{
+            width: 70%;
+            overflow: hidden;
+            padding: 20px;
+            padding-right: 80px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            overflow: auto;
+            // direction: rtl;
+    
+            h1{
+                font-size: 30px;
+                font-weight: bold;
             }
-        }
-        a {
-            color: rgb(41,71,1);
-            padding-top: 24px;
-            font-size: 20px;
-            font-family: 'Sansita Swashed', cursive;
-        }
-        .stats{
-            margin: 20px auto;
-            span{
-                justify-content: space-between;
-                align-items: baseline;
-                padding: 10px;
-                display: flex;
-                font-size: 20px;
-                min-width: 300px;
-                font-family: arial;
-                h3 {
-                    font-size: 20px;
-                    font-family: arial;
-                }
-                p{
-                    font-size: 20px;
-                    font-family: arial;
+            .img-container{
+                padding-bottom: 20px;
+                img{
+                    border-radius: 5px;
+                    max-width: 100%;
+                    max-height: 300px;
+                    box-shadow: 5px 5px 9px 0px rgba(0,0,0,0.75);
                 }
             }
-        }
-
-        .summary{
-            font-size: 30px;
-            margin: 30px 0px 0px 0px;
-            font-family: 'Sansita Swashed', cursive;
-            color: $brown;
             a {
-                color: red;
+                color: rgb(41,71,1);
+                padding-top: 24px;
+                font-size: 20px;
+                font-family: 'Sansita Swashed', cursive;
+            }
+            .stats{
+                margin: 20px auto;
+                span{
+                    justify-content: space-between;
+                    align-items: baseline;
+                    padding: 10px;
+                    display: flex;
+                    font-size: 20px;
+                    min-width: 300px;
+                    font-family: arial;
+                    h3 {
+                        font-size: 20px;
+                        font-family: arial;
+                    }
+                    p{
+                        font-size: 20px;
+                        font-family: arial;
+                    }
+                }
+            }
+    
+            .summary{
+                font-size: 30px;
+                margin: 30px 0px 0px 0px;
+                font-family: 'Sansita Swashed', cursive;
+                color: $brown;
+                a {
+                    color: red;
+                }
+            }
+    
+            .buttons{
+                margin-top: 20px;
             }
         }
-
-        .buttons{
-            margin-top: 20px;
+        .trail-reviews{
+            width: 50%;
+            overflow: auto;
+            
         }
     }
-    .trail-reviews{
-        padding-top: 100px;
-        width: 50%;
-    }
+
 }
 
 .title-and-info {

@@ -46,8 +46,8 @@ class ReviewIndex extends React.Component {
                 
                 return (
                     <div>
-                    <h1>Reviews for {this.props.trail.name}</h1>
-                    <button onClick={this.newReview}>Create Review</button>    
+                    <h1>Reviews</h1>
+                      
                     <ul>
                             {
                             this.props.reviews.map(review => {
@@ -67,7 +67,7 @@ class ReviewIndex extends React.Component {
                             })
                             }
                         </ul>
-                        
+                    <button onClick={this.newReview}>Create Review</button>      
                     </div>
                 )
             }

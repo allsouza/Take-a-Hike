@@ -2,7 +2,7 @@ import React from 'react';
 import '../../stylesheets/reset.css'
 import '../../stylesheets/dashboard.scss';
 import ListIndex from '../lists/list_index_container';
-import FollowerIndex from './follower_index';
+import FollowerIndex from './follower_index_container';
 import Footer from '../footer/footer';
 import SavedTrails from './saved_trails/saved_trails_index_container';
 import Profile from './profile';
@@ -21,7 +21,7 @@ class DashBoard extends React.Component {
     render() {        
         return(
             <>
-                <NavBarContainer /> 
+            <NavBarContainer /> 
             <div className='dashboard-container'>
                 <div className='dashboard'>
                    <div className='left' >

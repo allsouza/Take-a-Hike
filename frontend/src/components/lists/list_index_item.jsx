@@ -2,9 +2,9 @@ import React from 'react';
 import { formatDate } from '../../util/date_utils';
 
 
-export default function ListIndexItem({list, deleteList, userId, allUsers}) {
+export default function ListIndexItem({list, deleteList, userId, allUsers, openList}) {
     return(
-        < div className='lists'>
+        <li onClick={() => openList(list)}>
             <div>
                 <p className='list-title'>{list.title}</p>
                 <span>
@@ -17,6 +17,6 @@ export default function ListIndexItem({list, deleteList, userId, allUsers}) {
                         deleteList(list._id)}}></i> : 
                     <span>by {allUsers[list.author].firstName} {allUsers[list.author].lastName}</span> }
             </div>
-        </div>
+        </li>
     )
 }

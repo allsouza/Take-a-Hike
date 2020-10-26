@@ -69,6 +69,10 @@ a:hover{
 }
 
 i:hover{
-	color: rgb(33, 80, 3);
+	color: rgb(122, 151, 109);
 	cursor: pointer;
+}
+
+html{
+	overflow: hidden;
 }

@@ -36,14 +36,15 @@ class ListIndex extends React.Component {
                 {this.state.ready ? 
                 <ul>
                     {this.props.lists.map(list => {
-                        return <li key={list._id} onClick={() => this.openList(list)}>
+                        return (
                             <ListIndexItem 
                                 list={list} 
+                                openList ={this.openList}
                                 deleteList={this.props.deleteList} 
                                 editList={this.props.editList}
                                 userId = {this.props.currentUser}
                                 allUsers = {this.props.allUsers}
-                                />  </li>
+                                key={list._id}/>)
                     })} 
                 </ul> : null}
                  <button onClick={this.newList}>Create List</button>

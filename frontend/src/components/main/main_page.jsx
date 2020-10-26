@@ -16,7 +16,7 @@ class MainPage extends React.Component {
             <>
             <NavBarContainer />
             <div className='main'>
-                <img className='background' src={hiking} alt="Hiking is fun!"/>
+                {/* <img className='background' src={hiking} alt="Hiking is fun!"/> */}
                 <div className='display'>
                 <ul>
                     <header>Take the best hikes with Take a Hike app. Here you can:</header> 

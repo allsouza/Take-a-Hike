@@ -6,6 +6,7 @@ const mSTP = state => {
     const currentUser = state.session.user.id;
     let trails = Object.values(state.entities.users).length > 0 ? state.entities.users[currentUser].savedTrails : [];
     trails = Object.values(state.entities.trails).length > 0 ? trails.map(trail => state.entities.trails[trail]) : [];
+    trails = trails.filter(trail => trail !== undefined);
     return({
         trails: trails
     })
