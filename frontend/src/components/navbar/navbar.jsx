@@ -1,5 +1,5 @@
 import React, { useReducer } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import path from '../../images/path.jpg'
 import '../../stylesheets/navbar.css'
 
@@ -16,8 +16,15 @@ class NavBar extends React.Component {
         this.props.logout();
     }
 
+    findLocation() {
+            const location = useLocation();
+            console.log(location.pathname);
+    }
+
     getLinks() { 
         if (this.props.loggedIn) {
+                // const location = useLocation();
+                // console.log(location.pathname);
             return (
                 <div className='nav-components'>
                     Welcome {this.props.name.firstName}
@@ -36,6 +43,7 @@ class NavBar extends React.Component {
     }
 
     render() {
+        
         const ifCurrentUser = () => {
            if(this.props.loggedIn){
                return (
