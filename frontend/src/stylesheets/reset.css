@@ -67,3 +67,8 @@ a:hover{
 	text-decoration: none;
 	color: rgba(19, 46, 2, 0.8);
 }
+
+i:hover{
+	color: rgb(33, 80, 3);
+	cursor: pointer;
+}

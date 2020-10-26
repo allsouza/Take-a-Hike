@@ -26,16 +26,16 @@ class MainPage extends React.Component {
                         </div>
                         <div className="li-container">
                             <li> Find great trails</li>
-                            <li> Leave a review of your experience</li>
-                            <li> See reviews of a trail before taking the hike</li>
-                            <li> See what items you should take with you</li>
+                            <li> Leave reviews</li>
+                            <li> See what others are saying</li>
+                            <li> Follow your friends</li>
+                            <li> Never leave unprepared</li>
                         </div>
                     </div>
                 </ul> 
                 </div>
-                
-            <Footer />
             </div>
+            <Footer />
             </>
         )
         

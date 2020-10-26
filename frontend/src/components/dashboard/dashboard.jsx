@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../stylesheets/reset.css'
-import '../../stylesheets/dashboard.css';
+import '../../stylesheets/dashboard.scss';
 import ListIndex from '../lists/list_index_container';
 import FollowerIndex from './follower_index';
 import Footer from '../footer/footer';
@@ -24,19 +24,21 @@ class DashBoard extends React.Component {
                 <NavBarContainer /> 
             <div className='dashboard-container'>
                 <div className='dashboard'>
-                   <div className='index' >
+                   <div className='left' >
+                        <h1>Lists</h1>
                         <ListIndex />
                    </div>
-                    <div className='index2'>    
+                    <div className='center'>  
+                        <h1>My Favorite Trails</h1>  
                         <SavedTrails />
                         <button onClick={() => this.props.history.push('/map')}>Find More Trails</button>
                     </div>
-                    <div>
+                    <div className='right'>
 
                     <Profile 
                         user={this.props.user}/>
                     <FollowerIndex
-                        user= {this.props.user}
+                        user= {this.props.allUsers[this.props.user.id]}
                         allUsers ={this.props.allUsers}
                         />
                     </div>

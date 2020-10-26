@@ -1,0 +1,52 @@
+@import './lists.scss';
+
+$brown: rgb(97, 68, 15);
+
+.dashboard-container{
+    height: 84vh;
+}
+.dashboard{
+    margin: auto;
+    display: flex;
+    box-sizing: border-box;
+    height: 100%;
+    padding: 20px 0;
+    
+    h1{
+        text-align: center;
+        font-family: 'Sansita Swashed', cursive;
+        font-size: 28px;
+        color: $brown;
+        margin-bottom: 5px;
+    }
+    .left{
+        width: 30%;
+        padding: 15px;
+        border-right: 1px solid #eaeaea;
+    }
+
+    .center{
+        width: 40%;
+        padding: 15px;
+        border-right: 1px solid #eaeaea;
+    }
+
+    .right{
+        width: 30%;
+        padding: 15px;
+
+        .profile{
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid #eaeaea;
+
+            img{
+                height: 150px;
+                width: 150px;
+            }
+        }
+    }
+}

@@ -144,7 +144,7 @@ width: 350px;
 
 .form-name-signup input {
     border: none;
-    padding: 3px 0px 3px 5px;
+    padding: 10px;
     min-width: 200px
 }
 .form-name-signup input:focus {
@@ -187,11 +187,6 @@ width: 350px;
   text-align: center;
 }
 
-.list-index>ul>li{
-  border: 1px solid lightgreen;
-  width: 75%;
-}
-
 .errors{
   color: red;
   font-family: Arial, Helvetica, sans-serif;
@@ -213,12 +208,12 @@ width: 350px;
 
 #input-first {
   border-radius: 5px 5px 0px 0px;
-  padding-top: 5px;
+  padding-top: 10px;
 }
 
 #input-last {
   border-radius: 0px 0px 5px 5px;
-  padding-bottom: 5px;
+  padding-bottom: 10px;
 }
 
 #signup-btn {

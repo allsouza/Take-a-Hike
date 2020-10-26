@@ -1,5 +1,7 @@
 .saved-trails-index{
     margin-bottom: 5px;
+    width: 100%;
+
     img{
         max-height: 80px;
         max-width: 100px;
@@ -21,13 +23,14 @@
     }
 
     li{
-        width: 100%;
+        width: 95%;
         display: flex;
         color: black;
         justify-content: space-between;
         align-items: center;
         padding: 10px;
         transition: all 0.5s linear;
+        // margin: 8px;
     }
     
     li:hover{

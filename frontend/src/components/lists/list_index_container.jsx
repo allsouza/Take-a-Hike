@@ -4,10 +4,12 @@ import { fetchLists, deleteList, createList } from '../../actions/list_actions';
 import { openModal } from '../../actions/modal_actions';
 
 const mSTP = state => {
-    const userId = state.session.user ? state.session.user.id : ""
+    const userId = state.session.user ? state.session.user.id : "";
+    
     return {
         lists: Object.values(state.entities.lists),
-        currentUser: userId
+        currentUser: userId,
+        allUsers: state.entities.users
     }
 };
 
