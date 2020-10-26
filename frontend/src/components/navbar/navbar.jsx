@@ -18,7 +18,6 @@ class NavBar extends React.Component {
     }
 
     componentDidMount() {
-        // debugger
         this.setState(prevState => ({
             ready: !prevState.ready
         }));
