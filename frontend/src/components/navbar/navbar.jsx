@@ -1,5 +1,5 @@
 import React, { useReducer } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import path from '../../images/path.jpg'
 import '../../stylesheets/navbar.css'
 
@@ -9,11 +9,18 @@ class NavBar extends React.Component {
         super(props);
         this.logoutUser = this.logoutUser.bind(this);
         this.getLinks = this.getLinks.bind(this);
+        this.state = {ready: true}
     }
 
     logoutUser(e) {
         e.preventDefault();
         this.props.logout();
+    }
+
+    componentDidMount() {
+        this.setState(prevState => ({
+            ready: !prevState.ready
+        }));
     }
 
     getLinks() { 
@@ -36,30 +43,30 @@ class NavBar extends React.Component {
     }
 
     render() {
-        const ifCurrentUser = () => {
-           if(this.props.loggedIn){
-               return (
-                    <div></div>
-                //    <div className='dropdown'>
-                //  <Link to='/dashboard' >Dashboard </Link>
-                //  <div className='dropdown-content'>
-                //     <Link>My Trails</Link>
-                //     <Link to='/search'>Search</Link>
+        
+        // const ifCurrentUser = () => {
+        //    if(this.props.loggedIn){
+        //        return (
+        //             null
+        //         //    <div className='dropdown'>
+        //         //  <Link to='/dashboard' >Dashboard </Link>
+        //         //  <div className='dropdown-content'>
+        //         //     <Link>My Trails</Link>
+        //         //     <Link to='/search'>Search</Link>
                     
-                //  </div>
-                //    </div>
-               )
-           } 
-        }
+        //         //  </div>
+        //         //    </div>
+        //        )
+        //    } 
+        // }
 
         return (
             <div className='nav'>
                 <Link to='/'><img src={path} alt="logo" className='logo1'/></Link>
-                <Link to='/'><p className='nav-title'>Dashboard</p></Link>
-                {ifCurrentUser()}
-                {this.props.loggedIn ? <Link to='/map'>Map</Link> : null}
-                {/* <Link to='/trails'>Trails</Link> */}
-                { this.getLinks()}    
+                { !window.location.href.endsWith('dashboard') && !window.location.href.endsWith('/#/') ? <Link to='/'><p className='nav-title'>Dashboard</p></Link> : null}
+                {/* {ifCurrentUser()} */}
+                {this.props.loggedIn && !window.location.href.endsWith('map') ? <Link to='/map'>Map</Link> : null}
+                { this.getLinks()}   
             </div>
         );
     }

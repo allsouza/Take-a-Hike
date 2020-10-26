@@ -34,13 +34,15 @@
     display: flex;
 }
 .review-icon-wrapper i {
-    padding: 0px 17px 0px 0px;
+    padding: 8px 0px 0px 15px;
+    font-size: 20px;
 }
 
 .review-icon-wrapper h5 {
     color: black;
     font-family: 'Peddana', serif;
     font-size: 20px;
+    padding: 5px 0px 0px 0px;
 }
 
 .img-uploader-wrapper {
@@ -106,8 +108,9 @@ input[type="file"] {
 }
 
 .star-wrapper p {
-    margin-right: 10px;
+    margin: -3px 6px 5px 0px;
     font-size: 28px;
+
 }
 
 .star-wrapper i {

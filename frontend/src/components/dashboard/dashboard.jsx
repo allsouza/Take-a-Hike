@@ -6,6 +6,7 @@ import FollowerIndex from './follower_index';
 import Footer from '../footer/footer';
 import SavedTrails from './saved_trails/saved_trails_index_container';
 import Profile from './profile';
+import NavBarContainer from '../navbar/navbar_container';
 
 class DashBoard extends React.Component {
 
@@ -20,7 +21,7 @@ class DashBoard extends React.Component {
     render() {        
         return(
             <>
-            <h1 className='dashboard-header'>Dashboard</h1>
+                <NavBarContainer /> 
             <div className='dashboard-container'>
                 <div className='dashboard'>
                    <div className='index' >

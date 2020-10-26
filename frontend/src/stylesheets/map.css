@@ -4,3 +4,7 @@
     height:600px;
     visibility: visible;
 }
+
+.pac-target-input input {
+    margin-top: 15px;
+}

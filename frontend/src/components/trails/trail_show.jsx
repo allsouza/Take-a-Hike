@@ -2,6 +2,7 @@ import React from 'react';
 import '../../stylesheets/trails.scss'
 import Footer from '../footer/footer';
 import Reviews from '../reviews/review_index_container';
+import NavBarContainer from '../navbar/navbar_container';
 
 export default class TrailShow extends React.Component{
     constructor(props){
@@ -51,13 +52,14 @@ export default class TrailShow extends React.Component{
             const saved = this.state.user.savedTrails.includes(this.props.match.params.id)
             return(
                 <>
+                    <NavBarContainer />
                 <div className="trail-show">
                     <div className="title-and-info">
                     <h1>{trail.name}</h1>
                     <div className="trail-info">
-                        {trail.image !== "" ?<div className="img-container"><img src={trail.image}/></div>  : null}
+                        {trail.image !== "" ?<div className="img-container"><img src={trail.image}/></div>  : null }
                         <div className="stats">
-                                <span><h3>Difficulty:</h3><p>{trail.difficulty.charAt(0).toUpperCase() + trail.difficulty.slice(1)}</p></span>
+                                    <span><h3>Difficulty:</h3><p>{trail.difficulty.charAt(0).toUpperCase() + trail.difficulty.slice(1)}</p></span>
                                 <span><h3>Length:</h3><p>{trail.length} Miles</p></span>
                             <span><h3>Ascent:</h3><p>{trail.ascent} Feet</p></span>
                             <span><h3>Descent:</h3><p>{trail.descent} Feet</p></span>

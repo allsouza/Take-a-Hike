@@ -9,15 +9,25 @@
 }
 
 .modal-list .quill, .modal-review .quill{
-  height: 70%;
+  height: 100%;
   width: 95%;
   overflow: auto;
+  padding: 0px 0px 0px 17px;
+  max-height: 370px;
+  min-height: 370px;
 }
+
+.modal-list .quill, .modal-review .quill p, ul, ol{
+  color: rgb(97, 68, 15);
+}
+
+
 .modal-list, .modal-review {
   position: absolute;
   top: 50%;
   left: 50%;
   width: 700px;
+  height: 80%;
   transform: translate(-50%, -50%);
   background-color: rgb(245, 245, 245);
   border-radius: 10px 40px;
@@ -36,12 +46,12 @@
 }
 
 .modal-list>h1, .modal-review>h1{
-  font-family: Arial, Helvetica, sans-serif;
-  color: rgb(97, 68, 15);
-  font-size: larger;
-  font-weight: 600;
-  padding-top: 7px;
-  padding-bottom: 7px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(97, 68, 15);
+    font-size: 2.5vw;
+    font-weight: 600;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .modal-background>button {
@@ -95,14 +105,16 @@ transform: translate(-50%, -50%);
 
 .form-name input[type=text] {
     border: none;
-    padding: 15px 0px 12px 17px;
+    padding: 15px 0px 10px 17px;
+    border-radius: 5px 5px 0px 0px;
 }
 .form-name input[type=text]:focus {
   outline: none;
 }
 .form-name input[type=password] {
     border: none;
-    padding: 4px 0px 12px 17px;
+    padding: 11px 0px 12px 17px;
+    border-radius: 0px 0px 5px 5px;
 }
 .form-name input[type=password]:focus {
   outline: none;
@@ -141,6 +153,7 @@ width: 350px;
 
 .form-name .title, .form-name-signup .title{
   color: white;
+    padding: 0px 0px 9px 0px;
 }
 
 /* .form-name-signup input[type=password] {
@@ -170,7 +183,7 @@ width: 350px;
   border: none;
   outline: none;
   padding-top: 10px;
-  font-size: 16px;
+  font-size: 2.0vw;
   text-align: center;
 }
 
@@ -188,4 +201,26 @@ width: 350px;
     width: 10px;
     margin-right: 100px;
     outline: none;
+}
+
+/* .ql-editor {
+      height: 40vh;
+} */
+
+.login-form-buttons {
+  padding-top: 9px;
+}
+
+#input-first {
+  border-radius: 5px 5px 0px 0px;
+  padding-top: 5px;
+}
+
+#input-last {
+  border-radius: 0px 0px 5px 5px;
+  padding-bottom: 5px;
+}
+
+#signup-btn {
+  margin: 13px 0px 14px 0px;
 }
