@@ -18,6 +18,7 @@ $darkgreen: rgb(41,71,1);
     margin: auto;
     display: flex;
     justify-content: space-between;
+    min-height: 700px;
     p{
         color: black;
         padding: 0px;
@@ -32,7 +33,7 @@ $darkgreen: rgb(41,71,1);
         color: $brown;
     }
     .trail-info{
-        width: 50%;
+        width: 62%;
         overflow: hidden;
         padding: 20px;
         display: flex;
@@ -148,4 +149,9 @@ $darkgreen: rgb(41,71,1);
             margin-bottom: 5px;
         }
     }
+}
+
+.img-placeholder {
+    height: 1px;
+    min-width: 541px;
 }

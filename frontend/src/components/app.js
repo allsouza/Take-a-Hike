@@ -18,7 +18,7 @@ import TrailShowContainer from './trails/trail_show_container';
 const App = () => (
     <div>
         <Modal />
-        <NavBarContainer />
+        {/* <NavBarContainer /> */}
         <Switch>
             <AuthRoute exact path="/" component={MainPage} />  
             <ProtectedRoute path='/dashboard' component={DashBoard}/>

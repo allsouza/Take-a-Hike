@@ -1,6 +1,7 @@
 /* global google */
 import React from 'react';
 import MapComponent from './searchmap';
+import NavBarContainer from '../navbar/navbar_container';
 
 class Map extends React.Component{
   constructor(props){
@@ -41,6 +42,7 @@ class Map extends React.Component{
         return(
   
           <div>
+            <NavBarContainer />
             <MapComponent
               getTrails= {this.getTrails}
               updateBounds={this.props.updateFilter}

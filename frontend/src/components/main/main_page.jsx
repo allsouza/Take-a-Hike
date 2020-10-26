@@ -3,6 +3,7 @@ import Take_A_Hike from '../../images/Take_A_Hike.jpg';
 import hiking from '../../images/hiking.jpg';
 import '../../stylesheets/main.css';
 import Footer from '../../components/footer/footer';
+import NavBarContainer from '../navbar/navbar_container'
 
 class MainPage extends React.Component {
 
@@ -12,6 +13,8 @@ class MainPage extends React.Component {
 
     render() {
         return (
+            <>
+            <NavBarContainer />
             <div className='main'>
                 <img className='background' src={hiking} alt="Hiking is fun!"/>
                 <div className='display'>
@@ -33,6 +36,7 @@ class MainPage extends React.Component {
                 
             <Footer />
             </div>
+            </>
         )
         
     }

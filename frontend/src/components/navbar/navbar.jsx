@@ -9,6 +9,7 @@ class NavBar extends React.Component {
         super(props);
         this.logoutUser = this.logoutUser.bind(this);
         this.getLinks = this.getLinks.bind(this);
+        this.state = {ready: true}
     }
 
     logoutUser(e) {
@@ -16,15 +17,15 @@ class NavBar extends React.Component {
         this.props.logout();
     }
 
-    findLocation() {
-            const location = useLocation();
-            console.log(location.pathname);
+    componentDidMount() {
+        // debugger
+        this.setState(prevState => ({
+            ready: !prevState.ready
+        }));
     }
 
     getLinks() { 
         if (this.props.loggedIn) {
-                // const location = useLocation();
-                // console.log(location.pathname);
             return (
                 <div className='nav-components'>
                     Welcome {this.props.name.firstName}
@@ -44,30 +45,29 @@ class NavBar extends React.Component {
 
     render() {
         
-        const ifCurrentUser = () => {
-           if(this.props.loggedIn){
-               return (
-                    <div></div>
-                //    <div className='dropdown'>
-                //  <Link to='/dashboard' >Dashboard </Link>
-                //  <div className='dropdown-content'>
-                //     <Link>My Trails</Link>
-                //     <Link to='/search'>Search</Link>
+        // const ifCurrentUser = () => {
+        //    if(this.props.loggedIn){
+        //        return (
+        //             null
+        //         //    <div className='dropdown'>
+        //         //  <Link to='/dashboard' >Dashboard </Link>
+        //         //  <div className='dropdown-content'>
+        //         //     <Link>My Trails</Link>
+        //         //     <Link to='/search'>Search</Link>
                     
-                //  </div>
-                //    </div>
-               )
-           } 
-        }
+        //         //  </div>
+        //         //    </div>
+        //        )
+        //    } 
+        // }
 
         return (
             <div className='nav'>
                 <Link to='/'><img src={path} alt="logo" className='logo1'/></Link>
-                <Link to='/'><p className='nav-title'>Dashboard</p></Link>
-                {ifCurrentUser()}
-                {this.props.loggedIn ? <Link to='/map'>Map</Link> : null}
-                {/* <Link to='/trails'>Trails</Link> */}
-                { this.getLinks()}    
+                { !window.location.href.endsWith('dashboard') && !window.location.href.endsWith('/#/') ? <Link to='/'><p className='nav-title'>Dashboard</p></Link> : null}
+                {/* {ifCurrentUser()} */}
+                {this.props.loggedIn && !window.location.href.endsWith('map') ? <Link to='/map'>Map</Link> : null}
+                { this.getLinks()}   
             </div>
         );
     }
