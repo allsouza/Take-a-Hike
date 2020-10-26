@@ -12,17 +12,11 @@ export default class SavedTrails extends React.Component{
         this.props.fetchTrails();
     }
 
-    componentDidUpdate(prevProps) {
-        if(prevProps.trails.length === 0 && this.props.trails.length !== 0){
-            this.setState({ready: true})
-        }
-    }
-
     render(){
         return(
             <div className='saved-trails-index'>
-                {this.state.ready || this.props.trails.length > 0 ? <ul>
-                    {this.props.trails.map(trail => <SavedTrailIndexItem trail={trail}  key={trail.id}/>)}
+                {this.props.trails.length > 0 ? <ul>
+                    {this.props.trails.map(trail => <SavedTrailIndexItem trail={trail}  key={trail._id}/>)}
                 </ul>
            : <p>You don't have any trails yet</p>} </div> 
         )

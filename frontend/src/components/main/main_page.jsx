@@ -16,7 +16,7 @@ class MainPage extends React.Component {
             <>
             <NavBarContainer />
             <div className='main'>
-                <img className='background' src={hiking} alt="Hiking is fun!"/>
+                {/* <img className='background' src={hiking} alt="Hiking is fun!"/> */}
                 <div className='display'>
                 <ul>
                     <header>Take the best hikes with Take a Hike app. Here you can:</header> 
@@ -26,16 +26,16 @@ class MainPage extends React.Component {
                         </div>
                         <div className="li-container">
                             <li> Find great trails</li>
-                            <li> Leave a review of your experience</li>
-                            <li> See reviews of a trail before taking the hike</li>
-                            <li> See what items you should take with you</li>
+                            <li> Leave reviews</li>
+                            <li> See what others are saying</li>
+                            <li> Follow your friends</li>
+                            <li> Never leave unprepared</li>
                         </div>
                     </div>
                 </ul> 
                 </div>
-                
-            <Footer />
             </div>
+            <Footer />
             </>
         )
         

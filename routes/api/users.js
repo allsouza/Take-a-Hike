@@ -87,7 +87,18 @@ router.post('/register', (req,res)=> {
                     if (err) throw err;
                     newUser.password = hash;
                     newUser.save()
-                        .then(user => res.json(user))
+                        .then(user => {
+                            const payload = {
+                                id: user.id, 
+                                email: user.email, 
+                                firstName: user.firstName, 
+                                lastName: user.lastName, 
+                                savedTrails: user.savedTrails, 
+                                following: user.following, 
+                                follower: user.follower, 
+                                zipcode:user.zipcode,
+                                birthdate: user.birthdate}
+                            res.json(payload)})
                         .catch(err=> console.log(err))
                 })
             })

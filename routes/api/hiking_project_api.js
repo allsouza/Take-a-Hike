@@ -6,7 +6,7 @@ const keys = require('../../config/keys');
 const axios = require('axios');
 
 router.post('/', (req, res) => {
-    const {lat=45.415972, lon=-120.453624, maxResult =10, maxLength} = req.body;
+    const {lat=45.415972, lon=-120.453624, maxResult =100, maxLength} = req.body;
     const path = `https://www.hikingproject.com/data/get-trails?key=${keys.hikingProjectKey}&lat=${lat}&lon=${lon}&maxResult=${maxResult}&maxLength=${maxLength}`;
     const response = {};
     const promises = [];

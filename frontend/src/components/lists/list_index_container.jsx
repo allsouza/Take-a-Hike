@@ -4,10 +4,13 @@ import { fetchLists, deleteList, createList } from '../../actions/list_actions';
 import { openModal } from '../../actions/modal_actions';
 
 const mSTP = state => {
-    const userId = state.session.user ? state.session.user.id : ""
+    const userId = state.session.user ? state.session.user.id : "";
+    const lists = state.entities.users[userId] ? Object.values(state.entities.lists).filter(list => list.author === userId || state.entities.users[userId].following.includes(list.author)) : [];
+    
     return {
-        lists: Object.values(state.entities.lists),
-        currentUser: userId
+        lists: lists,
+        currentUser: userId,
+        allUsers: state.entities.users
     }
 };
 

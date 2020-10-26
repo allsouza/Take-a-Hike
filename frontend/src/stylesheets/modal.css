@@ -12,9 +12,13 @@
   height: 100%;
   width: 95%;
   overflow: auto;
-  padding: 0px 0px 0px 17px;
-  max-height: 370px;
-  min-height: 370px;
+}
+
+.rich-text-editor{
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .modal-list .quill, .modal-review .quill p, ul, ol{
@@ -35,10 +39,11 @@
   font-family: Arial, Helvetica, sans-serif;
 } 
 
-.modal-review form{
+.modal-list form, .modal-review form{
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100%;
 }
 
 .modal-review .star-wrapper{
@@ -48,7 +53,7 @@
 .modal-list>h1, .modal-review>h1{
     font-family: Arial, Helvetica, sans-serif;
     color: rgb(97, 68, 15);
-    font-size: 2.5vw;
+    font-size: 30px;
     font-weight: 600;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -144,7 +149,7 @@ width: 350px;
 
 .form-name-signup input {
     border: none;
-    padding: 3px 0px 3px 5px;
+    padding: 10px;
     min-width: 200px
 }
 .form-name-signup input:focus {
@@ -183,13 +188,8 @@ width: 350px;
   border: none;
   outline: none;
   padding-top: 10px;
-  font-size: 2.0vw;
+  font-size: 28px;
   text-align: center;
-}
-
-.list-index>ul>li{
-  border: 1px solid lightgreen;
-  width: 75%;
 }
 
 .errors{
@@ -203,22 +203,18 @@ width: 350px;
     outline: none;
 }
 
-/* .ql-editor {
-      height: 40vh;
-} */
-
 .login-form-buttons {
   padding-top: 9px;
 }
 
 #input-first {
   border-radius: 5px 5px 0px 0px;
-  padding-top: 5px;
+  padding-top: 10px;
 }
 
 #input-last {
   border-radius: 0px 0px 5px 5px;
-  padding-bottom: 5px;
+  padding-bottom: 10px;
 }
 
 #signup-btn {

@@ -54,30 +54,30 @@ export default class TrailShow extends React.Component{
                 <>
                     <NavBarContainer />
                 <div className="trail-show">
-                    <div className="title-and-info">
                     <h1>{trail.name}</h1>
-                    <div className="trail-info">
-                        {trail.image !== "" ?<div className="img-container"><img src={trail.image}/></div>  : null }
-                        <div className="stats">
-                                    <span><h3>Difficulty:</h3><p>{trail.difficulty.charAt(0).toUpperCase() + trail.difficulty.slice(1)}</p></span>
-                                <span><h3>Length:</h3><p>{trail.length} Miles</p></span>
-                            <span><h3>Ascent:</h3><p>{trail.ascent} Feet</p></span>
-                            <span><h3>Descent:</h3><p>{trail.descent} Feet</p></span>
-                            <span><h3>Highest point:</h3><p>{trail.high} Feet</p></span>
-                            {this.props.reviews.length == 0 ? null : <span><h3>Average Rating:</h3>{this.findAverage()}</span>}
-                            
+                    <div className='content'>
+                        <div className="trail-info">
+                            {trail.image !== "" ?<div className="img-container"><img src={trail.image}/></div>  : null }
+                            <div className="stats">
+                                        <span><h3>Difficulty:</h3><p>{trail.difficulty.charAt(0).toUpperCase() + trail.difficulty.slice(1)}</p></span>
+                                    <span><h3>Length:</h3><p>{trail.length} Miles</p></span>
+                                <span><h3>Ascent:</h3><p>{trail.ascent} Feet</p></span>
+                                <span><h3>Descent:</h3><p>{trail.descent} Feet</p></span>
+                                <span><h3>Highest point:</h3><p>{trail.high} Feet</p></span>
+                                {this.props.reviews.length == 0 ? null : <span><h3>Average Rating:</h3>{this.findAverage()}</span>}
+                                
+                            </div>
+                            <p className="summary">{trail.summary}</p>
+                            <a href={trail.url} target="_blank">More info</a>
+                            <div className="buttons">
+                                {!saved ? <button onClick={this.saveTrail}>Save to favorites</button> :
+                                <button onClick={this.removeTrail}>Remove from favorites</button> }
+                            </div>
                         </div>
-                        <p className="summary">{trail.summary}</p>
-                        <a href={trail.url} target="_blank">More info</a>
-                        <div className="buttons">
-                            {!saved ? <button onClick={this.saveTrail}>Save to favorites</button> :
-                            <button onClick={this.removeTrail}>Remove from favorites</button> }
-                        </div>
-                    </div>
 
-                    </div>
-                    <div className="trail-reviews">
-                        <Reviews trail={trail}/>
+                        <div className="trail-reviews">
+                            <Reviews trail={trail}/>
+                        </div>
                     </div>
                 </div>
                     <Footer />

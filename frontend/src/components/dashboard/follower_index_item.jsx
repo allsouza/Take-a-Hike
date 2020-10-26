@@ -1,35 +1,15 @@
 import React from 'react';
 
-
-class FollowerIndexItem extends React.Component{
-    constructor(props) {
-        super(props)
-        this.state = {
-            follower: '',
-            ready: false
-        }
-    }
-
-    componentDidUpdate(){
-        if(Object.keys(this.props.allUsers).length > 0 && this.state.follower === ""){
-            this.setState({follower: this.props.allUsers[this.props.follower], ready: true})
-        }
-    }
- 
+class FollowerIndexItem extends React.Component{ 
     render(){
-       if (this.state.ready){
-            const {firstName, lastName, email} = this.state.follower;
-            return(
-                <li>
-                    <p>{firstName + ' ' + lastName}</p>
-                    <p>{email}</p>
-                </li>
-            )
-        }else{
-            return null;
-        }
+        const {firstName, lastName, savedTrails} = this.props.follower;
+        return(
+            <li>
+                <p><i class="fas fa-user-minus" onClick={() => this.props.unfollow(this.props.follower.id)}></i>{firstName + ' ' + lastName}</p>
+                <p>Favorited trails: {savedTrails.length}</p>
+            </li>
+        )
     }
-    
 }
 
 export default FollowerIndexItem;

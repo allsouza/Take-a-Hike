@@ -1,7 +1,7 @@
 .trail-reviews li:hover{
     cursor: pointer;
     background-color: lightgray;
-    transition: all 0.5s linear;
+    transition: all 0.25s linear;
 }  
 
 .trail-reviews button{
@@ -151,3 +151,26 @@ input[type="file"] {
     margin: 0px 7px 0px 3px;
 }
 
+.trail-reviews>div{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.trail-reviews>div>button{
+    width: 200px;
+    align-self: center;
+}
+
+.trail-reviews ul{
+    height: 100%;
+}
+
+.trail-reviews>div>h1{
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.trail-reviews {
+    padding-left: 40px;
+}

@@ -1,0 +1,60 @@
+$brown: rgb(97, 68, 15);
+
+.list-index{
+    display: flex;
+    flex-direction: column;
+    height: 95%;
+    ul{
+        width: 100%;
+        padding: 10px 0;
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+        li{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 10px;
+            transition: all 0.25s linear;
+
+            div:first-of-type{
+                p{
+                    font-family: 'Sansita Swashed', cursive;
+                    font-size: 18px;
+                    color: $brown;
+                    margin-bottom: 10px;
+                }
+                span{
+                    font-style: italic;
+                    font-size: 14px;
+                }
+            }
+
+            div:last-of-type{
+                transition: all 0.25s linear;
+                margin-right: 10px;
+                span{
+                    padding: 10px;
+                }
+                i{
+                    padding: 10px;
+                }
+            }
+        }
+        
+        li:hover{
+            transform: scale(1.05);
+            background-color: lightgrey;
+            padding: 10px 15px;
+            cursor: pointer;
+            div:last-of-type{
+                margin-right: 20px;
+            }
+        }
+    }
+    button{
+        width: 25%;
+        align-self: center;
+    }
+}

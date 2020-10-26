@@ -67,3 +67,26 @@ a:hover{
 	text-decoration: none;
 	color: rgba(19, 46, 2, 0.8);
 }
+
+i:hover{
+	color: rgb(122, 151, 109);
+	cursor: pointer;
+}
+
+html{
+	overflow: hidden;
+}
+
+/* Rich text editor code don't delete */
+
+.ql-editor strong{
+	font-weight:bold;
+}
+
+.ql-editor em{
+	font-style: italic;
+}
+
+.ql-editor u{
+	text-decoration: underline;
+}
