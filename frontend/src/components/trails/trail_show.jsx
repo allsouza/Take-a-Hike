@@ -35,6 +35,10 @@ export default class TrailShow extends React.Component{
         )
     }
 
+    transformText(text) {
+        return text.charAt(0).toUpperCase() + text.difficulty.slice(1)
+    }
+
     saveTrail(){
         this.state.user.savedTrails.push(this.props.trail._id)
         this.props.updateUser(this.state.user);
@@ -57,7 +61,7 @@ export default class TrailShow extends React.Component{
                     <div className="trail-info">
                         {trail.image !== "" ?<div className="img-container"><img src={trail.image}/></div>  : null}
                         <div className="stats">
-                                <span><h3>Difficulty:</h3><p>{trail.difficulty.charAt(0).toUpperCase() + trail.difficulty.slice(1)}</p></span>
+                                <span><h3>Difficulty:</h3><p>{trail.difficulty}</p></span>
                                 <span><h3>Length:</h3><p>{trail.length} Miles</p></span>
                             <span><h3>Ascent:</h3><p>{trail.ascent} Feet</p></span>
                             <span><h3>Descent:</h3><p>{trail.descent} Feet</p></span>

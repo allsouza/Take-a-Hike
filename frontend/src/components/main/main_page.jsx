@@ -22,7 +22,7 @@ class MainPage extends React.Component {
                             <img src={Take_A_Hike} alt='logo' className='logo'/> 
                         </div>
                         <div className="li-container">
-                            <li> Find great trails to hike on</li>
+                            <li> Find great trails</li>
                             <li> Leave a review of your experience</li>
                             <li> See reviews of a trail before taking the hike</li>
                             <li> See what items you should take with you</li>
