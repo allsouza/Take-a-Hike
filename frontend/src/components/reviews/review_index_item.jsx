@@ -7,7 +7,7 @@ import '../../stylesheets/reviews.css'
 class ReviewIndexItem extends React.Component {
     constructor(props) {
         super(props)
-        this.state = { user: this.props.currentUser, followed: true }
+        this.state = { user: this.props.allUsers[props.currentUser.id], followed: true }
 
         this.renderRating = this.renderRating.bind(this);
     }
@@ -15,9 +15,6 @@ class ReviewIndexItem extends React.Component {
 
     componentDidMount() {
         this.findAuthor();
-        //
-        //this.props.fetchImage(this.props.review._id)
-        //this.props.fetchReviews(this.props.trail);
     }
 
     componentDidUpdate() {
@@ -98,10 +95,10 @@ class ReviewIndexItem extends React.Component {
                                 e.stopPropagation();
                                 this.props.editReview(this.props.review)
                             }}></i> : this.findReviewTime()}
-                        {this.props.currentUser.following.includes(this.props.review.author) || this.props.review.author === this.props.currentUserId ? null : <i className="fas fa-user-plus"
+                        {this.props.allUsers[this.props.currentUser.id].following.includes(this.props.review.author) || this.props.review.author === this.props.currentUserId ? null : <i className="fas fa-user-plus"
                             onClick={(e) => {
                                 e.stopPropagation();
-                                this.followerUser()
+                                this.followerUser();
                             }}
                         ></i>}
                     </div>

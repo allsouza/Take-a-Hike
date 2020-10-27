@@ -5,7 +5,7 @@ class FollowerIndexItem extends React.Component{
         const {firstName, lastName, savedTrails} = this.props.follower;
         return(
             <li>
-                <p><i class="fas fa-user-minus" onClick={() => this.props.unfollow(this.props.follower.id)}></i>{firstName + ' ' + lastName}</p>
+                <p><i className="fas fa-user-minus" onClick={() => this.props.unfollow(this.props.follower.id)}></i>{firstName + ' ' + lastName}</p>
                 <p>Favorited trails: {savedTrails.length}</p>
             </li>
         )

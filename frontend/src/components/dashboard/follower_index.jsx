@@ -28,6 +28,7 @@ class FollowerIndex extends React.Component{
             <ul>
                 {this.props.user.following.map(follower => {
                     return (<Follower 
+                        key={follower}
                         unfollow={this.unfollow}
                         follower={this.props.allUsers[follower]}
                         // allUsers = {this.props.allUsers}
