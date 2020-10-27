@@ -73,8 +73,8 @@ i:hover{
 	cursor: pointer;
 }
 
-html{
-	overflow: hidden;
+html::-webkit-scrollbar{
+	display: none;
 }
 
 /* Rich text editor code don't delete */
