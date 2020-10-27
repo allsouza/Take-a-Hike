@@ -4,8 +4,7 @@ import SavedTrails from './saved_trails_index';
 
 const mSTP = state => {
     const currentUser = state.session.user.id;
-    debugger
-    let trails = typeof state.entities.users !== 'undefined' ?  state.entities.users[currentUser].savedTrails : [];
+    let trails = typeof state.entities.users[currentUser] !== 'undefined' ?  state.entities.users[currentUser].savedTrails : [];
     //let trails = Object.values(state.entities.users).length > 0 ? state.entities.users[currentUser].savedTrails : [];
     trails = Object.values(state.entities.trails).length > 0 ? trails.map(trail => state.entities.trails[trail]) : [];
     trails = trails.filter(trail => trail !== undefined);
