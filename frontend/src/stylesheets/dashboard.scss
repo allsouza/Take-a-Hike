@@ -52,7 +52,7 @@ $brown: rgb(97, 68, 15);
     .right{
         width: 30%;
         padding: 15px;
-
+        overflow: auto;
         .profile{
             height: 300px;
             display: flex;
@@ -78,12 +78,13 @@ $brown: rgb(97, 68, 15);
 
         .follower-wrapper{
             ul{
-                height: 45vh;
+                padding-top: 10px;
+                height: fit-content;
                 overflow: auto;
                 li{
                     display: flex;
                     justify-content: space-between;
-                    padding: 20px;
+                    padding: 10px;
                     i{
                         padding-right: 10px;
                     }
