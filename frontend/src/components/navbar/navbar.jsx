@@ -27,7 +27,7 @@ class NavBar extends React.Component {
         if (this.props.loggedIn) {
             return (
                 <div className='nav-components'>
-                    Welcome {this.props.name.firstName}
+                    <h1>Welcome {this.props.name.firstName}!</h1>
                     <button onClick={this.logoutUser}>Logout</button>
                 </div>
             );
@@ -43,26 +43,13 @@ class NavBar extends React.Component {
     }
 
     render() {
-        
-        // const ifCurrentUser = () => {
-        //    if(this.props.loggedIn){
-        //        return (
-        //             null
-        //         //    <div className='dropdown'>
-        //         //  <Link to='/dashboard' >Dashboard </Link>
-        //         //  <div className='dropdown-content'>
-        //         //     <Link>My Trails</Link>
-        //         //     <Link to='/search'>Search</Link>
-                    
-        //         //  </div>
-        //         //    </div>
-        //        )
-        //    } 
-        // }
 
         return (
             <div className='nav'>
-                <Link to='/'><img src={path} alt="logo" className='logo1'/></Link>
+                <div className="nav-logo">
+                    <Link to='/'><img src={path} alt="logo" className='logo1'/></Link>
+                    <h1>Take a Hike</h1>
+                </div>
                 { !window.location.href.endsWith('dashboard') && !window.location.href.endsWith('/#/') ? <Link to='/'><p className='nav-title'>Dashboard</p></Link> : null}
                 {/* {ifCurrentUser()} */}
                 {this.props.loggedIn && !window.location.href.endsWith('map') ? <Link to='/map'>Map</Link> : null}
