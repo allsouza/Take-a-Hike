@@ -9,6 +9,7 @@ import SignupFormContainer from '../session/signup_form_container';
 import NewReview from '../reviews/create_review_form_container';
 import Review from '../reviews/edit_review_form_container';
 import TrailIndexItemContainer from '../../components/trails/trail_index_item_container';
+import Search from '../../components/dashboard/followers/search_container';
 import '../../stylesheets/modal.css'
 
 
@@ -38,13 +39,16 @@ function Modal({modal, closeModal, info}){
         case 'trail-item':
             component = <TrailIndexItemContainer trail={info}/>;
             break;
+        case 'searchModal':
+            component = <Search />;
+            break;
         default:
             return null;
     }
 
     return(
         <div className="modal-background" onClick={closeModal}>
-            <div onClick={e=>e.stopPropagation()}>{component}</div>
+            <div class={modal} onClick={e=>e.stopPropagation()}>{component}</div>
         </div>
     )
 }

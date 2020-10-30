@@ -37,7 +37,9 @@ class FollowerIndex extends React.Component{
                 )
                 }
             </ul> : <h3>Not following anyone</h3> }
-            <Search />
+        <div className='search'>
+            <button onClick={() => this.props.openModal('searchModal')}><i className="fas fa-search"></i>Find other hikers</button>
+        </div>
         </div>
         )
     }

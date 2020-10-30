@@ -1,0 +1,59 @@
+.modal-background>.searchModal{
+    height: 50%;
+    width: 25%;
+    
+    .search-modal{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+
+        h1{
+            font-family: bukhari;
+            font-size: 25px;
+            color: white;
+            padding: 20px;
+        }
+
+        .search-bar{
+            width: 85%;
+            padding: 10px 20px;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+
+        .results{
+            height: 100%;
+            overflow: auto;
+            width: 85%;
+
+            li{
+                display: flex;
+                padding: 10px;
+                justify-content: space-between;
+            }
+
+            li:nth-of-type(even){
+                background-color: white;
+            }
+            li:nth-of-type(odd){
+                background-color: rgb(230, 230, 230);
+            }
+            li:last-of-type{
+                border-radius: 0 0 10px 10px;
+            }
+            li:first-of-type{
+                border-radius:10px 10px  0 0;
+            }
+            li:only-of-type{
+                border-radius: 10px;
+            }
+
+            li:hover{
+                cursor: pointer;
+                background-color: rgb(197, 197, 197);
+            }
+        }
+    }
+}
