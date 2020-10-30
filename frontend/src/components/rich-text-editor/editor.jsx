@@ -107,7 +107,7 @@ export default class RichTextEditor extends React.Component {
                 </form>
                 <div className="buttons">
                     <button onClick={this.props.closeModal}>Return</button>
-                    {this.props.currentUser.id === this.state.author ? <button onClick={this.save}>Save</button> : null}
+                    {this.props.currentUser.id === this.state.author && this.state.title !== '' ? <button onClick={this.save}>Save</button> : null}
                 </div>
             </div>
         )

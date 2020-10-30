@@ -97,8 +97,20 @@ router.post('/register', (req,res)=> {
                                 following: user.following, 
                                 follower: user.follower, 
                                 zipcode:user.zipcode,
-                                birthdate: user.birthdate}
-                            res.json(payload)})
+                                birthdate: user.birthdate
+                            }
+                            jwt.sign(
+                                payload,
+                                keys.secretOrKey,
+                                {expiresIn: 3600},
+                                (err, token) => {
+                                    res.json({
+                                        success: true,
+                                        token: 'Bearer ' + token
+                                    })
+                                }
+                            )
+                        })
                         .catch(err=> console.log(err))
                 })
             })
@@ -138,7 +150,7 @@ router.post('/login', (req, res) => {
                         success: true,
                         token: 'Bearer ' + token
                     });
-                    });
+                });
                 } else {
                 return res.status(400).json({password: 'Incorrect password'});
                 }

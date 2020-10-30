@@ -48,15 +48,16 @@ button{
 	padding: 10px;
 	border-radius: 5px 20px;
     border: none;
-    font-family: bukhari;
+    font-family: 'Sansita Swashed', cursive;
     background-color: rgba(48, 112, 5, 0.8);
 	color: rgb(255, 255, 255);
 	outline: none;
 }
 
-button:hover{
+.button:hover, button:hover{
 	text-decoration: none;
 	background-color: rgba(19, 46, 2, 0.8);
+	cursor: pointer;
 }
 
 a{
