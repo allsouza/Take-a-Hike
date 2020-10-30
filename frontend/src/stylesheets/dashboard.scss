@@ -46,6 +46,9 @@ $brown: rgb(97, 68, 15);
         button{
             width: 25%;
             align-self: center;
+            i{
+                padding-right:10px;
+            }
         }
     }
 
@@ -53,6 +56,9 @@ $brown: rgb(97, 68, 15);
         width: 30%;
         padding: 15px;
         overflow: auto;
+        display: flex;
+        flex-direction: column;
+
         .profile{
             height: 300px;
             display: flex;
@@ -77,9 +83,12 @@ $brown: rgb(97, 68, 15);
         }
 
         .follower-wrapper{
+            height: 100%;
+            display: flex;
+            flex-direction: column;
             ul{
                 padding-top: 10px;
-                height: fit-content;
+                height: 100%;
                 overflow: auto;
                 li{
                     display: flex;
@@ -88,6 +97,13 @@ $brown: rgb(97, 68, 15);
                     i{
                         padding-right: 10px;
                     }
+                }
+            }
+
+            .search{
+                align-self: center;
+                i{
+                    padding-right:10px;
                 }
             }
         }

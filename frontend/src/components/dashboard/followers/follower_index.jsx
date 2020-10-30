@@ -1,5 +1,6 @@
 import React from 'react';
 import Follower from './follower_index_item';
+import Search from './search_container';
 
 class FollowerIndex extends React.Component{
 
@@ -35,7 +36,8 @@ class FollowerIndex extends React.Component{
                     />)}
                 )
                 }
-            </ul> : null}
+            </ul> : <h3>Not following anyone</h3> }
+            <Search />
         </div>
         )
     }

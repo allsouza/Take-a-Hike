@@ -2,7 +2,7 @@ import React from 'react';
 import '../../stylesheets/reset.css'
 import '../../stylesheets/dashboard.scss';
 import ListIndex from '../lists/list_index_container';
-import FollowerIndex from './follower_index_container';
+import FollowerIndex from './followers/follower_index_container';
 import Footer from '../footer/footer';
 import SavedTrails from './saved_trails/saved_trails_index_container';
 import Profile from './profile';
@@ -31,7 +31,7 @@ class DashBoard extends React.Component {
                     <div className='center'>  
                         <h1>My Favorite Trails</h1>  
                         <SavedTrails />
-                        <button onClick={() => this.props.history.push('/map')}>Find More Trails</button>
+                        <button onClick={() => this.props.history.push('/map')}><i class="fas fa-search-location"></i>Find More Trails</button>
                     </div>
                     <div className='right'>
 
