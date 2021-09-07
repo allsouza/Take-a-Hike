@@ -14,7 +14,7 @@ import '../../stylesheets/modal.css'
 
 
 function Modal({modal, closeModal, info}){
-    if(!modal) return null;
+    if(!modal) return '';
 
     let component;
     switch (modal) {
@@ -48,7 +48,7 @@ function Modal({modal, closeModal, info}){
 
     return(
         <div className="modal-background" onClick={closeModal}>
-            <div class={modal} onClick={e=>e.stopPropagation()}>{component}</div>
+            <div className={modal} onClick={e=>e.stopPropagation()}>{component}</div>
         </div>
     )
 }
