@@ -3,6 +3,7 @@ import React from 'react';
 import MapComponent from './searchmap';
 import NavBarContainer from '../navbar/navbar_container';
 
+
 class Map extends React.Component{
   constructor(props){
     super(props);
@@ -19,13 +20,16 @@ class Map extends React.Component{
     
     const geoData = await fetch(`https://public.opendatasoft.com/api/records/1.0/search/?dataset=us-zip-code-latitude-and-longitude&q=${this.props.zipcode}&facet=state&facet=timezone&facet=dst`)
     .then(res => res.json())
-    if(geoData.records.length > 0){
+    if(geoData.records && geoData.records.length > 0){
       this.setState({coords: { lat: geoData.records[0].fields.latitude, lon: geoData.records[0].fields.longitude}})
+      
     }
     this.getTrails(this.state.coords);
-    this.setState({
+    if (geoData) {
+      this.setState({
       ready:true,
     })
+    }
 
   }
 
@@ -49,12 +53,12 @@ class Map extends React.Component{
               trails= {this.props.trails}
               openModal={this.props.openModal}
               center={this.state.coords}
-              // get filter setter from props
               />
-         
           </div>
         )
-      }else{return null}
+      }else{return (
+        ''
+      )}
 
     
     
