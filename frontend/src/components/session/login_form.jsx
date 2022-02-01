@@ -18,30 +18,10 @@ class LoginForm extends React.Component {
 
     }
 
-    // componentWillReceiveProps(nextProps) {
-    //     if (nextProps.currentUser === true) {
-    //         this.props.history.push('/dashboard');
-    //     }
-
-    //     this.setState({ errors: nextProps.errors })
-    // }
 
     componentDidUpdate() {
-      // 
-      if (this.props.loggedIn === true) {
-        
-        this.props.closeModal()
-            // this.props.history.push('/dashboard');
-            }
-    
-            // this.setState({ errors: nextProps.errors })
+      if (this.props.loggedIn === true) this.props.closeModal()
     }
-
-    // componentWillUnmount(){
-    //   
-    // //   this.props.clearErrors()
-    //   this.forceUpdate()
-    // }
 
     update(field) { 
         return e => this.setState({
@@ -58,16 +38,6 @@ class LoginForm extends React.Component {
         };
 
         this.props.login(user)
-
-        if (!this.props.loggedIn){
-  
-        //   this.props.openModal('login')
-        // this.props.login(user).then(this.props.closeModal());
-        }else{
-          
-          this.props.closeModal()
-        }
-        // this.props.login(user);
     }
 
     // Render the session errors if there are any
@@ -84,15 +54,11 @@ class LoginForm extends React.Component {
     }
 
     loginGuest() {
-      // this.setState({ email: 'demo@mail.com', password: 'hunter12' });
       let demo = {
         email: 'demo@mail.com',
         password: 'hunter12'
       }
-    //   this.props.login(demo)
-    this.state.email = 'demo@mail.com'
-    this.state.password ='hunter12' 
-      this.props.login(demo).then(this.props.closeModal)
+      this.props.login(demo)
     }
 
     render() {

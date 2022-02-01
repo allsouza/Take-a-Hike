@@ -20,14 +20,9 @@ class SignupForm extends React.Component {
     }
 
     componentDidUpdate(){
-        // let newUser = {
-        //     email: this.state.email,
-        //     password: this.state.password
-        // };
 
         if (this.props.auth === true) {
             this.props.closeModal();
-            // this.props.login(newUser)
                 }
     }
 

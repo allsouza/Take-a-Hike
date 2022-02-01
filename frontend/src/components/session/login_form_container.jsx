@@ -15,7 +15,6 @@ const mDTP = (dispatch) => {
         login: user => dispatch(login(user)),
         closeModal: () => dispatch(closeModal()),
         clearErrors: () => dispatch(clearErrors()),
-        // openModal: (login) => dispatch(openModal('login'))
     }
 }
 

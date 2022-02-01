@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-// 
 // authorName: type:Schema.Types.String
 
 
